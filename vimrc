@@ -361,6 +361,8 @@ inoremap [] []<Left>
 inoremap {} {}<Left>
 inoremap "" ""<Left>
 inoremap '' ''<Left>
+" LaTeX-Math
+inoremap $$ $$<Left>
 
 " curly brace completion like in eclipse
 inoremap {<CR> {}<Left><CR><CR><Up><Tab>

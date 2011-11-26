@@ -132,8 +132,8 @@ set statusline=%#StatusLine#\ \|%#Folded#\ %02n\ %#StatusLine#\|
 " directory paths always use forward-slashes, even on windows
 set shellslash
 
-" wrap text afer 75 characters
-set textwidth=75
+" wrap text after 78 characters
+set textwidth=78
 " always wrap text in comments
 set formatoptions=crq
 

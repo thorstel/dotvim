@@ -1,0 +1,122 @@
+# JavaDoc-Comment für Klassen
+snippet clc
+	/**
+	 * ${1:Kurzbeschreibung.}
+	 * @author Thorsten Löbig
+	 */
+# JavaDoc-Comment für Methoden
+snippet mc
+	/**
+	 * ${1:Beschreibung.}
+	 * @param ${2:p}
+	 * @return ${3:}
+	 * @author Thorsten Löbig
+	 */
+# Copyright Comment
+snippet cc
+	/**
+	 * `Filename('')`.java
+	 * ${1:Beschreibung.}
+	 *
+	 * Created by Thorsten Löbig on `system('date "+%Y-%m-%d"')`
+	 * Copyright `system('date "+%Y"')` Thorsten Löbig. All rights reserved.
+	 *
+	 * $Id$
+	 */
+
+snippet bcc
+	/*
+	 * `Filename('')`.java
+	 *
+	 * Created by Thorsten Löbig on `system('date "+%Y-%m-%d"')`
+	 * Copyright `system('date "+%Y"')` Thorsten Löbig. All rights reserved.
+	 */
+
+snippet //
+	/** ${1:Comment} */
+snippet main
+	public static void main(String[] args) {
+		${1:}
+	}
+snippet pu
+	public ${1:}
+snippet po
+	protected ${1:}
+snippet pr
+	private ${1:}
+snippet st
+	static ${1:}
+snippet fi
+	final ${1:}
+snippet ab
+	abstract ${1:}
+snippet re
+	return ${1:}
+snippet br
+	break;${1:}
+snippet de
+	default:
+		${1}
+snippet ca
+	catch(${1:Exception} ${2:e}) ${3}
+snippet th
+	throw ${1:}
+snippet sy
+	synchronized ${1:}
+snippet im
+	import ${1:}
+snippet j.u
+	java.util${1:}
+snippet j.i
+	java.io.${1:}
+snippet j.b
+	java.beans.${1:}
+snippet j.n
+	java.net.${1:}
+snippet j.m
+	java.math.${1:}
+snippet if
+	if (${1}) ${2}
+snippet el
+	else 
+snippet elif
+	else if (${1}) ${2}
+snippet wh
+	while (${1}) {
+		 ${2}
+	}
+snippet for
+	for (int ${2:i} = 0; $2 < ${1:count}; ++$2) {
+		${4:/* code */}
+	}
+snippet fore
+	for (${1} : ${2}) {
+		${3: /* code */}
+	}
+snippet sw
+	switch (${1}) ${2}
+snippet cs
+	case ${1}:
+		${2}
+	${3}
+snippet tc
+	public class ${1:`Filename()`} extends ${2:TestCase}
+snippet t
+	public void test${1:Name}() throws Exception ${2}
+snippet cl
+	public class ${1:`Filename('$1', 'name')`} {
+	}
+snippet in
+	interface ${1:`Filename("", "untitled")`} ${2:extends Parent}${3}
+snippet m
+	${1:void} ${2:method}(${3}) ${4:throws }${5}
+snippet v
+	${1:String} ${2:var}${3: = null}${4};${5}
+snippet as
+	assert ${1:test} : "${2:Failure message}";${3}
+snippet const
+	private static final ${1:String}
+snippet co
+	public static final ${1:String}
+snippet pri
+	System.out.println(${1:});

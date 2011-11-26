@@ -1,0 +1,92 @@
+" General Settings
+set nocompatible
+filetype indent plugin on
+syntax on
+set backspace=indent,eol,start
+let &errorformat="%f:%l:%c: %t%*[^:]:%m,%f:%l: %t%*[^:]:%m," . &errorformat
+set fileformats=unix,dos,mac
+set autoindent
+set smartindent
+set autoread
+set virtualedit=all
+set hidden
+set visualbell t_vb=
+set laststatus=2
+set shellslash
+set textwidth=75
+set formatoptions=crq
+set showmode
+set showcmd
+set scrolloff=5
+set lazyredraw
+set expandtab
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set shiftround
+set listchars=tab:▸\ ,trail:•
+set list
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+set foldmethod=indent
+set nofoldenable
+set foldopen=block,insert,jump,mark,percent,quickfix,search,tag,undo
+set wildmenu
+set wildignore=*.o,*.class,*.toc,*.aux
+set cmdheight=2
+set fillchars=""
+set diffopt+=iwhite
+set spelllang=de,en
+
+" Custom Statusline
+set statusline=%#StatusLine#\ \|%#Folded#\ %02n\ %#StatusLine#\|
+            \\ \"%f\"\ %#ErrorMsg#%w%r%m%#StatusLine#%=
+            \\ [%{&filetype}\|%{&fileformat}\|%{&fileencoding}]
+            \\ \ [L:%3l/%L,\ C:%2v]\ \ [%3b\|0x%-2B]
+
+" change into directory of current file
+if has("autocmd")
+  autocmd BufEnter * :silent! lcd %:p:h
+endif
+
+" special gui settings (minimalistic)
+if has("gui_running")
+    set guioptions=ac
+    set showtabline=1
+    set number
+endif
+
+" Mappings
+inoremap () ()<Left>
+inoremap [] []<Left>
+inoremap {} {}<Left>
+inoremap "" ""<Left>
+inoremap '' ''<Left>
+inoremap {<CR> {}<Left><CR><CR><Up><Tab>
+inoremap <C-Space> <C-p>
+
+inoremap <C-f> <Right>
+inoremap <C-b> <Left>
+inoremap <C-e> <End>
+inoremap <C-a> <Home>
+
+" ESC - Alternatives
+noremap <C-CR> <ESC>
+noremap <S-CR> <ESC>
+inoremap <C-CR> <ESC>
+inoremap <S-CR> <ESC>
+
+noremap <space> <C-d>
+noremap <S-space> <C-u>
+
+noremap <silent> ,h :noh<CR>
+
+noremap <silent> ,a :b#<CR>
+noremap <silent> ,d :bd<CR>
+
+iab esle else
+iab flase false
+iab ture true
+iab itme item

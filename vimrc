@@ -102,7 +102,7 @@ set virtualedit=all
 " directory for the vim swap-files
 set directory=~/.vimtmp
 
-" create backups and save them in the according folder
+" create backups and save them in the accordant folder
 set backup
 set backupdir=~/.vimbackup
 
@@ -210,7 +210,7 @@ if version >= 703
   "set undodir=~/.vimundo
 
   " turn on the conceal feature (for example replace latex code with the
-  " according unicode-character)
+  " accordant unicode-character)
   set conceallevel=2
   " conceal in LaTeX for accents, delimters, greek & math
   let g:tex_conceal="adgm"

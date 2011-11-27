@@ -28,6 +28,10 @@
 " -----------
 "  Space        -   scroll down half a page
 "  Shift-Space  -   scroll up half a page
+"  Ctrl-h       -   select window left to the current window
+"  Ctrl-j       -   select window below the current window
+"  Ctrl-k       -   select window above the current window
+"  Ctrl-l       -   select window right to the current window
 "  ,a           -   switch between active and alternate buffer
 "  ,b           -   buffer-overview (LustyJuggler PlugIn - requires Ruby-Vim)
 "  ,cr          -   compiles and runs the active c-file (gcc)
@@ -387,6 +391,12 @@ inoremap <S-CR> <ESC>
 " scroll in normal mode with space
 noremap <space> <C-d>
 noremap <S-space> <C-u>
+
+" window navigation in normal mode
+noremap <C-h> <C-w>h
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-l> <C-w>l
 
 " change tabs firefox style with command-0..9 (Mac only)
 if has("mac")

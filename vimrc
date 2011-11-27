@@ -261,6 +261,9 @@ augroup VIMRC
   " set compiler to gcc for c-files
   autocmd Filetype c setl makeprg=gcc\ -Wall\ -o\ %:t:r\ %
 
+  " set compiler to pdflatex for LaTeX-Code
+  autocmd Filetype tex setl makeprg=pdflatex\ %
+
   " java code-completion with javacomplete-PlugIn
   autocmd Filetype java setl omnifunc=javacomplete#Complete
 

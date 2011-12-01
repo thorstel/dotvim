@@ -21,6 +21,7 @@
 "  Ctrl-f       -   one character forward
 "  Ctrl-b       -   one character backward
 "  Ctrl-Space   -   code completion
+"  Ctrl-d       -   search dictionary for word completion
 "  Shift-Enter  -   ESC
 "  Ctrl-Enter   -   ESC
 "
@@ -387,6 +388,9 @@ noremap <C-CR> <ESC>
 noremap <S-CR> <ESC>
 inoremap <C-CR> <ESC>
 inoremap <S-CR> <ESC>
+
+" search dictionary for word completion
+inoremap <C-d> <C-x><C-k>
 
 " scroll in normal mode with space
 noremap <space> <C-d>

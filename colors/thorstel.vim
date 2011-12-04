@@ -1,9 +1,10 @@
+"
 " Vim color file
 "
 " Name:     thorstel.vim
-" Version:  1.0
 "
 " Based on the moria-light colorscheme
+"
 
 if ! has("gui_running")
     echomsg ""
@@ -95,7 +96,7 @@ hi WildMenu guibg=#ffff00 guifg=fg gui=bold
 "  SYNTAX
 " ========
 
-hi Comment guibg=bg guifg=#786000 gui=none
+hi Comment guibg=bg guifg=#786000 gui=italic
 hi Constant guibg=bg guifg=#077807 gui=none
 hi Error guibg=bg guifg=#ee2c2c gui=bold
 hi Identifier guibg=bg guifg=#007080 gui=none

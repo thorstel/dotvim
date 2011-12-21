@@ -182,10 +182,10 @@ set incsearch
 set ignorecase
 set smartcase
 
-" code folding via indentation
-set foldmethod=indent
-" do not fold the code automatically
-set nofoldenable
+" code folding via standard markers
+set foldmethod=marker
+" fold code automatically
+set foldenable
 " open fold, if one of these commands is used within a closed fold
 set foldopen=block,insert,jump,mark,percent,quickfix,search,tag,undo
 

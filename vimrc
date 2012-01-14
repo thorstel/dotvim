@@ -218,7 +218,8 @@ if version >= 703
   " accordant unicode-character)
   set conceallevel=2
   " conceal in LaTeX for accents, delimters, greek & math
-  let g:tex_conceal="adgm"
+  "let g:tex_conceal="adgm"
+  let g:tex_conceal="adg"
 endif
 
 " =========================

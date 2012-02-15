@@ -322,6 +322,9 @@ let g:SuperTabMappingForward = '<C-Space>'
 "  GUI - Settings
 " ================
 
+" my colorscheme
+colo thorstel
+
 if has("gui_running")
   " minimalistic GUI - I don't need no fancy buttons
   set guioptions=ac
@@ -343,8 +346,6 @@ if has("gui_running")
   set lines=999
   " cursor only blinks in insert mode
   set gcr=n:blinkon0
-  " my colorscheme (GUI-only)
-  colo thorstel
 endif
 
 " ===========

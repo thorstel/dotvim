@@ -282,6 +282,9 @@ augroup VIMRC
   autocmd Filetype dot setl makeprg=dot\ -Tpdf\ %\ >%:t:r.pdf
   "autocmd Filetype dot setl makeprg=neato\ -Tpdf\ %\ >%:t:r.pdf
 
+  " set compilter for Markdown
+  autocmd Filetype markdown setl makeprg=markdown\ %\ >%:t:r.html
+
 augroup END
 
 " ===================

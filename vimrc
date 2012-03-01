@@ -233,8 +233,8 @@ augroup VIMRC
   " change directory according to the active file
   autocmd BufEnter * :silent! lcd %:p:h
 
-  " always activate spelling in LaTeX
-  autocmd BufRead,BufNewFile *.tex,*.txt setlocal spell
+  " always activate spelling in LaTeX, txt-Files and MDown-Files
+  autocmd BufRead,BufNewFile *.tex,*.txt,*.mdown setlocal spell
 
   " always wrap text in LaTeX
   autocmd BufRead,BufNewFile *.tex,*.txt setlocal formatoptions+=t

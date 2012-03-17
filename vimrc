@@ -513,6 +513,10 @@ endif
 map <silent> <leader>q :copen<CR>
 map <silent> <leader>qc :cclose<CR>
 
+" save and restore vim Sessions
+noremap <silent> <leader>ss :mksession! ~/.vimtmp/latestSession<CR>:echo "Session saved!"<CR>
+noremap <silent> <leader>ls :source ~/.vimtmp/latestSession<CR>
+
 " adjust very frequent mistakes
 iab esle else
 iab flase false

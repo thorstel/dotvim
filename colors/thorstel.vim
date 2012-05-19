@@ -97,7 +97,8 @@ hi Ignore guibg=bg guifg=bg gui=none cterm=none
 hi lCursor guibg=#008000 guifg=#ffffff gui=none cterm=none
 hi MatchParen guibg=#00ffff gui=none cterm=none
 hi PreProc guibg=bg guifg=#800090 gui=none ctermfg=magenta cterm=none
-hi Special guibg=bg guifg=#912f11 gui=none ctermfg=red cterm=none
+"hi Special guibg=bg guifg=#912f11 gui=none ctermfg=red cterm=none
+hi Special guibg=bg guifg=#cc0000 gui=none ctermfg=red cterm=none
 hi Statement guibg=bg guifg=#1f3f81 gui=bold ctermfg=blue cterm=bold
 hi Todo guibg=#ffff00 guifg=fg gui=bold ctermfg=blue cterm=bold ctermbg=none
 hi Type guibg=bg guifg=#912f11 gui=bold ctermfg=red cterm=bold

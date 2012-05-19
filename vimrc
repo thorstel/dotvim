@@ -112,7 +112,7 @@ set backupdir=~/.vimbackup
 
 " path for the vim intern 'find' command to search for files
 if has("mac")
-    set path+=~/Uni/**,~/LaTeX/**,~/Programmierung/Cpp/**,~/MaTA/**
+    set path+=~/Uni/**,~/LaTeX/**,~/Programmierung/**,~/MaTA/**
 endif
 
 " allow switching buffers, even if the active buffer is not saved
@@ -217,8 +217,8 @@ if version >= 703
   " accordant unicode-character)
   set conceallevel=2
   " conceal in LaTeX for accents, delimters, greek & math
-  "let g:tex_conceal="adgm"
-  let g:tex_conceal="adg"
+  let g:tex_conceal="adgm"
+  "let g:tex_conceal="adg"
 endif
 
 " =========================
@@ -349,6 +349,8 @@ if has("gui_running")
   set lines=999
   " cursor only blinks in insert mode
   set gcr=n:blinkon0
+  " favorite font for coding so far
+  set guifont=Anonymous\ Pro:h12
 endif
 
 " ===========

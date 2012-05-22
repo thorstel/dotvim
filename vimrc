@@ -313,7 +313,7 @@ let OmniCpp_GlobalScopeSearch = 1
 let OmniCpp_ShowPrototypeInAbbr = 1
 let OmniCpp_ShowAccess = 1
 " tag-databases for system / C++ STL / QT-Lib
-set tags+=~/.vimtags/commontags,~/.vimtags/stltags,~/.vimtags/qttags
+"set tags+=~/.vimtags/commontags,~/.vimtags/stltags,~/.vimtags/qttags
 
 " SuperTab Completion
 " -------------------
@@ -326,9 +326,10 @@ let g:SuperTabMappingForward = '<C-Space>'
 " ================
 
 " colorscheme setup
+let g:solarized_visibility="low"
+let g:solarized_contrast="normal"
 colo solarized
 set background=dark
-let g:solarized_visibility="low"
 
 if has("gui_running")
   " minimalistic GUI - I don't need no fancy buttons

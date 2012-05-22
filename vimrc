@@ -33,7 +33,7 @@
 "  Ctrl-k       -   select window above the current window
 "  Ctrl-l       -   select window right to the current window
 "  ,a           -   switch between active and alternate buffer
-"  ,b           -   buffer-overview (LustyJuggler PlugIn - requires Ruby-Vim)
+"  ,b           -   calls toggle background function
 "  ,cr          -   compiles and runs the active c-file (gcc)
 "  ,d           -   delete current buffer
 "  ,h           -   turn off highlighting
@@ -325,8 +325,10 @@ let g:SuperTabMappingForward = '<C-Space>'
 "  GUI - Settings
 " ================
 
-" my colorscheme
-colo thorstel
+" colorscheme setup
+colo solarized
+set background=dark
+let g:solarized_visibility="low"
 
 if has("gui_running")
   " minimalistic GUI - I don't need no fancy buttons
@@ -434,9 +436,6 @@ noremap <silent> <leader>h :noh<CR>
 " toggle spell checking
 noremap <silent> <leader>s :set spell! <CR>
 
-" show all open buffers (LustyJuggler PlugIn)
-noremap <silent> <leader>b :LustyJuggler<CR>
-
 " shortcut for editing the vimrc file
 noremap <silent> <leader>v :e ~/.vimrc<CR>
 
@@ -518,6 +517,8 @@ map <silent> <leader>qc :cclose<CR>
 " save and restore vim Sessions
 noremap <silent> <leader>ss :mksession! ~/.vimtmp/latestSession<CR>:echo "Session saved!"<CR>
 noremap <silent> <leader>ls :source ~/.vimtmp/latestSession<CR>
+
+call togglebg#map("<leader>b")
 
 " adjust very frequent mistakes
 iab esle else

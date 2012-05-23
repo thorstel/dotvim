@@ -519,7 +519,9 @@ map <silent> <leader>qc :cclose<CR>
 noremap <silent> <leader>ss :mksession! ~/.vimtmp/latestSession<CR>:echo "Session saved!"<CR>
 noremap <silent> <leader>ls :source ~/.vimtmp/latestSession<CR>
 
-call togglebg#map("<leader>b")
+" toggle solarized background color
+call togglebg#map("<F5>")
+noremap <silent> <leader>b :ToggleBG<CR>
 
 " adjust very frequent mistakes
 iab esle else

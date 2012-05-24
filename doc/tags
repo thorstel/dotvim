@@ -127,6 +127,8 @@
 <Plug>LatexEnvWrapSelection	latex-box.txt	/*<Plug>LatexEnvWrapSelection*
 <Plug>LatexWrapSelection	latex-box.txt	/*<Plug>LatexWrapSelection*
 ConqueTerm	conque_term.txt	/*ConqueTerm*
+DisableTimestamp	timestamp.txt	/*DisableTimestamp*
+EnableTimestamp	timestamp.txt	/*EnableTimestamp*
 ExtractSnips()	snipMate.txt	/*ExtractSnips()*
 ExtractSnipsFile()	snipMate.txt	/*ExtractSnipsFile()*
 Filename()	snipMate.txt	/*Filename()*
@@ -304,6 +306,7 @@ b:match_tail	matchit.txt	/*b:match_tail*
 b:match_wholeBR	matchit.txt	/*b:match_wholeBR*
 b:match_word	matchit.txt	/*b:match_word*
 b:match_words	matchit.txt	/*b:match_words*
+b:timestamp_disable	timestamp.txt	/*b:timestamp_disable*
 before	solarized.txt	/*before*
 c-support	csupport.txt	/*c-support*
 conque_term-bugs	conque_term.txt	/*conque_term-bugs*
@@ -613,6 +616,20 @@ taglist-session	taglist.txt	/*taglist-session*
 taglist-todo	taglist.txt	/*taglist-todo*
 taglist-using	taglist.txt	/*taglist-using*
 taglist.txt	taglist.txt	/*taglist.txt*
+timestamp.vim	timestamp.txt	/*timestamp.vim*
+timestamp_Hostname	timestamp.txt	/*timestamp_Hostname*
+timestamp_UseSystemCalls	timestamp.txt	/*timestamp_UseSystemCalls*
+timestamp_automask	timestamp.txt	/*timestamp_automask*
+timestamp_differences	timestamp.txt	/*timestamp_differences*
+timestamp_examples	timestamp.txt	/*timestamp_examples*
+timestamp_filename	timestamp.txt	/*timestamp_filename*
+timestamp_history	timestamp.txt	/*timestamp_history*
+timestamp_hostname	timestamp.txt	/*timestamp_hostname*
+timestamp_modelines	timestamp.txt	/*timestamp_modelines*
+timestamp_regexp	timestamp.txt	/*timestamp_regexp*
+timestamp_rep	timestamp.txt	/*timestamp_rep*
+timestamp_userid	timestamp.txt	/*timestamp_userid*
+timestamp_username	timestamp.txt	/*timestamp_username*
 tog-bg	togglebg.txt	/*tog-bg*
 togbg	togglebg.txt	/*togbg*
 toggle-background	solarized.txt	/*toggle-background*
@@ -627,6 +644,7 @@ togglebg-issues	togglebg.txt	/*togglebg-issues*
 togglebg-newmap	togglebg.txt	/*togglebg-newmap*
 togglebg-usage	togglebg.txt	/*togglebg-usage*
 togglebg.vim	togglebg.txt	/*togglebg.vim*
+token_substitution	timestamp.txt	/*token_substitution*
 unimpaired	unimpaired.txt	/*unimpaired*
 unimpaired-author	unimpaired.txt	/*unimpaired-author*
 unimpaired-encoding	unimpaired.txt	/*unimpaired-encoding*

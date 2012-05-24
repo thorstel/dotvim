@@ -328,8 +328,8 @@ let g:SuperTabMappingForward = '<C-Space>'
 " colorscheme setup
 let g:solarized_visibility="low"
 let g:solarized_contrast="normal"
-colo solarized
 set background=dark
+colo solarized
 
 if has("gui_running")
   " minimalistic GUI - I don't need no fancy buttons
@@ -391,6 +391,10 @@ inoremap <C-f> <Right>
 inoremap <C-b> <Left>
 inoremap <C-e> <End>
 inoremap <C-a> <Home>
+
+" always allow navigation in wrapped lines
+noremap j gj
+noremap k gk
 
 " alternatives for the escape button
 noremap <C-CR> <ESC>

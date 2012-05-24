@@ -392,10 +392,6 @@ inoremap <C-b> <Left>
 inoremap <C-e> <End>
 inoremap <C-a> <Home>
 
-" always allow navigation in wrapped lines
-noremap j gj
-noremap k gk
-
 " alternatives for the escape button
 noremap <C-CR> <ESC>
 noremap <S-CR> <ESC>

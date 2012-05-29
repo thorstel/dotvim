@@ -282,8 +282,8 @@ augroup VIMRC
   autocmd Filetype dot setl makeprg=dot\ -Tpdf\ %\ >%:t:r.pdf
   "autocmd Filetype dot setl makeprg=neato\ -Tpdf\ %\ >%:t:r.pdf
 
-  " set compilter for Markdown
-  autocmd Filetype markdown setl makeprg=markdown\ %\ >%:t:r.html
+  " set compilter for Pandoc Markdown
+  autocmd Filetype pandoc setl makeprg=pandoc\ -s\ %\ -o\ %:t:r.html
 
 augroup END
 
@@ -370,6 +370,11 @@ function! <SID>DeleteTrailings()
   call cursor(l, c)
 endfunction
 
+" places {} at the end of the line
+function! <SID>PlaceCurlyBraces()
+  s/\s*$/ {}
+endfunction
+
 " ==========
 "  Mappings
 " ==========
@@ -384,7 +389,10 @@ inoremap '' ''<Left>
 inoremap $$ $$<Left>
 
 " curly brace completion like in eclipse
-inoremap {<CR> {}<Left><CR><CR><Up><Tab>
+inoremap <silent> {<CR> <Esc>:call <SID>PlaceCurlyBraces()<CR>$i<CR><CR><Up><Tab>
+
+" place ; always at the end of a line in insert mode
+inoremap ; <End>;
 
 " emacs-like insert mode navigation
 inoremap <C-f> <Right>

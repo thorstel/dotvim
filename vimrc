@@ -234,7 +234,7 @@ augroup VIMRC
   autocmd BufEnter * :silent! lcd %:p:h
 
   " always activate spelling in LaTeX, txt-Files and MDown-Files
-  autocmd BufRead,BufNewFile *.tex,*.txt,*.mdown setlocal spell
+  autocmd BufRead,BufNewFile *.tex,*.txt,*.mkd setlocal spell
 
   " always wrap text in LaTeX
   autocmd BufRead,BufNewFile *.tex,*.txt setlocal formatoptions+=t

@@ -1,8 +1,9 @@
-" General Settings
 set nocompatible
 filetype indent plugin on
 syntax on
 set backspace=indent,eol,start
+let g:load_doxygen_syntax=1
+let g:tex_flavor='latex'
 let &errorformat="%f:%l:%c: %t%*[^:]:%m,%f:%l: %t%*[^:]:%m," . &errorformat
 set fileformats=unix,dos,mac
 set autoindent
@@ -12,67 +13,109 @@ set virtualedit=all
 set hidden
 set visualbell t_vb=
 set laststatus=2
+set statusline=%#StatusLine#\ \|%#Folded#\ %02n\ %#StatusLine#\|
+      \\ \"%f\"\ %#ErrorMsg#%w%r%m%#StatusLine#%=
+      \\ [%{&filetype}\|%{&fileformat}\|%{&fileencoding}]
+      \\ \ [L:%3l/%L,\ C:%2v]\ \ [%3b\|0x%-2B]
 set shellslash
-set textwidth=75
+set textwidth=78
 set formatoptions=crq
+set ruler
 set showmode
 set showcmd
+set mouse=a
+set mousehide
 set scrolloff=5
 set lazyredraw
+
 set expandtab
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 set shiftround
-set listchars=tab:▸\ ,trail:•
+
+set listchars=tab:▸\ ,trail:• ",eol:¬
 set list
+
 set hlsearch
 set incsearch
 set ignorecase
 set smartcase
-set foldmethod=indent
-set nofoldenable
+
+set foldmethod=marker
+set foldenable
 set foldopen=block,insert,jump,mark,percent,quickfix,search,tag,undo
+
 set wildmenu
 set wildignore=*.o,*.class,*.toc,*.aux
+
 set cmdheight=2
 set fillchars=""
 set diffopt+=iwhite
 set spelllang=de,en
 
-" Custom Statusline
-set statusline=%#StatusLine#\ \|%#Folded#\ %02n\ %#StatusLine#\|
-            \\ \"%f\"\ %#ErrorMsg#%w%r%m%#StatusLine#%=
-            \\ [%{&filetype}\|%{&fileformat}\|%{&fileencoding}]
-            \\ \ [L:%3l/%L,\ C:%2v]\ \ [%3b\|0x%-2B]
+let mapleader=','
 
-" change into directory of current file
-if has("autocmd")
+if version >= 703
+  set conceallevel=2
+  let g:tex_conceal="adgm"
+endif
+
+augroup VIMRC
+  autocmd!
   autocmd BufEnter * :silent! lcd %:p:h
-endif
+  autocmd BufRead,BufNewFile *.tex,*.txt setlocal formatoptions+=t
+  autocmd BufWritePost vimrc.vim,.vimrc source $MYVIMRC
+  autocmd GuiEnter * set visualbell t_vb=
+augroup END
 
-" special gui settings (minimalistic)
+set completeopt=menuone
+let OmniCpp_SelectFirstItem = 2
+let OmniCpp_GlobalScopeSearch = 1
+let OmniCpp_ShowPrototypeInAbbr = 1
+let OmniCpp_ShowAccess = 1
+
 if has("gui_running")
-    set guioptions=ac
-    set showtabline=1
-    set number
+  set guioptions=ac
+  set showtabline=1
+  set number
+  set numberwidth=6
+  set co=105
+  set cursorline
+  set lines=999
+  set gcr=n:blinkon0
 endif
 
-" Mappings
+function! <SID>DeleteTrailings()
+  let _s=@/
+  let l = line(".")
+  let c = col(".")
+  %s/\s\+$//e
+  let @/=_s
+  call cursor(l, c)
+endfunction
+
+function! <SID>PlaceCurlyBraces()
+  s/\s*$/ {}
+endfunction
+
+
 inoremap () ()<Left>
 inoremap [] []<Left>
 inoremap {} {}<Left>
 inoremap "" ""<Left>
 inoremap '' ''<Left>
-inoremap {<CR> {}<Left><CR><CR><Up><Tab>
-inoremap <C-Space> <C-p>
+inoremap $$ $$<Left>
+
+inoremap <silent> {<CR> <Esc>:call <SID>PlaceCurlyBraces()<CR>$i<CR><CR><Up><Tab>
+inoremap ; <End>;
 
 inoremap <C-f> <Right>
 inoremap <C-b> <Left>
 inoremap <C-e> <End>
 inoremap <C-a> <Home>
+inoremap <C-Space> <C-p>
 
-" ESC - Alternatives
 noremap <C-CR> <ESC>
 noremap <S-CR> <ESC>
 inoremap <C-CR> <ESC>
@@ -81,10 +124,27 @@ inoremap <S-CR> <ESC>
 noremap <space> <C-d>
 noremap <S-space> <C-u>
 
-noremap <silent> ,h :noh<CR>
+noremap <C-h> <C-w>h
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-l> <C-w>l
 
-noremap <silent> ,a :b#<CR>
-noremap <silent> ,d :bd<CR>
+map <silent> gf :e <cfile><CR>
+
+noremap <silent> <leader>t :call <SID>DeleteTrailings()<CR>
+noremap <silent> <leader>h :noh<CR>
+noremap <silent> <leader>v :e ~/.vimrc<CR>
+noremap <silent> <leader>a :b#<CR>
+noremap <silent> <leader>d :bd<CR>
+noremap <silent> <leader>w :set wrap!<CR>
+
+map <silent> <leader>jr :!javac % && java %:t:r<CR>
+map <silent> <leader>cr :!gcc -Wall -o %:t:r % && ./%:t:r<CR>
+
+map <silent> <right> :bn<CR>
+map <silent> <left> :bp<CR>
+map <silent> Q gq
+noremap <silent> Y y$
 
 iab esle else
 iab flase false

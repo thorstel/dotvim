@@ -112,7 +112,7 @@ set backupdir=~/.vimbackup
 
 " path for the vim intern 'find' command to search for files
 if has("mac")
-    set path+=~/Uni/**,~/LaTeX/**,~/Programmierung/**,~/MaTA/**
+  set path+=~/Uni/**,~/LaTeX/**,~/Programmierung/**,~/MaTA/**
 endif
 
 " allow switching buffers, even if the active buffer is not saved
@@ -206,6 +206,9 @@ set spelllang=de,en
 
 " custom mappings begin with ,
 let mapleader=','
+
+" do not scan included files for completion (removed 'i'-option)
+set complete=.,w,b,u,t
 
 " 7.3 features
 if version >= 703

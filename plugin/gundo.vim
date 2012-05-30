@@ -36,12 +36,12 @@ ENDPYTHON
 
     " Python version is too old
     if !s:has_supported_python
-        echo  "Gundo requires that Vim be compiled with Python 2.4+"
+        "echo  "Gundo requires that Vim be compiled with Python 2.4+"
         finish
     endif
 else
     " no Python support
-    echo  "Gundo requires that Vim be compiled with Python 2.4+"
+    "echo  "Gundo requires that Vim be compiled with Python 2.4+"
     finish
 endif"}}}
 

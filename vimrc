@@ -76,6 +76,8 @@ filetype indent plugin on
 
 " turn syntax-highlighting on
 syntax on
+" stop coloring very long lines
+set synmaxcol=512
 
 " set backspace behaviour. Should be default anyway - just in case it is not
 set backspace=indent,eol,start
@@ -240,7 +242,7 @@ augroup VIMRC
   autocmd BufRead,BufNewFile *.tex,*.txt,*.mkd setlocal spell
 
   " always wrap text in LaTeX
-  autocmd BufRead,BufNewFile *.tex,*.txt setlocal formatoptions+=t
+  autocmd BufRead,BufNewFile *.tex,*.txt,*.mkd setlocal formatoptions+=t
 
   " don't make backups of files in my encrypted folders
   if has("mac")
@@ -287,6 +289,8 @@ augroup VIMRC
 
   " set compilter for Pandoc Markdown
   autocmd Filetype pandoc setl makeprg=pandoc\ -s\ %\ -o\ %:t:r.html
+  " automatically compile Pandoc files after saving
+  autocmd! BufWritePost * if &ft == 'pandoc' | silent make | endif
 
 augroup END
 

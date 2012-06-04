@@ -39,7 +39,7 @@
 "  ,h           -   turn off highlighting
 "  ,jr          -   compiles ands runs the active java-file
 "  ,ll          -   compiles the active latex-file
-"  ,l<space>    -   align text around spaces (or - =)
+"  ,l= ,l:      -   align text around = or :
 "  ,m           -   maximize the window
 "  ,n           -   restore the default window
 "  ,q           -   open quickfix view
@@ -93,6 +93,9 @@ let &errorformat="%f:%l:%c: %t%*[^:]:%m,%f:%l: %t%*[^:]:%m," . &errorformat
 
 " self-explanatory - prefer unix over dos over mac formats
 set fileformats=unix,dos,mac
+
+" use unicode
+set encoding=utf-8
 
 " automatic smart indenting is set
 set autoindent
@@ -504,11 +507,11 @@ map <silent> <left> :bp<CR>
 " format text with Q instead of gq
 map <silent> Q gq
 
-" align text around <space> / = / : / -
-map <silent> <leader>l<space> :Tab /\v\w\zs\s\ze\w<CR>
-map <silent> <leader>l= :Tab /=<CR>
-map <silent> <leader>l: :Tab /:\zs<CR>
-map <silent> <leader>l- :Tab /-<CR>
+" align text around = :
+nmap <silent> <leader>l= :Tab /=<CR>
+vmap <silent> <leader>l= :Tab /=<CR>
+nmap <silent> <leader>l: :Tab /:<CR>
+vmap <silent> <leader>l: :Tab /:<CR>
 
 " Y shall copy from the current position to the end of line
 noremap <silent> Y y$

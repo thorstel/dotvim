@@ -39,6 +39,7 @@
 "  ,h           -   turn off highlighting
 "  ,jr          -   compiles ands runs the active java-file
 "  ,ll          -   compiles the active latex-file
+"  ,l<CR>       -   align around to be entered search pattern
 "  ,l= ,l:      -   align text around = or :
 "  ,m           -   maximize the window
 "  ,n           -   restore the default window
@@ -512,6 +513,8 @@ nmap <silent> <leader>l= :Tab /=<CR>
 vmap <silent> <leader>l= :Tab /=<CR>
 nmap <silent> <leader>l: :Tab /:<CR>
 vmap <silent> <leader>l: :Tab /:<CR>
+nmap <leader>l<CR> :Tab /
+vmap <leader>l<CR> :Tab /
 
 " Y shall copy from the current position to the end of line
 noremap <silent> Y y$

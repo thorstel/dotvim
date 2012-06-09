@@ -174,9 +174,8 @@ set softtabstop=2
 set shiftwidth=2
 set shiftround
 
-" real tabs are displayed with: ▸
-" if there are trailings in the file the show up as: •
-set listchars=tab:▸\ ,trail:• ",eol:¬
+" show tabs and trailing spaces
+set listchars=tab:»\ ,trail:· ",eol:¬
 set list
 
 " highlight search results

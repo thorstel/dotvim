@@ -34,7 +34,7 @@ set softtabstop=2
 set shiftwidth=2
 set shiftround
 
-set listchars=tab:▸\ ,trail:• ",eol:¬
+set listchars=tab:»\ ,trail:· ",eol:¬
 set list
 
 set hlsearch

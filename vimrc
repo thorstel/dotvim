@@ -499,7 +499,7 @@ map <silent> <up> :TlistToggle<CR>
 map <silent> <leader>n :NERDTreeClose<CR>:TlistClose<CR>:set co=90<CR>:set lines=999<CR>
 
 " maximize the current window
-map <silent> <leader>m :set co=999<CR> :set lines=999<CR>
+map <silent> <leader>m :set co=181<CR> :set lines=999<CR>
 
 " compile and run the active java-file
 map <silent> <leader>jr :!javac % && java %:t:r<CR>

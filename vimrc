@@ -1,11 +1,9 @@
+" ======================
+"  ThorsteLs Vimrc-File
+" ======================
 "
-" =========================================
-"  T H O R S T E L s   V I M R C - F I L E
-" =========================================
-"
-
-"  Shortcut Overview
-" ===================
+" Shortcut Overview
+" =================
 "
 " Arrow Keys
 " ----------
@@ -62,12 +60,10 @@
 "  Cmd-i        -   shortcut for ci -l of the active buffer (RCS)
 "  Cmd-k        -   move selected text up
 "  Cmd-j        -   move selected text down
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-" ==================
-"  General Settings
-" ==================
+" *** General Settings *** {{{
 
 " don't force strict vi-compatibility
 set nocompatible
@@ -229,9 +225,8 @@ if version >= 703
   "let g:tex_conceal="adg"
 endif
 
-" =========================
-"  Autocommands - Settings
-" =========================
+" }}}
+" *** Autocommands *** {{{
 
 augroup VIMRC
 
@@ -290,6 +285,9 @@ augroup VIMRC
   autocmd Filetype dot setl makeprg=dot\ -Tpdf\ %\ >%:t:r.pdf
   "autocmd Filetype dot setl makeprg=neato\ -Tpdf\ %\ >%:t:r.pdf
 
+  " remove trailing characters before saving a file
+  autocmd BufWritePre * call <SID>DeleteTrailings()
+
   " set compilter for Pandoc Markdown
   autocmd Filetype pandoc setl makeprg=pandoc\ -s\ %\ -o\ %:t:r.html
   " automatically compile Pandoc files after saving
@@ -297,9 +295,8 @@ augroup VIMRC
 
 augroup END
 
-" ===================
-"  PlugIn - Settings
-" ===================
+" }}}
+" *** PlugIn - Settings *** {{{
 
 " Taglist
 let Tlist_Ctags_Cmd = 'ctags'
@@ -331,9 +328,13 @@ let OmniCpp_ShowAccess = 1
 " use ctrl-space completion insted (Eclipse-like)
 let g:SuperTabMappingForward = '<C-Space>'
 
-" ================
-"  GUI - Settings
-" ================
+" EasyMotion
+" ----------
+" all EasyMotion commands are triggered with double-pressing the leader-key
+let g:EasyMotion_leader_key = '<Leader><Leader>'
+
+" }}}
+" *** UI / GUI - Settings *** {{{
 
 " colorscheme setup
 let g:solarized_visibility="low"
@@ -357,7 +358,7 @@ if has("gui_running")
   set co=90
   " columns from 80 shall be in a different color (vim 7.3 feature)
   if version >= 703
-      set colorcolumn=81,82,83,84,85 ",86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180,181,182,183,184,185,186,187,188,189,190,191,192,193,194,195,196,197,198,199,200,201,202,203,204,205,206,207,208,209,210,211,212,213,214,215,216,217,218,219,220,221,222,223,224,225,226,227,228,229,230,231,232,233,234,235,236,237,238,239,240,241,242,243,244,245,246,247,248,249,250,251,252,253,254,255,256,257,258,259,260,261,262,263,264,265,266,267,268,269,270,271,272,273,274,275,276,277,278,279,280,281,282,283,284,285,286,287,288,289,290,291,292
+      set colorcolumn=81,82,83,84,85
   endif
   " maximize window vertically
   set lines=999
@@ -367,9 +368,8 @@ if has("gui_running")
   set guifont=Anonymous\ Pro:h12
 endif
 
-" ===========
-"  Functions
-" ===========
+" }}}
+" *** Custom Functions *** {{{
 
 " delete all trailings in the active buffer
 function! <SID>DeleteTrailings()
@@ -386,9 +386,8 @@ function! <SID>PlaceCurlyBraces()
   s/\s*$/ {}
 endfunction
 
-" ==========
-"  Mappings
-" ==========
+" }}}
+" *** Mappings *** {{{
 
 " place cursor between braces / quotes
 inoremap () ()<Left>
@@ -455,7 +454,7 @@ map <silent> gf :e <cfile><CR>
 " compile the active latex-file (latex-box PlugIn)
 noremap <silent> <leader>ll :Latexmk<CR>
 
-" call the DeleteTrailings() function
+" call the DeleteTrailings() function manually
 noremap <silent> <leader>t :call <SID>DeleteTrailings()<CR>
 
 " turn off hlsearch
@@ -558,10 +557,11 @@ iab flase false
 iab ture true
 iab itme item
 
-" =============================
-"  consider local Vim Settings
-" =============================
+" }}}
 
+"  consider local Vim Settings
 if filereadable(expand('~/.vimrc.local'))
   source ~/.vimrc.local
 endif
+
+" vim: fdm=marker

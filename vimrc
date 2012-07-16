@@ -432,7 +432,7 @@ noremap N Nzz
 noremap * *zz
 noremap # #zz
 noremap g* g*zz
-noremap g# g#z
+noremap g# g#zz
 
 " change tabs firefox style with command-0..9 (Mac only)
 if has("mac")
@@ -523,7 +523,7 @@ vmap <silent> <leader>l: :Tab /:<CR>
 nmap <leader>l<CR> :Tab /
 vmap <leader>l<CR> :Tab /
 
-" Y shall copy from the current position to the end of line
+" Y should copy from the current position to the end of line
 noremap <silent> Y y$
 
 " scale the window up / down by 10 columns

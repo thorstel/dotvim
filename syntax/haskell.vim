@@ -174,6 +174,7 @@ if version >= 508 || !exists("did_hs_syntax_inits")
   hi link hsEnumConst           Constant
   hi link hsConstant            Constant
   hi link hsDebug               Debug
+  hi link hsDelimiter           Delimiter
 
   delcommand HiLink
 endif

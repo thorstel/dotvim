@@ -336,6 +336,11 @@ let g:EasyMotion_leader_key = '<Leader><Leader>'
 " }}}
 " *** UI / GUI - Settings *** {{{
 
+" show line numbers
+set number
+" display line numbers with 5 digits
+set numberwidth=5
+
 " colorscheme setup
 let g:solarized_visibility="low"
 let g:solarized_contrast="normal"
@@ -350,10 +355,6 @@ if has("gui_running")
   set guioptions=ac
   " only show tab-bar if more than one tab is present
   set showtabline=1
-  " show line numbers
-  set number
-  " display line numbers with 5 digits
-  set numberwidth=5
   " number of colums
   set co=90
   " columns from 80 shall be in a different color (vim 7.3 feature)

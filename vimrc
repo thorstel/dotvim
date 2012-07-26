@@ -31,9 +31,10 @@
 "  Ctrl-k       -   select window above the current window
 "  Ctrl-l       -   select window right to the current window
 "  ,a           -   switch between active and alternate buffer
-"  ,b           -   calls toggle background function
+"  ,b           -   open ctrlP Buffer explorer
 "  ,cr          -   compiles and runs the active c-file (gcc)
 "  ,d           -   delete current buffer
+"  ,e           -   open CtrlP Path explorer
 "  ,h           -   turn off highlighting
 "  ,jr          -   compiles ands runs the active java-file
 "  ,ll          -   compiles the active latex-file
@@ -333,6 +334,14 @@ let g:SuperTabMappingForward = '<C-Space>'
 " all EasyMotion commands are triggered with double-pressing the leader-key
 let g:EasyMotion_leader_key = '<Leader><Leader>'
 
+" CtrlP
+" -----
+" CtrlP Plugin is invoked with ctrl-e
+let g:ctrlp_map = '<c-e>'
+let g:ctrlp_cmd = 'CtrlP'
+" work with dircetory of current file
+let g:ctrlp_working_path_mode = 1
+
 " }}}
 " *** UI / GUI - Settings *** {{{
 
@@ -550,7 +559,9 @@ noremap <silent> <leader>ls :source ~/.vimtmp/latestSession<CR>
 
 " toggle solarized background color
 call togglebg#map("<F5>")
-noremap <silent> <leader>b :ToggleBG<CR>
+
+" call CtrlP buffer explorer
+noremap <silent> <leader>b :CtrlPBuffer<CR>
 
 " adjust very frequent mistakes
 iab esle else

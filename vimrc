@@ -30,8 +30,9 @@
 "  Ctrl-j       -   select window below the current window
 "  Ctrl-k       -   select window above the current window
 "  Ctrl-l       -   select window right to the current window
+"  Ctrl-e       -   open CtrlP Path explorer
 "  ,a           -   switch between active and alternate buffer
-"  ,b           -   open ctrlP Buffer explorer
+"  ,b           -   open CtrlP Buffer explorer
 "  ,cr          -   compiles and runs the active c-file (gcc)
 "  ,d           -   delete current buffer
 "  ,e           -   open CtrlP Path explorer
@@ -562,6 +563,8 @@ call togglebg#map("<F5>")
 
 " call CtrlP buffer explorer
 noremap <silent> <leader>b :CtrlPBuffer<CR>
+" call CtrlP file explorer
+noremap <silent> <leader>e :CtrlP<CR>
 
 " adjust very frequent mistakes
 iab esle else

@@ -26,6 +26,7 @@
 " -----------
 "  Space        -   scroll down half a page
 "  Shift-Space  -   scroll up half a page
+"  Tab          -   invoke Tabularize Plugin
 "  Ctrl-h       -   select window left to the current window
 "  Ctrl-j       -   select window below the current window
 "  Ctrl-k       -   select window above the current window
@@ -531,8 +532,8 @@ nmap <silent> <leader>l= :Tab /=<CR>
 vmap <silent> <leader>l= :Tab /=<CR>
 nmap <silent> <leader>l: :Tab /:<CR>
 vmap <silent> <leader>l: :Tab /:<CR>
-nmap <leader>l<CR> :Tab /
-vmap <leader>l<CR> :Tab /
+nmap <tab> :Tab /
+vmap <tab> :Tab /
 
 " Y should copy from the current position to the end of line
 noremap <silent> Y y$

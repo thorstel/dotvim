@@ -23,6 +23,15 @@ snippet tab
 	\begin{${1:tabular}}{${2:c}}
 	${3}
 	\end{$1}
+snippet tbl
+	\begin{table}[t]
+	\centering
+	\caption{${3:caption}}
+	\label{tbl:${2:}}
+	\begin{tabular}{${1:ll}}
+
+	\end{tabular}
+	\end{table}
 # Align(ed)
 snippet ali
 	\begin{align${1:ed}}

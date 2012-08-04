@@ -439,12 +439,12 @@ noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
 
 " center around line with current search result
-noremap n nzz
-noremap N Nzz
-noremap * *zz
-noremap # #zz
-noremap g* g*zz
-noremap g# g#zz
+nnoremap n nzz
+nnoremap N Nzz
+nnoremap * *zz
+nnoremap # #zz
+nnoremap g* g*zz
+nnoremap g# g#zz
 
 " change tabs firefox style with command-0..9 (Mac only)
 if has("mac")

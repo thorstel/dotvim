@@ -381,7 +381,7 @@ if has("gui_running")
       set colorcolumn=81,82,83,84,85
   endif
   " maximize window vertically
-  set lines=999
+  set lines=51
   " cursor only blinks in insert mode
   set gcr=n:blinkon0
   " favorite font for coding so far
@@ -519,10 +519,10 @@ map <silent> <down> :NERDTreeToggle<CR>
 map <silent> <up> :TlistToggle<CR>
 
 " restore standard window layout
-map <silent> <leader>n :NERDTreeClose<CR>:TlistClose<CR>:set co=90<CR>:set lines=999<CR>
+map <silent> <leader>n :NERDTreeClose<CR>:TlistClose<CR>:set co=90<CR>:set lines=51<CR>
 
 " maximize the current window
-map <silent> <leader>m :set co=181<CR> :set lines=999<CR>
+map <silent> <leader>m :set co=181<CR> :set lines=51<CR>
 
 " compile and run the active java-file
 map <silent> <leader>jr :!javac % && java %:t:r<CR>

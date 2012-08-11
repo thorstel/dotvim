@@ -66,6 +66,9 @@
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" enable Pathogen PlugIn-Manager
+call pathogen#infect()
+
 " *** General Settings *** {{{
 
 " don't force strict vi-compatibility
@@ -132,11 +135,11 @@ set visualbell t_vb=
 " statusline is always displayed - not only in split view
 set laststatus=2
 
-" statusline layout
-set statusline=%#StatusLine#\ \|%#Folded#\ %02n\ %#StatusLine#\|
-      \\ \"%f\"\ %#ErrorMsg#%w%r%m%#StatusLine#%=
-      \\ [%{&filetype}\|%{&fileformat}\|%{&fileencoding}]
-      \\ \ [L:%3l/%L,\ C:%2v]\ \ [%3b\|0x%-2B]
+" statusline layout (without powerline)
+"set statusline=%#StatusLine#\ \|%#Folded#\ %02n\ %#StatusLine#\|
+      "\\ \"%f\"\ %#ErrorMsg#%w%r%m%#StatusLine#%=
+      "\\ [%{&filetype}\|%{&fileformat}\|%{&fileencoding}]
+      "\\ \ [L:%3l/%L,\ C:%2v]\ \ [%3b\|0x%-2B]
 
 " directory paths always use forward-slashes, even on windows
 set shellslash
@@ -344,6 +347,12 @@ let g:ctrlp_cmd = 'CtrlP'
 " work with dircetory of current file
 let g:ctrlp_working_path_mode = 1
 
+" Powerline
+" ---------
+
+let g:Powerline_theme = 'default'
+let g:Powerline_colorscheme = 'default'
+
 " }}}
 " *** UI / GUI - Settings *** {{{
 
@@ -526,6 +535,9 @@ map <silent> <left> :bp<CR>
 
 " format text with Q instead of gq
 map <silent> Q gq
+
+" spilt line at current position - opposite of J
+nnoremap K i<CR><ESC>k$
 
 " align text around = :
 nmap <silent> <leader>l= :Tab /=<CR>

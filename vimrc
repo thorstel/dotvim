@@ -9,7 +9,7 @@
 " ----------
 "  right        -   next buffer
 "  left         -   previous buffer
-"  up           -   toggle Taglist-view
+"  up           -   toggle Tagbar-view
 "  down         -   toggle NERDTree-Explorer
 "
 " Insert Mode
@@ -263,9 +263,6 @@ augroup VIMRC
   " do not show special characters in terminal view (PLUGIN!)
   autocmd FileType conque_term setl nolist
 
-  " do not display standard statusline in taglist window
-  autocmd FileType taglist setl statusline=Taglist
-
   " reload the vimrc file if changed
   autocmd BufWritePost vimrc.vim,.vimrc source $MYVIMRC
 
@@ -303,15 +300,6 @@ augroup END
 
 " }}}
 " *** PlugIn - Settings *** {{{
-
-" Taglist
-let Tlist_Ctags_Cmd = 'ctags'
-let Tlist_Exist_OnlyWindow = 1
-let Tlist_Enable_Fold_Column = 0
-let Tlist_Use_Right_Window = 1
-let Tlist_WinWidth = 30
-" do not show every single variable in PHP
-let tlist_php_settings = 'php;c:class;d:constant;f:function'
 
 " file browsers width is 30 columns
 let NERDTreeWinSize = 30
@@ -515,8 +503,8 @@ map <silent> <C-p> :!open -a skim %:t:r.pdf<CR>
 " show/hide the NERDTree filebrowser
 map <silent> <down> :NERDTreeToggle<CR>
 
-" toggle the Taglist-PlugIn view
-map <silent> <up> :TlistToggle<CR>
+" toggle the Tagbar-PlugIn view
+map <silent> <up> :TagbarToggle<CR>
 
 " restore standard window layout
 map <silent> <leader>n :NERDTreeClose<CR>:TlistClose<CR>:set co=90<CR>:set lines=51<CR>

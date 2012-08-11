@@ -349,7 +349,6 @@ let g:ctrlp_working_path_mode = 1
 
 " Powerline
 " ---------
-
 let g:Powerline_theme = 'default'
 let g:Powerline_colorscheme = 'default'
 
@@ -386,7 +385,11 @@ if has("gui_running")
   " cursor only blinks in insert mode
   set gcr=n:blinkon0
   " favorite font for coding so far
-  set guifont=Anonymous\ Pro:h12
+  "set guifont=Anonymous\ Pro:h12
+  " patched Anonymous Pro font for Powerline Plugin
+  set guifont=Anonymous\ Pro\ for\ Powerline:h12
+  " enable status line decorations in gui vim
+  let g:Powerline_symbols = 'fancy'
 endif
 
 " }}}

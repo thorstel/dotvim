@@ -507,7 +507,7 @@ map <silent> <down> :NERDTreeToggle<CR>
 map <silent> <up> :TagbarToggle<CR>
 
 " restore standard window layout
-map <silent> <leader>n :NERDTreeClose<CR>:TlistClose<CR>:set co=90<CR>:set lines=51<CR>
+map <silent> <leader>n :NERDTreeClose<CR>:TagbarClose<CR>:set co=90<CR>:set lines=51<CR>
 
 " maximize the current window
 map <silent> <leader>m :set co=181<CR> :set lines=51<CR>

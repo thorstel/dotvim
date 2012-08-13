@@ -39,8 +39,7 @@
 "  ,e           -   open CtrlP Path explorer
 "  ,h           -   turn off highlighting
 "  ,jr          -   compiles ands runs the active java-file
-"  ,ll          -   compiles the active latex-file
-"  ,l= ,l:      -   align text around = or :
+"  ,l           -   switch between relative and absolute line number display
 "  ,m           -   maximize the window
 "  ,n           -   restore the default window
 "  ,q           -   open quickfix view
@@ -398,6 +397,15 @@ function! <SID>PlaceCurlyBraces()
   s/\s*$/ {}
 endfunction
 
+" function for switching between relative and absolute line numbers
+function! <SID>SwitchLineNumbers()
+  if (&relativenumber == 1)
+    set number
+  else
+    set relativenumber
+  endif
+endfunction
+
 " }}}
 " *** Mappings *** {{{
 
@@ -463,9 +471,6 @@ endif
 " always open file under cursor - even if it does not exist
 map <silent> gf :e <cfile><CR>
 
-" compile the active latex-file (latex-box PlugIn)
-noremap <silent> <leader>ll :Latexmk<CR>
-
 " call the DeleteTrailings() function manually
 noremap <silent> <leader>t :call <SID>DeleteTrailings()<CR>
 
@@ -493,6 +498,13 @@ noremap <silent> <leader>w :set wrap!<CR>
 " RCS checkin of current file on Mac OS X
 if has("mac")
     map <silent> <D-i> :!ci -l % <CR>
+endif
+
+" switch between absolute and relative line numbers (only vim 7.3 and after)
+if version >= 703
+  nnoremap <silent> <leader>l :call <SID>SwitchLineNumbers()<CR>
+else
+  nnoremap <silent> <leader>l :set number!<CR>
 endif
 
 " open the pdf-equivalent to the active buffer.
@@ -531,10 +543,6 @@ map <silent> Q gq
 nnoremap K i<CR><ESC>k$
 
 " align text around = :
-nmap <silent> <leader>l= :Tab /=<CR>
-vmap <silent> <leader>l= :Tab /=<CR>
-nmap <silent> <leader>l: :Tab /:<CR>
-vmap <silent> <leader>l: :Tab /:<CR>
 nmap <tab> :Tab /
 vmap <tab> :Tab /
 
@@ -560,7 +568,7 @@ map <silent> <leader>qc :cclose<CR>
 
 " save and restore vim Sessions
 noremap <silent> <leader>ss :mksession! ~/.vimtmp/latestSession<CR>:echo "Session saved!"<CR>
-noremap <silent> <leader>ls :source ~/.vimtmp/latestSession<CR>
+noremap <silent> <leader>sl :source ~/.vimtmp/latestSession<CR>
 
 " toggle solarized background color
 call togglebg#map("<F5>")

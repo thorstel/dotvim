@@ -40,7 +40,6 @@
 "  ,h           -   turn off highlighting
 "  ,jr          -   compiles ands runs the active java-file
 "  ,ll          -   compiles the active latex-file
-"  ,l<CR>       -   align around to be entered search pattern
 "  ,l= ,l:      -   align text around = or :
 "  ,m           -   maximize the window
 "  ,n           -   restore the default window
@@ -291,8 +290,9 @@ augroup VIMRC
   " remove trailing characters before saving a file
   autocmd BufWritePre * call <SID>DeleteTrailings()
 
-  " set compilter for Pandoc Markdown
-  autocmd Filetype pandoc setl makeprg=pandoc\ -s\ %\ -o\ %:t:r.html
+  " settings for pandoc markdown
+  autocmd Filetype pandoc setl makeprg=pandoc\ -s\ -c\ pandoc-stylesheet.css\ %\ -o\ %:t:r.html
+  autocmd Filetype pandoc setl ts=4 sts=4 sw=4
   " automatically compile Pandoc files after saving
   autocmd! BufWritePost * if &ft == 'pandoc' | silent make | endif
 

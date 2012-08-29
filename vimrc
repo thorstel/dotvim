@@ -64,13 +64,13 @@
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" don't force strict vi-compatibility
+set nocompatible
+
 " enable Pathogen PlugIn-Manager
 call pathogen#infect()
 
 " *** General Settings *** {{{
-
-" don't force strict vi-compatibility
-set nocompatible
 
 " automatic file identification
 filetype indent plugin on

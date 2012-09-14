@@ -300,8 +300,8 @@ augroup END
 " }}}
 " *** PlugIn - Settings *** {{{
 
-" file browsers width is 30 columns
-let NERDTreeWinSize = 30
+" file browsers width is 40 columns
+let NERDTreeWinSize = 40
 " always display bookmarks
 let NERDTreeShowBookmarks=0
 
@@ -359,7 +359,7 @@ set cursorline
 if has("gui_running")
   " minimalistic GUI - I don't need no fancy buttons
   set guioptions=ac
-  " only show tab-bar if more than one tab is present
+  " always show tab bar
   set showtabline=1
   " number of colums
   set co=90

@@ -339,6 +339,11 @@ let g:ctrlp_working_path_mode = 1
 let g:Powerline_theme = 'default'
 let g:Powerline_colorscheme = 'default'
 
+" Syntastic
+" ---------
+let g:syntastic_error_symbol='✗'
+let g:syntastic_warning_symbol='⚠'
+
 " }}}
 " *** UI / GUI - Settings *** {{{
 
@@ -353,13 +358,13 @@ let g:solarized_contrast="normal"
 set background=dark
 colo solarized
 
-" highlight the line where the cursor is at
-set cursorline
+" do not highlight the line where the cursor is at
+set nocursorline
 
 if has("gui_running")
   " minimalistic GUI - I don't need no fancy buttons
   set guioptions=ac
-  " always show tab bar
+  " only show tabline if more than one tab page is present
   set showtabline=1
   " number of colums
   set co=90

@@ -40,8 +40,6 @@
 "  ,h           -   turn off highlighting
 "  ,jr          -   compiles ands runs the active java-file
 "  ,l           -   switch between relative and absolute line number display
-"  ,m           -   maximize the window
-"  ,n           -   restore the default window
 "  ,q           -   open quickfix view
 "  ,qc          -   close quickfix view
 "  ,s           -   toggle spelling
@@ -51,6 +49,8 @@
 "  ,u           -   open view for the Gundo PlugIn
 "  ,v           -   open the vimrc file
 "  ,w           -   toggle line wrapping at window-borders
+"  ,wm          -   maximize the window
+"  ,wn          -   restore the default window
 "  Q            -   reformat the text (shortcut for gq)
 "  Ctrl-p       -   open pdf-equivalent to the active buffer
 "  Ctrl-F10     -   create tag-database of the current location
@@ -419,7 +419,7 @@ function! <SID>SwitchLineNumbers()
   endif
 endfunction
 
-" restores the default window settings. call with <leader>n
+" restores the default window settings. call with <leader>wn
 function! <SID>DefaultWindow()
   NERDTreeClose
   TagbarClose
@@ -537,10 +537,10 @@ map <silent> <down> :NERDTreeToggle<CR>
 map <silent> <up> :TagbarToggle<CR>
 
 " restore standard window layout
-map <silent> <leader>n :call <SID>DefaultWindow()<CR>
+map <silent> <leader>wn :call <SID>DefaultWindow()<CR>
 
 " maximize the current window
-map <silent> <leader>m :set co=181<CR>
+map <silent> <leader>wm :set co=181<CR>
 
 " compile and run the active java-file
 map <silent> <leader>jr :!javac % && java %:t:r<CR>

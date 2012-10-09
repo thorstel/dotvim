@@ -48,7 +48,6 @@
 "  ,sl          -   load vim session from default file
 "  ,sr          -   compile and run the active scala file
 "  ,ss          -   save current vim session to default file
-"  ,t           -   delete trailings in this file
 "  ,u           -   open view for the Gundo PlugIn
 "  ,v           -   open the vimrc file
 "  ,w           -   toggle line wrapping at window-borders

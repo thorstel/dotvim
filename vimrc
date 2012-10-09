@@ -45,6 +45,9 @@
 "  ,q           -   open quickfix view
 "  ,qc          -   close quickfix view
 "  ,s           -   toggle spelling
+"  ,sl          -   load vim session from default file
+"  ,sr          -   compile and run the active scala file
+"  ,ss          -   save current vim session to default file
 "  ,t           -   delete trailings in this file
 "  ,u           -   open view for the Gundo PlugIn
 "  ,v           -   open the vimrc file
@@ -267,6 +270,9 @@ augroup VIMRC
   " set compiler to javac for java-files
   autocmd Filetype java setl makeprg=javac\ %
 
+  " set compiler to scalac for scala-files
+  autocmd Filetype scala setl makeprg=scalac\ %
+
   " set compiler to gcc for c-files
   autocmd Filetype c setl makeprg=gcc\ -Wall\ -o\ %:t:r\ %
 
@@ -323,8 +329,8 @@ let g:SuperTabMappingForward = '<C-Space>'
 
 " EasyMotion
 " ----------
-" all EasyMotion commands are triggered with double-pressing the leader-key
-let g:EasyMotion_leader_key = '<Leader><Leader>'
+" all EasyMotion commands are triggered with pressing the leader-key
+let g:EasyMotion_leader_key = '<Leader>'
 
 " CtrlP
 " -----
@@ -343,6 +349,9 @@ let g:Powerline_colorscheme = 'default'
 " ---------
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
+let g:syntastic_mode_map = { 'mode': 'passive',
+                            \ 'active_filetypes': [],
+                            \ 'passive_filetypes': [] }
 
 " }}}
 " *** UI / GUI - Settings *** {{{
@@ -373,7 +382,7 @@ if has("gui_running")
       set colorcolumn=81,82,83,84,85
   endif
   " maximize window vertically
-  set lines=51
+  set lines=48
   " cursor only blinks in insert mode
   set gcr=n:blinkon0
   " favorite font for coding so far
@@ -409,6 +418,14 @@ function! <SID>SwitchLineNumbers()
   else
     set relativenumber
   endif
+endfunction
+
+" restores the default window settings. call with <leader>n
+function! <SID>DefaultWindow()
+  NERDTreeClose
+  TagbarClose
+  set co=90
+  set lines=48
 endfunction
 
 " }}}
@@ -476,9 +493,6 @@ endif
 " always open file under cursor - even if it does not exist
 map <silent> gf :e <cfile><CR>
 
-" call the DeleteTrailings() function manually
-noremap <silent> <leader>t :call <SID>DeleteTrailings()<CR>
-
 " turn off hlsearch
 noremap <silent> <leader>h :noh<CR>
 
@@ -524,16 +538,18 @@ map <silent> <down> :NERDTreeToggle<CR>
 map <silent> <up> :TagbarToggle<CR>
 
 " restore standard window layout
-map <silent> <leader>n :NERDTreeClose<CR>:TagbarClose<CR>:set co=90<CR>:set lines=51<CR>
+map <silent> <leader>n :call <SID>DefaultWindow()<CR>
 
 " maximize the current window
-map <silent> <leader>m :set co=181<CR> :set lines=51<CR>
+map <silent> <leader>m :set co=181<CR>
 
 " compile and run the active java-file
 map <silent> <leader>jr :!javac % && java %:t:r<CR>
 
 " compile and run the active c-file
 map <silent> <leader>cr :!gcc -Wall -o %:t:r % && ./%:t:r<CR>
+
+map <silent> <leader>sr :!scalac % && scala %:t:r<CR>
 
 " go to the next buffer
 map <silent> <right> :bn<CR>

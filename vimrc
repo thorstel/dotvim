@@ -48,6 +48,7 @@
 "  ,sl          -   load vim session from default file
 "  ,sr          -   compile and run the active scala file
 "  ,ss          -   save current vim session to default file
+"  ,t           -   delete trailing whitespaces manually
 "  ,u           -   open view for the Gundo PlugIn
 "  ,v           -   open the vimrc file
 "  ,w           -   toggle line wrapping at window-borders
@@ -538,6 +539,9 @@ map <silent> <up> :TagbarToggle<CR>
 
 " restore standard window layout
 map <silent> <leader>n :call <SID>DefaultWindow()<CR>
+
+" delete trailing whitespaces manually
+nmap <silent> <leader>t :call <SID>DeleteTrailings()<CR>
 
 " maximize the current window
 map <silent> <leader>m :set co=181<CR>

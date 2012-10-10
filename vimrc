@@ -328,9 +328,8 @@ let g:SuperTabMappingForward = '<C-Space>'
 
 " EasyMotion
 " ----------
-" all EasyMotion commands are triggered with pressing the leader-key
+" all EasyMotion commands are triggered with pressing ctrl-f
 let g:EasyMotion_leader_key = '<C-f>'
-"let g:EasyMotion_leader_key = '<Leader>'
 
 " CtrlP
 " -----

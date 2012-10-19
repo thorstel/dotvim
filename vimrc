@@ -27,6 +27,8 @@
 "  Space        -   scroll down half a page
 "  Shift-Space  -   scroll up half a page
 "  Tab          -   invoke Tabularize Plugin
+"  Ctrl-b       -   invoke EasyMotion goto character in backward direction
+"  Ctrl-f       -   invoke EasyMotion goto character in foreward direction
 "  Ctrl-h       -   select window left to the current window
 "  Ctrl-j       -   select window below the current window
 "  Ctrl-k       -   select window above the current window

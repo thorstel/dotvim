@@ -12,19 +12,18 @@ snippet inc
 	use ieee.numeric_std.all;
 snippet ent
 	entity ${1:`Filename('$1', 'name')`} is
-		generic(
+		generic (
 			${2:-- generic values}
 		);
-		port(
+		port (
 			${3:-- port definitions}
 		);
 	end entity $1;
 snippet arch
-	architecture ${4:Behav} of ${1:`Filename('$1', 'name')`} is
-		${2:-- signal x : std_logic := '0';}
+	architecture ${3:Behav} of ${1:`Filename('$1', 'name')`} is
 	begin
-		${3:}
-	end architecture $4;
+		${2:}
+	end architecture $3;
 snippet vec
 	std_logic_vector(${1:N} downto 0)${2:}
 snippet gen
@@ -33,7 +32,6 @@ snippet gen
 	end generate;
 snippet pro
 	${1:label}: process${2:()}
-		variable x : integer range 0 to ${3:N};
 	begin
 		${4:}
 	end process;

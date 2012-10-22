@@ -366,6 +366,8 @@ set numberwidth=5
 " colorscheme setup
 let g:solarized_visibility="low"
 let g:solarized_contrast="normal"
+" I like the degraded color palette of solarized better
+let g:solarized_degrade=1
 set background=dark
 colo solarized
 

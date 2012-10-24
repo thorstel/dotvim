@@ -386,7 +386,7 @@ if has("gui_running")
   set showtabline=1
   " number of colums
   set co=90
-  " maximize window vertically
+  " number of total lines of the window (statusline and command line included!)
   set lines=48
   " cursor only blinks in insert mode
   set gcr=n:blinkon0
@@ -575,7 +575,7 @@ map <silent> Q gq
 " spilt line at current position - opposite of J
 nnoremap K i<CR><ESC>k$
 
-" align text around = :
+" align text with Tabularize
 nmap <tab> :Tab /
 vmap <tab> :Tab /
 

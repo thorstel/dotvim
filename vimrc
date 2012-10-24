@@ -386,7 +386,7 @@ if has("gui_running")
   set showtabline=1
   " number of colums
   set co=90
-  " number of total lines of the window (statusline and command line included!)
+  " total number of lines of the window (statusline and command line included!)
   set lines=48
   " cursor only blinks in insert mode
   set gcr=n:blinkon0

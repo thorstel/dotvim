@@ -371,6 +371,11 @@ let g:solarized_degrade=1
 set background=dark
 colo solarized
 
+" columns from 80 shall be in a different color (vim 7.3 feature)
+if version >= 703
+    set colorcolumn=81,82,83,84,85
+endif
+
 " do not highlight the line where the cursor is at
 set nocursorline
 
@@ -381,10 +386,6 @@ if has("gui_running")
   set showtabline=1
   " number of colums
   set co=90
-  " columns from 80 shall be in a different color (vim 7.3 feature)
-  if version >= 703
-      set colorcolumn=81,82,83,84,85
-  endif
   " maximize window vertically
   set lines=48
   " cursor only blinks in insert mode

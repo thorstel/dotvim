@@ -387,7 +387,7 @@ if has("gui_running")
   " number of colums
   set co=90
   " total number of lines of the window (statusline and command line included!)
-  set lines=48
+  set lines=53
   " cursor only blinks in insert mode
   set gcr=n:blinkon0
   " favorite font for coding so far
@@ -430,7 +430,7 @@ function! <SID>DefaultWindow()
   NERDTreeClose
   TagbarClose
   set co=90
-  set lines=48
+  set lines=53
 endfunction
 
 " }}}

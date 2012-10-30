@@ -117,15 +117,6 @@ set virtualedit=all
 " directory for the vim swap-files
 set directory=~/.vimtmp
 
-" create backups and save them in the accordant folder
-set backup
-set backupdir=~/.vimbackup
-
-" path for the vim intern 'find' command to search for files
-if has("mac")
-  set path+=~/Uni/**,~/LaTeX/**,~/Programmierung/**,~/MaTA/**
-endif
-
 " allow switching buffers, even if the active buffer is not saved
 set hidden
 
@@ -250,15 +241,6 @@ augroup VIMRC
 
   " always wrap text in LaTeX
   autocmd BufRead,BufNewFile *.tex,*.txt,*.mkd setlocal formatoptions+=t
-
-  " don't make backups of files in my encrypted folders
-  if has("mac")
-      autocmd BufRead,BufNewFile /Volumes/NOT\ FOR\ YOU/** set nobackup
-  else
-      autocmd BufRead,BufNewFile /media/NOT\ FOR\ YOU/** set nobackup
-  endif
-  " XXX: only needed if persistent undo is active
-  "autocmd BufRead,BufNewFile /Volumes/NOT\ FOR\ YOU/** setl noundofile
 
   " update ctags database in C++ if a header is changed
   autocmd BufWritePost *.h,*.hpp :silent! :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .

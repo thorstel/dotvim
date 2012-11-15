@@ -398,6 +398,20 @@ function! <SID>PlaceCurlyBraces()
   s/\s*$/ {}
 endfunction
 
+" toggle between a light and a dark colorscheme
+let g:thorstel_darkbg=1
+function! <SID>ToggleColorScheme()
+  if (g:thorstel_darkbg == 1)
+    set bg=light
+    colo github
+    let g:thorstel_darkbg = 0
+  else
+    set bg=dark
+    colo solarized
+    let g:thorstel_darkbg = 1
+  endif
+endfunction
+
 " function for switching between relative and absolute line numbers
 function! <SID>SwitchLineNumbers()
   if (&relativenumber == 1)
@@ -586,7 +600,9 @@ noremap <silent> <leader>ss :mksession! ~/.vimtmp/latestSession<CR>:echo "Sessio
 noremap <silent> <leader>sl :source ~/.vimtmp/latestSession<CR>
 
 " toggle solarized background color
-call togglebg#map("<F5>")
+"call togglebg#map("<F5>")
+" toggle between favorite dark and light colorschemes
+nnoremap <silent> <F5> :call <SID>ToggleColorScheme()<CR>
 
 " call CtrlP buffer explorer
 noremap <silent> <leader>b :CtrlPBuffer<CR>

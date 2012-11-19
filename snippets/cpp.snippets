@@ -24,11 +24,11 @@ snippet ns
 # Class
 snippet cl
 	class ${1:`Filename('$1', 'name')`} {
-	public:
+	 public:
 		$1();
 		virtual ~$1();
-	
-	private:
+
+	 private:
 		${2:/* data */}
 	};
 snippet cs

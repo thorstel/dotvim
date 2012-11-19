@@ -323,6 +323,8 @@ let g:ctrlp_map = '<c-e>'
 let g:ctrlp_cmd = 'CtrlP'
 " work with dircetory of current file
 let g:ctrlp_working_path_mode = 1
+" do not rebuild cache every time called the first time after start up
+let g:ctrlp_clear_cache_on_exit = 0
 
 " Powerline
 " ---------

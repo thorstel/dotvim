@@ -497,12 +497,6 @@ if has("mac")
   map <D-0> :tablast<CR>
 endif
 
-" Multicursor Plugin on Mac
-if has("mac")
-  map <D-M> :<c-u>call MultiCursorSearch('')<CR>
-  let g:multicursor_quit = "<D-E>"
-endif
-
 " always open file under cursor - even if it does not exist
 map <silent> gf :e <cfile><CR>
 

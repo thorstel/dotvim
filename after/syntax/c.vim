@@ -9,7 +9,7 @@
 "   0.4 - updates and fixes to cDelimiter to fix break with foldmethod=syntax,
 "         entirely suggested and solved by Ivan Freitas
 "         <ivansichfreitas@gmail.com>
-"   0.3 - updates and fixes to cUserFunctionPointer, thanks to 
+"   0.3 - updates and fixes to cUserFunctionPointer, thanks to
 "         Alexei <lxmzhv@gmail.com>
 "   0.2 - change [] to operator
 "   0.1 - initial upload, modification from vimscript#1201, Extended c.vim
@@ -247,6 +247,9 @@ syn match cOperator	"/[^/*=]"me=e-1
 syn match cOperator	"/$"
 syn match cOperator "&&\|||"
 syn match cOperator	"[][]"
+
+" custom typedefs
+syn match cType "\w\+_t\ze\W"
 
 " Preprocs
 syn keyword cDefined defined contained containedin=cDefine

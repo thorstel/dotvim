@@ -364,6 +364,8 @@ endif
 set nocursorline
 
 if has("gui_running")
+  colo github
+
   " minimalistic GUI - I don't need no fancy buttons
   set guioptions=ac
   " only show tabline if more than one tab page is present
@@ -371,7 +373,7 @@ if has("gui_running")
   " number of colums
   set co=90
   " total number of lines of the window (statusline and command line included!)
-  set lines=53
+  set lines=60
   " cursor only blinks in insert mode
   set gcr=n:blinkon0
   " favorite font for coding so far
@@ -401,7 +403,7 @@ function! <SID>PlaceCurlyBraces()
 endfunction
 
 " toggle between a light and a dark colorscheme
-let g:thorstel_darkbg=1
+let g:thorstel_darkbg=0
 function! <SID>ToggleColorScheme()
   if (g:thorstel_darkbg == 1)
     set bg=light
@@ -428,7 +430,7 @@ function! <SID>DefaultWindow()
   NERDTreeClose
   TagbarClose
   set co=90
-  set lines=53
+  set lines=60
 endfunction
 
 " }}}

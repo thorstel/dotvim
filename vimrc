@@ -217,9 +217,9 @@ if version >= 703
   "set undofile
   "set undodir=~/.vimundo
 
-  " turn on the conceal feature (for example replace latex code with the
+  " turn off the conceal feature (for example replace latex code with the
   " accordant unicode-character)
-  set conceallevel=2
+  set conceallevel=0
   " conceal in LaTeX for accents, delimters, greek & math
   let g:tex_conceal="adgm"
   "let g:tex_conceal="adg"

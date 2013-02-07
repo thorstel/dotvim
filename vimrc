@@ -34,13 +34,13 @@
 "  Ctrl-k       -   select window above the current window
 "  Ctrl-l       -   select window right to the current window
 "  Ctrl-e       -   open CtrlP Path explorer
-"  ,a           -   switch between active and alternate buffer
+"  ,a           -   switch between current and alternate buffer
 "  ,b           -   open CtrlP Buffer explorer
-"  ,cr          -   compiles and runs the active c-file (gcc)
+"  ,cr          -   compiles and runs the current c-file (gcc)
 "  ,d           -   delete current buffer
 "  ,e           -   open CtrlP Path explorer
 "  ,h           -   turn off highlighting
-"  ,jr          -   compiles ands runs the active java-file
+"  ,jr          -   compiles ands runs the current java-file
 "  ,l           -   switch between relative and absolute line number display
 "  ,m           -   maximize the window
 "  ,n           -   restore the default window
@@ -48,14 +48,14 @@
 "  ,qc          -   close quickfix view
 "  ,s           -   toggle spelling
 "  ,sl          -   load vim session from default file
-"  ,sr          -   compile and run the active scala file
+"  ,sr          -   compile and run the current scala file
 "  ,ss          -   save current vim session to default file
-"  ,t           -   delete trailing whitespaces manually
+"  ,t           -   open CtrlP Tag explorer
 "  ,u           -   open view for the Gundo PlugIn
 "  ,v           -   open the vimrc file
 "  ,w           -   toggle line wrapping at window-borders
 "  Q            -   reformat the text (shortcut for gq)
-"  Ctrl-p       -   open pdf-equivalent to the active buffer
+"  Ctrl-p       -   open pdf-equivalent to the current buffer
 "  Ctrl-F10     -   create tag-database of the current location
 "  Ctrl-F11     -   remove 10 columns from the window
 "  Ctrl-F12     -   add 10 columns to the window
@@ -63,7 +63,7 @@
 " Mac OS X only
 " -------------
 "  Cmd-0..9     -   select Tab no. 0 to 9
-"  Cmd-i        -   shortcut for ci -l of the active buffer (RCS)
+"  Cmd-i        -   shortcut for ci -l of the current buffer (RCS)
 "  Cmd-k        -   move selected text up
 "  Cmd-j        -   move selected text down
 "
@@ -117,7 +117,7 @@ set virtualedit=all
 " directory for the vim swap-files
 set directory=~/.vimtmp
 
-" allow switching buffers, even if the active buffer is not saved
+" allow switching buffers, even if the current buffer is not saved
 set hidden
 
 " size of the history-file
@@ -233,7 +233,7 @@ augroup VIMRC
   " clear all previous autocommands
   autocmd!
 
-  " change directory according to the active file
+  " change directory according to the current file
   autocmd BufEnter * :silent! lcd %:p:h
 
   " always activate spelling in LaTeX, txt-Files and MDown-Files
@@ -352,7 +352,7 @@ let g:solarized_visibility="low"
 let g:solarized_contrast="normal"
 " I like the degraded color palette of solarized better
 let g:solarized_degrade=1
-set background=dark
+set background=light
 colo solarized
 
 " columns from 80 shall be in a different color (vim 7.3 feature)
@@ -387,7 +387,7 @@ endif
 " }}}
 " *** Custom Functions *** {{{
 
-" delete all trailings in the active buffer
+" delete all trailings in the current buffer
 function! <SID>DeleteTrailings()
   let _s=@/
   let l = line(".")
@@ -511,13 +511,13 @@ noremap <silent> <leader>s :set spell! <CR>
 " shortcut for editing the vimrc file
 noremap <silent> <leader>v :e ~/.vimrc<CR>
 
-" switch between active and alternate buffer
+" switch between current and alternate buffer
 noremap <silent> <leader>a :b#<CR>
 
 " open Gundo-PlugIn view
 noremap <silent> <leader>u :GundoToggle<CR>
 
-" close the active buffer
+" close the current buffer
 noremap <silent> <leader>d :bd<CR>
 
 " toggle line wrapping
@@ -535,7 +535,7 @@ else
   nnoremap <silent> <leader>l :set number!<CR>
 endif
 
-" open the pdf-equivalent to the active buffer.
+" open the pdf-equivalent to the current buffer.
 " 'open' only works on Mac OS X - on linux it has to be replaced with
 " gnome-open or an explicit pdf-viewer
 map <silent> <C-p> :!open -a skim %:t:r.pdf<CR>
@@ -550,15 +550,15 @@ map <silent> <up> :TagbarToggle<CR>
 map <silent> <leader>n :call <SID>DefaultWindow()<CR>
 
 " delete trailing whitespaces manually
-nmap <silent> <leader>t :call <SID>DeleteTrailings()<CR>
+"nmap <silent> <leader>t :call <SID>DeleteTrailings()<CR>
 
 " maximize the current window
 map <silent> <leader>m :set co=181<CR>
 
-" compile and run the active java-file
+" compile and run the current java-file
 map <silent> <leader>jr :!javac % && java %:t:r<CR>
 
-" compile and run the active c-file
+" compile and run the current c-file
 map <silent> <leader>cr :!gcc -Wall -o %:t:r % && ./%:t:r<CR>
 
 map <silent> <leader>sr :!scalac % && scala %:t:r<CR>
@@ -612,6 +612,8 @@ nnoremap <silent> <F5> :call <SID>ToggleColorScheme()<CR>
 noremap <silent> <leader>b :CtrlPBuffer<CR>
 " call CtrlP file explorer
 noremap <silent> <leader>e :CtrlP<CR>
+" call CtrlP tag explorer
+noremap <silent> <leader>t :CtrlPBufTag<CR>
 
 " adjust very frequent mistakes
 iab esle else

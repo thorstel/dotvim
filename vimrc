@@ -280,7 +280,7 @@ augroup VIMRC
   autocmd BufWritePre * call <SID>DeleteTrailings()
 
   " settings for pandoc markdown
-  autocmd Filetype pandoc setl makeprg=pandoc\ -s\ -c\ pandoc-stylesheet.css\ %\ -o\ %:t:r.html
+  autocmd Filetype pandoc setl makeprg=pandoc\ -s\ %\ -o\ %:t:r.html
   autocmd Filetype pandoc setl ts=4 sts=4 sw=4
   " automatically compile Pandoc files after saving
   autocmd! BufWritePost * if &ft == 'pandoc' | silent make | endif

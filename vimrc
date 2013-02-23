@@ -239,9 +239,6 @@ augroup VIMRC
   " always activate spelling in LaTeX, txt-Files and MDown-Files
   autocmd BufRead,BufNewFile *.tex,*.txt,*.mkd setlocal spell
 
-  " always wrap text in LaTeX
-  autocmd BufRead,BufNewFile *.tex,*.txt,*.mkd setlocal formatoptions+=t
-
   " update ctags database in C++ if a header is changed
   autocmd BufWritePost *.h,*.hpp :silent! :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .
 

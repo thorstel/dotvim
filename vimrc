@@ -382,7 +382,10 @@ if has("gui_running")
 endif
 
 " }}}
-" *** Custom Functions *** {{{
+" *** Custom Commands / Functions *** {{{
+
+" compare current buffer with its unchanged state
+command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis | wincmd p | diffthis
 
 " delete all trailings in the current buffer
 function! <SID>DeleteTrailings()

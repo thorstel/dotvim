@@ -350,7 +350,7 @@ let g:solarized_contrast="normal"
 " I like the degraded color palette of solarized better
 let g:solarized_degrade=1
 set background=light
-colo solarized
+colo badwolf
 
 " columns from 80 shall be in a different color (vim 7.3 feature)
 if version >= 703
@@ -411,7 +411,7 @@ function! <SID>ToggleColorScheme()
     let g:thorstel_darkbg = 0
   else
     set bg=dark
-    colo solarized
+    colo badwolf
     let g:thorstel_darkbg = 1
   endif
 endfunction

@@ -81,5 +81,5 @@ endif
 
 hi link hsNiceOperator Operator
 hi! link Conceal Operator
-setlocal conceallevel=2
+setlocal conceallevel=0
 

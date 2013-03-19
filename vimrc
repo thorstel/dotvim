@@ -387,6 +387,17 @@ endif
 " compare current buffer with its unchanged state
 command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis | wincmd p | diffthis
 
+" set the arglist to the filenames currently referenced in the quickfix list
+command! -nargs=0 -bar Qargs execute 'args' QuickfixFilenames()
+function! QuickfixFilenames()
+  " Building a hash ensures we get each buffer only once
+  let buffer_numbers = {}
+  for quickfix_item in getqflist()
+    let buffer_numbers[quickfix_item['bufnr']] = bufname(quickfix_item['bufnr'])
+  endfor
+  return join(map(values(buffer_numbers), 'fnameescape(v:val)'))
+endfunction
+
 " delete all trailings in the current buffer
 function! <SID>DeleteTrailings()
   let _s=@/

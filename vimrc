@@ -110,9 +110,9 @@ set smartindent
 " if a file is changed outside of vim, reload it automatically
 set autoread
 
-" cursor can be placed everywhere on the screen, even if there are no
-" characters
-set virtualedit=all
+" allow placing the cursor at arbitrary positions on the screen in visual
+" block mode
+set virtualedit=block
 
 " directory for the vim swap-files
 set directory=~/.vimtmp

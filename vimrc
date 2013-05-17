@@ -257,6 +257,9 @@ augroup VIMRC
   " set compiler to gcc for c-files
   autocmd Filetype c setl makeprg=gcc\ -Wall\ -o\ %:t:r\ %
 
+  " set compiler to ghc for haskell
+  autocmd Filetype haskell setl makeprg=ghc\ -Wall\ -o\ %:t:r\ %
+
   " set compiler to pdflatex for LaTeX-Code
   autocmd Filetype tex setl makeprg=pdflatex\ %
 
@@ -345,12 +348,12 @@ set number
 set numberwidth=5
 
 " colorscheme setup
-let g:solarized_visibility="low"
-let g:solarized_contrast="normal"
+"let g:solarized_visibility="low"
+"let g:solarized_contrast="normal"
 " I like the degraded color palette of solarized better
-let g:solarized_degrade=1
+"let g:solarized_degrade=1
 set background=light
-colo badwolf
+colo Tomorrow
 
 " columns from 80 shall be in a different color (vim 7.3 feature)
 if version >= 703

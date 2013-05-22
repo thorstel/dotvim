@@ -590,8 +590,8 @@ map <silent> Q gq
 nnoremap K i<CR><ESC>k$
 
 " align text with Tabularize
-nmap <tab> :Tab /
-vmap <tab> :Tab /
+nmap <tab> :Tabularize /
+vmap <tab> :Tabularize /
 
 " Y should copy from the current position to the end of line
 noremap <silent> Y y$

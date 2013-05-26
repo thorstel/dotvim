@@ -255,7 +255,7 @@ augroup VIMRC
   autocmd Filetype scala setl makeprg=scalac\ %
 
   " set compiler to gcc for c-files
-  autocmd Filetype c setl makeprg=gcc\ -Wall\ -o\ %:t:r\ %
+  autocmd Filetype c setl makeprg=make
 
   " set compiler to ghc for haskell
   autocmd Filetype haskell setl makeprg=ghc\ -Wall\ -o\ %:t:r\ %
@@ -373,13 +373,13 @@ if has("gui_running")
   " number of colums
   set co=90
   " total number of lines of the window (statusline and command line included!)
-  set lines=60
+  set lines=56
   " cursor only blinks in insert mode
   set gcr=n:blinkon0
   " favorite font for coding so far
-  "set guifont=Anonymous\ Pro:h12
+  "set guifont=Anonymous\ Pro:h13
   " patched Anonymous Pro font for Powerline Plugin
-  set guifont=Anonymous\ Pro\ for\ Powerline:h12
+  set guifont=Anonymous\ Pro\ for\ Powerline:h13
   " enable status line decorations in gui vim
   let g:Powerline_symbols = 'fancy'
 endif
@@ -444,7 +444,7 @@ function! <SID>DefaultWindow()
   NERDTreeClose
   TagbarClose
   set co=90
-  set lines=60
+  set lines=56
 endfunction
 
 " }}}

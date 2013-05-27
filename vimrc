@@ -477,6 +477,9 @@ noremap <S-CR> <ESC>
 inoremap <C-CR> <ESC>
 inoremap <S-CR> <ESC>
 
+" fast correction of switched characters in insert mode
+inoremap <C-h> <ESC>hxpa
+
 " scroll in normal mode with space
 noremap <space> <C-d>
 noremap <S-space> <C-u>

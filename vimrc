@@ -60,13 +60,6 @@
 "  Ctrl-F11     -   remove 10 columns from the window
 "  Ctrl-F12     -   add 10 columns to the window
 "
-" Mac OS X only
-" -------------
-"  Cmd-0..9     -   select Tab no. 0 to 9
-"  Cmd-i        -   shortcut for ci -l of the current buffer (RCS)
-"  Cmd-k        -   move selected text up
-"  Cmd-j        -   move selected text down
-"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " don't force strict vi-compatibility
@@ -83,7 +76,7 @@ filetype indent plugin on
 " turn syntax-highlighting on
 syntax on
 " stop coloring very long lines
-set synmaxcol=512
+set synmaxcol=2048
 
 " set backspace behaviour. Should be default anyway - just in case it is not
 set backspace=indent,eol,start
@@ -324,7 +317,7 @@ let g:ctrlp_cmd = 'CtrlP'
 " work with dircetory of current file
 let g:ctrlp_working_path_mode = 1
 " do not rebuild cache every time called the first time after start up
-let g:ctrlp_clear_cache_on_exit = 0
+"let g:ctrlp_clear_cache_on_exit = 0
 
 " Powerline
 " ---------
@@ -352,19 +345,19 @@ set numberwidth=5
 "let g:solarized_contrast="normal"
 " I like the degraded color palette of solarized better
 "let g:solarized_degrade=1
-set background=light
-colo Tomorrow
-
-" columns from 80 shall be in a different color (vim 7.3 feature)
-if version >= 703
-    set colorcolumn=81,82,83,84,85,86,87,88,89,90
-endif
+" set background=light
+colo badwolf
 
 " do not highlight the line where the cursor is at
 set nocursorline
 
 if has("gui_running")
   colo github
+
+  " columns from 80 shall be in a different color (vim 7.3 feature)
+  if version >= 703
+    set colorcolumn=81,82,83,84,85,86,87,88,89,90
+  endif
 
   " minimalistic GUI - I don't need no fancy buttons
   set guioptions=ac
@@ -377,11 +370,12 @@ if has("gui_running")
   " cursor only blinks in insert mode
   set gcr=n:blinkon0
   " favorite font for coding so far
-  "set guifont=Anonymous\ Pro:h13
+  set guifont=Deja\ Vu\ Sans\ Mono\ 12
+  "set guifont=Anonymous\ Pro\ 13
   " patched Anonymous Pro font for Powerline Plugin
-  set guifont=Anonymous\ Pro\ for\ Powerline:h13
+  "set guifont=Anonymous\ Pro\ for\ Powerline:h13
   " enable status line decorations in gui vim
-  let g:Powerline_symbols = 'fancy'
+  "let g:Powerline_symbols = 'fancy'
 endif
 
 " }}}
@@ -477,9 +471,6 @@ noremap <S-CR> <ESC>
 inoremap <C-CR> <ESC>
 inoremap <S-CR> <ESC>
 
-" fast correction of switched characters in insert mode
-inoremap <C-h> <ESC>hxpa
-
 " scroll in normal mode with space
 noremap <space> <C-d>
 noremap <S-space> <C-u>
@@ -540,22 +531,12 @@ noremap <silent> <leader>d :bd<CR>
 " toggle line wrapping
 noremap <silent> <leader>w :set wrap!<CR>
 
-" RCS checkin of current file on Mac OS X
-if has("mac")
-    map <silent> <D-i> :!ci -l % <CR>
-endif
-
 " switch between absolute and relative line numbers (only vim 7.3 and after)
 if version >= 703
   nnoremap <silent> <leader>l :call <SID>SwitchLineNumbers()<CR>
 else
   nnoremap <silent> <leader>l :set number!<CR>
 endif
-
-" open the pdf-equivalent to the current buffer.
-" 'open' only works on Mac OS X - on linux it has to be replaced with
-" gnome-open or an explicit pdf-viewer
-map <silent> <C-p> :!open -a skim %:t:r.pdf<CR>
 
 " show/hide the NERDTree filebrowser
 map <silent> <down> :NERDTreeToggle<CR>
@@ -597,7 +578,12 @@ nmap <tab> :Tabularize /
 vmap <tab> :Tabularize /
 
 " Y should copy from the current position to the end of line
-noremap <silent> Y y$
+nnoremap <silent> Y y$
+
+" Y yanks to the clipboard in visual mode
+vnoremap <silent> Y "+y
+
+nnoremap <silent> <C-p> o<Esc>"+p
 
 " scale the window up / down by 10 columns
 noremap <silent> <C-F12> :set co+=10<CR>
@@ -605,12 +591,6 @@ noremap <silent> <C-F11> :set co-=10<CR>
 
 " create ctags database of current location
 map <silent> <C-F10> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
-
-" move marked text up / down by holding the command key (OS X only)
-if has("mac")
-  vmap <silent> <D-k> [egv
-  vmap <silent> <D-j> ]egv
-endif
 
 " open / close the quickfix view
 map <silent> <leader>q :copen<CR>

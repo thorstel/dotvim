@@ -603,7 +603,9 @@ noremap <silent> <leader>sl :source ~/.vimtmp/latestSession<CR>
 " toggle solarized background color
 "call togglebg#map("<F5>")
 " toggle between favorite dark and light colorschemes
-nnoremap <silent> <F5> :call <SID>ToggleColorScheme()<CR>
+nnoremap <silent> <F2> :call <SID>ToggleColorScheme()<CR>
+
+nnoremap <F5> :make<CR>
 
 " call CtrlP buffer explorer
 noremap <silent> <leader>b :CtrlPBuffer<CR>

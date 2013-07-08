@@ -107,6 +107,9 @@ set autoread
 " block mode
 set virtualedit=block
 
+" retain the current cursor postion when making jumps
+set nostartofline
+
 " directory for the vim swap-files
 set directory=~/.vimtmp
 
@@ -251,7 +254,7 @@ augroup VIMRC
   autocmd Filetype c setl makeprg=make
 
   " set compiler to ghc for haskell
-  autocmd Filetype haskell setl makeprg=ghc\ -Wall\ -o\ %:t:r\ %
+  autocmd Filetype haskell setl makeprg=ghc\ -Wall\ -O3\ \ -o\ %:t:r\ %
 
   " set compiler to pdflatex for LaTeX-Code
   autocmd Filetype tex setl makeprg=pdflatex\ %

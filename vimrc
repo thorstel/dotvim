@@ -322,18 +322,13 @@ let g:ctrlp_working_path_mode = 1
 " do not rebuild cache every time called the first time after start up
 "let g:ctrlp_clear_cache_on_exit = 0
 
-" Powerline
+" Lightline
 " ---------
-let g:Powerline_theme = 'default'
-let g:Powerline_colorscheme = 'default'
 
-" Syntastic
-" ---------
-let g:syntastic_error_symbol='✗'
-let g:syntastic_warning_symbol='⚠'
-let g:syntastic_mode_map = { 'mode': 'passive',
-                            \ 'active_filetypes': [],
-                            \ 'passive_filetypes': [] }
+let g:lightline = {
+  \ 'colorscheme' : 'Tomorrow'
+  \ }
+
 
 " }}}
 " *** UI / GUI - Settings *** {{{
@@ -363,7 +358,7 @@ if has("gui_running")
   endif
 
   " minimalistic GUI - I don't need no fancy buttons
-  set guioptions=ac
+  set guioptions=acm
   " only show tabline if more than one tab page is present
   set showtabline=1
   " number of colums
@@ -457,7 +452,8 @@ inoremap '' ''<Left>
 inoremap $$ $$<Left>
 
 " curly brace completion like in eclipse
-inoremap <silent> {<CR> <Esc>:call <SID>PlaceCurlyBraces()<CR>$i<CR><CR><Up><Tab>
+"inoremap <silent> {<CR> <Esc>o<Esc>:call <SID>PlaceCurlyBraces()<CR>$i<CR><CR><Up><Tab>
+inoremap <silent> {<CR> <Esc>o{<CR>}<Esc>O
 
 " place ; always at the end of a line in insert mode
 inoremap ; <End>;

@@ -31,9 +31,6 @@
 [submodule "bundle/vim-scala"]
 	path = bundle/vim-scala
 	url = git://github.com/derekwyatt/vim-scala.git
-[submodule "bundle/table-mode"]
-	path = bundle/table-mode
-	url = git@github.com:dhruvasagar/vim-table-mode.git
 [submodule "bundle/lightline"]
 	path = bundle/lightline
 	url = https://github.com/itchyny/lightline.vim.git

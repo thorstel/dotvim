@@ -368,12 +368,12 @@ if has("gui_running")
   " cursor only blinks in insert mode
   set gcr=n:blinkon0
   " favorite font for coding so far
-  set guifont=Deja\ Vu\ Sans\ Mono\ 12
-  "set guifont=Anonymous\ Pro\ 13
-  " patched Anonymous Pro font for Powerline Plugin
-  "set guifont=Anonymous\ Pro\ for\ Powerline:h13
-  " enable status line decorations in gui vim
-  "let g:Powerline_symbols = 'fancy'
+  if has("gui_win32")
+    set guifont=Consolas:h12
+    set guioptions+=r
+  else
+    set guifont=Deja\ Vu\ Sans\ Mono\ 12
+  endif
 endif
 
 " }}}

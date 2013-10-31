@@ -111,7 +111,12 @@ set virtualedit=block
 set nostartofline
 
 " directory for the vim swap-files
-set directory=~/.vimtmp
+if isdirectory(expand('~/.vimtmp'))
+  set directory=~/.vimtmp
+else
+  set directory=
+  set noswapfile
+endif
 
 " allow switching buffers, even if the current buffer is not saved
 set hidden
@@ -138,6 +143,12 @@ set shellslash
 set textwidth=78
 " always wrap text in comments
 set formatoptions=crq
+
+" Do not use the internal formatter
+set formatexpr=
+
+" Use par for formatting plaintext
+set formatprg=par\ 72j
 
 " show current position of the cursor
 set ruler
@@ -369,7 +380,7 @@ if has("gui_running")
   set gcr=n:blinkon0
   " favorite font for coding so far
   if has("gui_win32")
-    set guifont=Consolas:h12
+    set guifont=Consolas:h10
     set guioptions+=r
   else
     set guifont=Deja\ Vu\ Sans\ Mono\ 12

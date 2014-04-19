@@ -264,6 +264,8 @@ augroup VIMRC
   " set compiler to gcc for c-files
   autocmd Filetype c setl makeprg=make
 
+  autocmd BufRead,BufNewFile *.des set syntax=levdes
+
   " set compiler to ghc for haskell
   autocmd Filetype haskell setl makeprg=ghc\ -Wall\ -O3\ \ -o\ %:t:r\ %
 
@@ -474,6 +476,7 @@ inoremap <C-f> <Right>
 inoremap <C-b> <Left>
 inoremap <C-e> <End>
 inoremap <C-a> <Home>
+
 
 " alternatives for the escape button
 noremap <C-CR> <ESC>

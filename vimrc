@@ -342,6 +342,19 @@ let g:lightline = {
   \ 'colorscheme' : 'Tomorrow'
   \ }
 
+" Org Mode
+" --------
+let g:ft_ignore_pat = '\.org'
+" and then put these lines in vimrc somewhere after the line above
+au! BufRead,BufWrite,BufWritePost,BufNewFile *.org
+au BufEnter *.org            call org#SetOrgFileType()
+" let g:org_capture_file = '~/org_files/mycaptures.org'
+command! OrgCapture :call org#CaptureBuffer()
+command! OrgCaptureFile :call org#OpenCaptureFile()
+
+let g:org_todo_setup='TODO | DONE'
+let g:org_command_for_emacsclient = 'emacsclient'
+
 
 " }}}
 " *** UI / GUI - Settings *** {{{
@@ -603,7 +616,7 @@ noremap <silent> <C-F12> :set co+=10<CR>
 noremap <silent> <C-F11> :set co-=10<CR>
 
 " create ctags database of current location
-map <silent> <C-F10> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+map <silent> <C-F10> :!ctags -R .<CR>
 
 " open / close the quickfix view
 map <silent> <leader>q :copen<CR>

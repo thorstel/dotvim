@@ -127,8 +127,8 @@ set history=1000
 " I don't want to hear or see any 'bell' indications
 set visualbell t_vb=
 
-" statusline is always displayed - not only in split view
-set laststatus=2
+" statusline is never displayed
+set laststatus=0
 
 " statusline layout (without powerline)
 "set statusline=%#StatusLine#\ \|%#Folded#\ %02n\ %#StatusLine#\|
@@ -176,6 +176,9 @@ set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 set shiftround
+
+" preserve indent for wrapped lines
+set breakindent
 
 " show tabs and trailing spaces
 set listchars=tab:»\ ,trail:· ",eol:¬
@@ -398,7 +401,7 @@ if has("gui_running")
     set guifont=Consolas:h10
     set guioptions+=r
   else
-    set guifont=Deja\ Vu\ Sans\ Mono\ 12
+    set guifont=Deja\ Vu\ Sans\ Mono\ 13
   endif
 endif
 

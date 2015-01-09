@@ -404,9 +404,9 @@ function! <SID>DefaultWindow()
   set lines=56
 endfunction
 
-let g:thorstel_quertz = 0
-function! <SID>ToggleQUERTZLayout()
-  if (g:thorstel_quertz == 0)
+let g:thorstel_qwertz = 0
+function! <SID>ToggleQWERTZLayout()
+  if (g:thorstel_qwertz == 0)
     inoremap ; ö
     inoremap : Ö
     inoremap ' ä
@@ -418,7 +418,7 @@ function! <SID>ToggleQUERTZLayout()
     inoremap z y
     inoremap y z
     inoremap - ß
-    let g:thorstel_quertz = 1
+    let g:thorstel_qwertz = 1
   else
     iunmap ;
     iunmap :
@@ -431,7 +431,7 @@ function! <SID>ToggleQUERTZLayout()
     iunmap z
     iunmap y
     iunmap -
-    let g:thorstel_quertz = 0
+    let g:thorstel_qwertz = 0
   endif
 endfunction
 
@@ -451,8 +451,8 @@ inoremap $$ $$<Left>
 "inoremap <silent> {<CR> <Esc>o<Esc>:call <SID>PlaceCurlyBraces()<CR>$i<CR><CR><Up><Tab>
 inoremap <silent> {<CR> <Esc>o{<CR>}<Esc>O
 
-noremap <silent> <C-l> :call <SID>ToggleQUERTZLayout()<CR>
-inoremap <silent> <C-l> <Esc>:call <SID>ToggleQUERTZLayout()<CR>a
+noremap <silent> <C-l> :call <SID>ToggleQWERTZLayout()<CR>
+inoremap <silent> <C-l> <Esc>:call <SID>ToggleQWERTZLayout()<CR>a
 
 " emacs-like insert mode navigation
 inoremap <C-f> <Right>

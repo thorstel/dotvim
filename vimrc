@@ -1,67 +1,3 @@
-" ======================
-"  ThorsteLs Vimrc-File
-" ======================
-"
-" Shortcut Overview
-" =================
-"
-" Arrow Keys
-" ----------
-"  right        -   next buffer
-"  left         -   previous buffer
-"  up           -   toggle Tagbar-view
-"  down         -   toggle NERDTree-Explorer
-"
-" Insert Mode
-" -----------
-"  Ctrl-a       -   jump to the beginning of line
-"  Ctrl-e       -   jump to the end of line
-"  Ctrl-f       -   one character forward
-"  Ctrl-b       -   one character backward
-"  Ctrl-Space   -   code completion
-"  Shift-Enter  -   ESC
-"  Ctrl-Enter   -   ESC
-"
-" Normal Mode
-" -----------
-"  Space        -   scroll down half a page
-"  Shift-Space  -   scroll up half a page
-"  Tab          -   invoke Tabularize Plugin
-"  Ctrl-b       -   invoke EasyMotion goto character in backward direction
-"  Ctrl-f       -   invoke EasyMotion goto character in foreward direction
-"  Ctrl-h       -   select window left to the current window
-"  Ctrl-j       -   select window below the current window
-"  Ctrl-k       -   select window above the current window
-"  Ctrl-l       -   select window right to the current window
-"  Ctrl-e       -   open CtrlP Path explorer
-"  ,a           -   switch between current and alternate buffer
-"  ,b           -   open CtrlP Buffer explorer
-"  ,cr          -   compiles and runs the current c-file (gcc)
-"  ,d           -   delete current buffer
-"  ,e           -   open CtrlP Path explorer
-"  ,h           -   turn off highlighting
-"  ,jr          -   compiles ands runs the current java-file
-"  ,l           -   switch between relative and absolute line number display
-"  ,m           -   maximize the window
-"  ,n           -   restore the default window
-"  ,q           -   open quickfix view
-"  ,qc          -   close quickfix view
-"  ,s           -   toggle spelling
-"  ,sl          -   load vim session from default file
-"  ,sr          -   compile and run the current scala file
-"  ,ss          -   save current vim session to default file
-"  ,t           -   open CtrlP Tag explorer
-"  ,u           -   open view for the Gundo PlugIn
-"  ,v           -   open the vimrc file
-"  ,w           -   toggle line wrapping at window-borders
-"  Q            -   reformat the text (shortcut for gq)
-"  Ctrl-p       -   open pdf-equivalent to the current buffer
-"  Ctrl-F10     -   create tag-database of the current location
-"  Ctrl-F11     -   remove 10 columns from the window
-"  Ctrl-F12     -   add 10 columns to the window
-"
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 " don't force strict vi-compatibility
 set nocompatible
 
@@ -468,6 +404,37 @@ function! <SID>DefaultWindow()
   set lines=56
 endfunction
 
+let g:thorstel_quertz = 0
+function! <SID>ToggleQUERTZLayout()
+  if (g:thorstel_quertz == 0)
+    inoremap ; ö
+    inoremap : Ö
+    inoremap ' ä
+    inoremap " Ä
+    inoremap [ ü
+    inoremap { Ü
+    inoremap < ;
+    inoremap > :
+    inoremap z y
+    inoremap y z
+    inoremap - ß
+    let g:thorstel_quertz = 1
+  else
+    iunmap ;
+    iunmap :
+    iunmap '
+    iunmap "
+    iunmap [
+    iunmap {
+    iunmap <
+    iunmap >
+    iunmap z
+    iunmap y
+    iunmap -
+    let g:thorstel_quertz = 0
+  endif
+endfunction
+
 " }}}
 " *** Mappings *** {{{
 
@@ -484,15 +451,14 @@ inoremap $$ $$<Left>
 "inoremap <silent> {<CR> <Esc>o<Esc>:call <SID>PlaceCurlyBraces()<CR>$i<CR><CR><Up><Tab>
 inoremap <silent> {<CR> <Esc>o{<CR>}<Esc>O
 
-" place ; always at the end of a line in insert mode
-inoremap ; <End>;
+noremap <silent> <C-l> :call <SID>ToggleQUERTZLayout()<CR>
+inoremap <silent> <C-l> <Esc>:call <SID>ToggleQUERTZLayout()<CR>a
 
 " emacs-like insert mode navigation
 inoremap <C-f> <Right>
 inoremap <C-b> <Left>
 inoremap <C-e> <End>
 inoremap <C-a> <Home>
-
 
 " alternatives for the escape button
 noremap <C-CR> <ESC>
@@ -503,12 +469,6 @@ inoremap <S-CR> <ESC>
 " scroll in normal mode with space
 noremap <space> <C-d>
 noremap <S-space> <C-u>
-
-" window navigation in normal mode
-noremap <C-h> <C-w>h
-noremap <C-j> <C-w>j
-noremap <C-k> <C-w>k
-noremap <C-l> <C-w>l
 
 " center around line with current search result
 nnoremap n nzz

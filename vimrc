@@ -140,7 +140,7 @@ set wildmenu
 set wildignore=*.o,*.class,*.toc,*.aux
 
 " two lines for the command line
-set cmdheight=2
+"set cmdheight=2
 
 " don't use any characters in the window-separators
 set fillchars=""
@@ -190,9 +190,6 @@ augroup VIMRC
 
   " do not show special characters in terminal view (PLUGIN!)
   autocmd FileType conque_term setl nolist
-
-  " reload the vimrc file if changed
-  autocmd BufWritePost vimrc.vim,.vimrc source $MYVIMRC
 
   " set compiler to javac for java-files
   autocmd Filetype java setl makeprg=javac\ %
@@ -417,6 +414,8 @@ function! <SID>ToggleQWERTZLayout()
     inoremap > :
     inoremap z y
     inoremap y z
+    inoremap Z Y
+    inoremap Y Z
     inoremap - ß
     let g:thorstel_qwertz = 1
   else
@@ -430,6 +429,8 @@ function! <SID>ToggleQWERTZLayout()
     iunmap >
     iunmap z
     iunmap y
+    iunmap Z
+    iunmap Y
     iunmap -
     let g:thorstel_qwertz = 0
   endif
@@ -481,20 +482,6 @@ nnoremap g# g#zz
 " make the Easymotion goto-character-function more accessible
 nnoremap <C-f> :call EasyMotion#F(0,0)<CR>
 nnoremap <C-b> :call EasyMotion#F(0,1)<CR>
-
-" change tabs firefox style with command-0..9 (Mac only)
-if has("mac")
-  map <D-1> 1gt
-  map <D-2> 2gt
-  map <D-3> 3gt
-  map <D-4> 4gt
-  map <D-5> 5gt
-  map <D-6> 6gt
-  map <D-7> 7gt
-  map <D-8> 8gt
-  map <D-9> 9gt
-  map <D-0> :tablast<CR>
-endif
 
 " always open file under cursor - even if it does not exist
 map <silent> gf :e <cfile><CR>

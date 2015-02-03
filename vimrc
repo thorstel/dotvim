@@ -307,9 +307,9 @@ if has("gui_running")
   colo github
 
   " columns from 80 shall be in a different color (vim 7.3 feature)
-  if version >= 703
-    set colorcolumn=81,82,83,84,85,86,87,88,89,90
-  endif
+  "if version >= 703
+    "set colorcolumn=81,82,83,84,85,86,87,88,89,90
+  "endif
 
   " minimalistic GUI - I don't need no fancy buttons
   set guioptions=acm

@@ -4,7 +4,7 @@ set nocompatible
 " enable Pathogen PlugIn-Manager
 call pathogen#infect()
 
-" *** General Settings *** {{{
+" General Settings {{{
 
 " automatic file identification
 filetype indent plugin on
@@ -63,8 +63,8 @@ set history=1000
 " I don't want to hear or see any 'bell' indications
 set visualbell t_vb=
 
-" statusline is never displayed
-set laststatus=0
+" statusline is only displayed when more than one window exists
+set laststatus=1
 
 " statusline layout (without powerline)
 "set statusline=%#StatusLine#\ \|%#Folded#\ %02n\ %#StatusLine#\|
@@ -139,9 +139,6 @@ set foldopen=block,insert,jump,mark,percent,quickfix,search,tag,undo
 set wildmenu
 set wildignore=*.o,*.class,*.toc,*.aux
 
-" two lines for the command line
-"set cmdheight=2
-
 " don't use any characters in the window-separators
 set fillchars=""
 
@@ -172,7 +169,7 @@ if version >= 703
 endif
 
 " }}}
-" *** Autocommands *** {{{
+" Autocommands {{{
 
 augroup VIMRC
 
@@ -233,7 +230,7 @@ augroup VIMRC
 augroup END
 
 " }}}
-" *** PlugIn - Settings *** {{{
+" PlugIn Settings {{{
 
 " file browsers width is 40 columns
 let NERDTreeWinSize = 40
@@ -293,7 +290,7 @@ let g:org_command_for_emacsclient = 'emacsclient'
 
 
 " }}}
-" *** UI / GUI - Settings *** {{{
+" (G)UI Settings {{{
 
 " show line numbers
 set number
@@ -301,15 +298,10 @@ set number
 set numberwidth=5
 
 " colorscheme setup
-"let g:solarized_visibility="low"
-"let g:solarized_contrast="normal"
-" I like the degraded color palette of solarized better
-"let g:solarized_degrade=1
-" set background=light
 colo badwolf
 
-" do not highlight the line where the cursor is at
-set nocursorline
+" hightlight the current line of the cursor
+set cursorline
 
 if has("gui_running")
   colo github
@@ -339,7 +331,7 @@ if has("gui_running")
 endif
 
 " }}}
-" *** Custom Commands / Functions *** {{{
+" Custom Commands / Functions {{{
 
 " compare current buffer with its unchanged state
 command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis | wincmd p | diffthis
@@ -437,7 +429,7 @@ function! <SID>ToggleQWERTZLayout()
 endfunction
 
 " }}}
-" *** Mappings *** {{{
+" Mappings {{{
 
 " place cursor between braces / quotes
 inoremap () ()<Left>
@@ -493,7 +485,7 @@ noremap <silent> <leader>h :noh<CR>
 noremap <silent> <leader>s :set spell! <CR>
 
 " shortcut for editing the vimrc file
-noremap <silent> <leader>v :e ~/.vimrc<CR>
+noremap <silent> <leader>v :e $MYVIMRC<CR>
 
 " switch between current and alternate buffer
 noremap <silent> <leader>a :b#<CR>
@@ -558,7 +550,9 @@ nnoremap <silent> Y y$
 
 " Y yanks to the clipboard in visual mode
 vnoremap <silent> Y "+y
+vnoremap <silent> <C-c> "+y
 
+" Paste from system clipboard with ctrl-p
 nnoremap <silent> <C-p> o<Esc>"+p
 
 " scale the window up / down by 10 columns

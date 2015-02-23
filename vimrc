@@ -336,6 +336,10 @@ endif
 " compare current buffer with its unchanged state
 command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis | wincmd p | diffthis
 
+" save and restore vim Sessions
+command SaveSession mksession! ~/.vimtmp/latestSession | echo "Session saved!"
+command LoadSession source ~/.vimtmp/latestSession
+
 " set the arglist to the filenames currently referenced in the quickfix list
 command! -nargs=0 -bar Qargs execute 'args' QuickfixFilenames()
 function! QuickfixFilenames()
@@ -566,11 +570,7 @@ map <silent> <C-F10> :!ctags -R .<CR>
 map <silent> <leader>q :copen<CR>
 map <silent> <leader>qc :cclose<CR>
 
-" save and restore vim Sessions
-noremap <silent> <leader>ss :mksession! ~/.vimtmp/latestSession<CR>:echo "Session saved!"<CR>
-noremap <silent> <leader>sl :source ~/.vimtmp/latestSession<CR>
-
-" toggle solarized background color
+" toggle background color
 "call togglebg#map("<F5>")
 " toggle between favorite dark and light colorschemes
 nnoremap <silent> <F2> :call <SID>ToggleColorScheme()<CR>

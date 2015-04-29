@@ -301,10 +301,11 @@ set numberwidth=5
 colo badwolf
 
 " hightlight the current line of the cursor
-set cursorline
+"set cursorline
 
 if has("gui_running")
-  colo github
+  "colo github
+  colo thorstel_blackwhite
 
   " columns from 80 shall be in a different color (vim 7.3 feature)
   "if version >= 703

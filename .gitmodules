@@ -43,3 +43,6 @@
 [submodule "bundle/ack"]
 	path = bundle/ack
 	url = https://github.com/mileszs/ack.vim.git
+[submodule "bundle/gutentag"]
+	path = bundle/gutentag
+	url = https://github.com/ludovicchabant/vim-gutentags.git

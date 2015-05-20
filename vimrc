@@ -337,6 +337,9 @@ endif
 " compare current buffer with its unchanged state
 command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis | wincmd p | diffthis
 
+" Close all buffers
+command Bdall bufdo bd
+
 " save and restore vim Sessions
 command SaveSession mksession! ~/.vimtmp/latestSession | echo "Session saved!"
 command LoadSession source ~/.vimtmp/latestSession

@@ -288,7 +288,6 @@ command! OrgCaptureFile :call org#OpenCaptureFile()
 let g:org_todo_setup='TODO | DONE'
 let g:org_command_for_emacsclient = 'emacsclient'
 
-
 " }}}
 " (G)UI Settings {{{
 
@@ -298,14 +297,15 @@ set number
 set numberwidth=5
 
 " colorscheme setup
-colo badwolf
+let s:thorstel_darkcolor  = "badwolf"
+let s:thorstel_lightcolor = "PaperColor"
+execute "colorscheme " . s:thorstel_darkcolor
 
 " hightlight the current line of the cursor
 "set cursorline
 
 if has("gui_running")
-  "colo github
-  colo thorstel_blackwhite
+  execute "colorscheme " . s:thorstel_lightcolor
 
   " columns from 80 shall be in a different color (vim 7.3 feature)
   "if version >= 703
@@ -371,16 +371,16 @@ function! <SID>PlaceCurlyBraces()
 endfunction
 
 " toggle between a light and a dark colorscheme
-let g:thorstel_darkbg=0
+let s:thorstel_darkbg=0
 function! <SID>ToggleColorScheme()
-  if (g:thorstel_darkbg == 1)
+  if (s:thorstel_darkbg == 1)
     set bg=light
-    colo github
-    let g:thorstel_darkbg = 0
+    execute "colorscheme " . s:thorstel_lightcolor
+    let s:thorstel_darkbg = 0
   else
     set bg=dark
-    colo badwolf
-    let g:thorstel_darkbg = 1
+    execute "colorscheme " . s:thorstel_darkcolor
+    let s:thorstel_darkbg = 1
   endif
 endfunction
 
@@ -401,9 +401,9 @@ function! <SID>DefaultWindow()
   set lines=56
 endfunction
 
-let g:thorstel_qwertz = 0
+let s:thorstel_qwertz = 0
 function! <SID>ToggleQWERTZLayout()
-  if (g:thorstel_qwertz == 0)
+  if (s:thorstel_qwertz == 0)
     inoremap ; ö
     inoremap : Ö
     inoremap ' ä
@@ -417,7 +417,7 @@ function! <SID>ToggleQWERTZLayout()
     inoremap Z Y
     inoremap Y Z
     inoremap - ß
-    let g:thorstel_qwertz = 1
+    let s:thorstel_qwertz = 1
   else
     iunmap ;
     iunmap :
@@ -432,7 +432,7 @@ function! <SID>ToggleQWERTZLayout()
     iunmap Z
     iunmap Y
     iunmap -
-    let g:thorstel_qwertz = 0
+    let s:thorstel_qwertz = 0
   endif
 endfunction
 

@@ -335,10 +335,10 @@ endif
 " Custom Commands / Functions {{{
 
 " compare current buffer with its unchanged state
-command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis | wincmd p | diffthis
+command! DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis | wincmd p | diffthis
 
 " Close all buffers
-command Bdall bufdo bd
+command! -bang Bdall bufdo bd<bang>
 
 " save and restore vim Sessions
 command SaveSession mksession! ~/.vimtmp/latestSession | echo "Session saved!"

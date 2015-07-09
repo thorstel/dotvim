@@ -46,3 +46,6 @@
 [submodule "bundle/gutentag"]
 	path = bundle/gutentag
 	url = https://github.com/ludovicchabant/vim-gutentags.git
+[submodule "bundle/papercolor-theme"]
+	path = bundle/papercolor-theme
+	url = https://github.com/NLKNguyen/papercolor-theme.git

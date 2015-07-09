@@ -48,10 +48,10 @@ set nostartofline
 
 " directory for the vim swap-files
 if isdirectory(expand('~/.vimtmp'))
-  set directory=~/.vimtmp
+    set directory=~/.vimtmp
 else
-  set directory=
-  set noswapfile
+    set directory=
+    set noswapfile
 endif
 
 " allow switching buffers, even if the current buffer is not saved
@@ -108,9 +108,9 @@ set lazyredraw
 
 " code indentation of 2 spaces - do not use real tabs
 set expandtab
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
+set tabstop=8
+set softtabstop=4
+set shiftwidth=4
 set shiftround
 
 " preserve indent for wrapped lines
@@ -156,16 +156,16 @@ set complete=.,w,b,u,t
 
 " 7.3 features
 if version >= 703
-  " in vim 7.3 persitant undo was added - creates very large undo-histories
-  "set undofile
-  "set undodir=~/.vimundo
+    " in vim 7.3 persitant undo was added - creates very large undo-histories
+    "set undofile
+    "set undodir=~/.vimundo
 
-  " turn off the conceal feature (for example replace latex code with the
-  " accordant unicode-character)
-  set conceallevel=0
-  " conceal in LaTeX for accents, delimters, greek & math
-  let g:tex_conceal="adgm"
-  "let g:tex_conceal="adg"
+    " turn off the conceal feature (for example replace latex code with the
+    " accordant unicode-character)
+    set conceallevel=0
+    " conceal in LaTeX for accents, delimters, greek & math
+    let g:tex_conceal="adgm"
+    "let g:tex_conceal="adg"
 endif
 
 " }}}
@@ -173,59 +173,59 @@ endif
 
 augroup VIMRC
 
-  " clear all previous autocommands
-  autocmd!
+    " clear all previous autocommands
+    autocmd!
 
-  " change directory according to the current file
-  autocmd BufEnter * :silent! lcd %:p:h
+    " change directory according to the current file
+    autocmd BufEnter * :silent! lcd %:p:h
 
-  " always activate spelling in LaTeX, txt-Files and MDown-Files
-  autocmd BufRead,BufNewFile *.tex,*.txt,*.mkd setlocal spell
+    " always activate spelling in LaTeX, txt-Files and MDown-Files
+    autocmd BufRead,BufNewFile *.tex,*.txt,*.mkd setlocal spell
 
-  " update ctags database in C++ if a header is changed
-  autocmd BufWritePost *.h,*.hpp :silent! :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .
+    " update ctags database in C++ if a header is changed
+    autocmd BufWritePost *.h,*.hpp :silent! :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .
 
-  " do not show special characters in terminal view (PLUGIN!)
-  autocmd FileType conque_term setl nolist
+    " do not show special characters in terminal view (PLUGIN!)
+    autocmd FileType conque_term setl nolist
 
-  " set compiler to javac for java-files
-  autocmd Filetype java setl makeprg=javac\ %
+    " set compiler to javac for java-files
+    autocmd Filetype java setl makeprg=javac\ %
 
-  " set compiler to scalac for scala-files
-  autocmd Filetype scala setl makeprg=scalac\ %
+    " set compiler to scalac for scala-files
+    autocmd Filetype scala setl makeprg=scalac\ %
 
-  " set compiler to gcc for c-files
-  autocmd Filetype c setl makeprg=make
+    " set compiler to gcc for c-files
+    autocmd Filetype c setl makeprg=make
 
-  autocmd BufRead,BufNewFile *.des set syntax=levdes
+    autocmd BufRead,BufNewFile *.des set syntax=levdes
 
-  " set compiler to ghc for haskell
-  autocmd Filetype haskell setl makeprg=ghc\ -Wall\ -O3\ \ -o\ %:t:r\ %
+    " set compiler to ghc for haskell
+    autocmd Filetype haskell setl makeprg=ghc\ -Wall\ -O3\ \ -o\ %:t:r\ %
 
-  " set compiler to pdflatex for LaTeX-Code
-  autocmd Filetype tex setl makeprg=pdflatex\ %
+    " set compiler to pdflatex for LaTeX-Code
+    autocmd Filetype tex setl makeprg=pdflatex\ %
 
-  " java code-completion with javacomplete-PlugIn
-  autocmd Filetype java setl omnifunc=javacomplete#Complete
+    " java code-completion with javacomplete-PlugIn
+    autocmd Filetype java setl omnifunc=javacomplete#Complete
 
-  " visualbell has to be silenced again if a GUI is entered
-  autocmd GuiEnter * set visualbell t_vb=
+    " visualbell has to be silenced again if a GUI is entered
+    autocmd GuiEnter * set visualbell t_vb=
 
-  " make the current file executable if it's a shellscript
-  autocmd BufWritePost * if getline(1) =~ "^#!" | if getline(1) =~ "/bin/" | silent !chmod +x <afile> | endif | endif
+    " make the current file executable if it's a shellscript
+    autocmd BufWritePost * if getline(1) =~ "^#!" | if getline(1) =~ "/bin/" | silent !chmod +x <afile> | endif | endif
 
-  " set compiler for graphviz dot
-  autocmd Filetype dot setl makeprg=dot\ -Tpdf\ %\ >%:t:r.pdf
-  "autocmd Filetype dot setl makeprg=neato\ -Tpdf\ %\ >%:t:r.pdf
+    " set compiler for graphviz dot
+    autocmd Filetype dot setl makeprg=dot\ -Tpdf\ %\ >%:t:r.pdf
+    "autocmd Filetype dot setl makeprg=neato\ -Tpdf\ %\ >%:t:r.pdf
 
-  " remove trailing characters before saving a file
-  autocmd BufWritePre * call <SID>DeleteTrailings()
+    " remove trailing characters before saving a file
+    autocmd BufWritePre * call <SID>DeleteTrailings()
 
-  " settings for pandoc markdown
-  autocmd Filetype pandoc setl makeprg=pandoc\ -s\ %\ -o\ %:t:r.html
-  autocmd Filetype pandoc setl ts=4 sts=4 sw=4
-  " automatically compile Pandoc files after saving
-  autocmd! BufWritePost * if &ft == 'pandoc' | silent make | endif
+    " settings for pandoc markdown
+    autocmd Filetype pandoc setl makeprg=pandoc\ -s\ %\ -o\ %:t:r.html
+    autocmd Filetype pandoc setl ts=4 sts=4 sw=4
+    " automatically compile Pandoc files after saving
+    autocmd! BufWritePost * if &ft == 'pandoc' | silent make | endif
 
 augroup END
 
@@ -297,38 +297,41 @@ set number
 set numberwidth=5
 
 " colorscheme setup
-let s:thorstel_darkcolor  = "badwolf"
 let s:thorstel_lightcolor = "PaperColor"
+let s:thorstel_darkcolor  = "PaperColor-Dark"
+let s:thorstel_darkbg     = 1
 execute "colorscheme " . s:thorstel_darkcolor
+"colo badwolf
 
 " hightlight the current line of the cursor
 "set cursorline
 
 if has("gui_running")
-  execute "colorscheme " . s:thorstel_lightcolor
+    execute "colorscheme " . s:thorstel_lightcolor
+    let s:thorstel_darkbg=0
 
-  " columns from 80 shall be in a different color (vim 7.3 feature)
-  "if version >= 703
+    " columns from 80 shall be in a different color (vim 7.3 feature)
+    "if version >= 703
     "set colorcolumn=81,82,83,84,85,86,87,88,89,90
-  "endif
+    "endif
 
-  " minimalistic GUI - I don't need no fancy buttons
-  set guioptions=acm
-  " only show tabline if more than one tab page is present
-  set showtabline=1
-  " number of colums
-  set co=90
-  " total number of lines of the window (statusline and command line included!)
-  set lines=56
-  " cursor only blinks in insert mode
-  set gcr=n:blinkon0
-  " favorite font for coding so far
-  if has("gui_win32")
-    set guifont=Consolas:h10
-    set guioptions+=r
-  else
-    set guifont=Deja\ Vu\ Sans\ Mono\ 13
-  endif
+    " minimalistic GUI - I don't need no fancy buttons
+    set guioptions=acm
+    " only show tabline if more than one tab page is present
+    set showtabline=1
+    " number of colums
+    set co=90
+    " total number of lines of the window (statusline and command line included!)
+    set lines=56
+    " cursor only blinks in insert mode
+    set gcr=n:blinkon0
+    " favorite font for coding so far
+    if has("gui_win32")
+        set guifont=Consolas:h10
+        set guioptions+=r
+    else
+        set guifont="Deja Vu Sans Mono 10"
+    endif
 endif
 
 " }}}
@@ -347,93 +350,92 @@ command LoadSession source ~/.vimtmp/latestSession
 " set the arglist to the filenames currently referenced in the quickfix list
 command! -nargs=0 -bar Qargs execute 'args' QuickfixFilenames()
 function! QuickfixFilenames()
-  " Building a hash ensures we get each buffer only once
-  let buffer_numbers = {}
-  for quickfix_item in getqflist()
-    let buffer_numbers[quickfix_item['bufnr']] = bufname(quickfix_item['bufnr'])
-  endfor
-  return join(map(values(buffer_numbers), 'fnameescape(v:val)'))
+    " Building a hash ensures we get each buffer only once
+    let buffer_numbers = {}
+    for quickfix_item in getqflist()
+        let buffer_numbers[quickfix_item['bufnr']] = bufname(quickfix_item['bufnr'])
+    endfor
+    return join(map(values(buffer_numbers), 'fnameescape(v:val)'))
 endfunction
 
 " delete all trailings in the current buffer
 function! <SID>DeleteTrailings()
-  let _s=@/
-  let l = line(".")
-  let c = col(".")
-  %s/\s\+$//e
-  let @/=_s
-  call cursor(l, c)
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    let @/=_s
+    call cursor(l, c)
 endfunction
 
 " places {} at the end of the line
 function! <SID>PlaceCurlyBraces()
-  s/\s*$/ {}
+    s/\s*$/ {}
 endfunction
 
 " toggle between a light and a dark colorscheme
-let s:thorstel_darkbg=0
 function! <SID>ToggleColorScheme()
-  if (s:thorstel_darkbg == 1)
-    set bg=light
-    execute "colorscheme " . s:thorstel_lightcolor
-    let s:thorstel_darkbg = 0
-  else
-    set bg=dark
-    execute "colorscheme " . s:thorstel_darkcolor
-    let s:thorstel_darkbg = 1
-  endif
+    if (s:thorstel_darkbg == 1)
+        set bg=light
+        execute "colorscheme " . s:thorstel_lightcolor
+        let s:thorstel_darkbg = 0
+    else
+        set bg=dark
+        execute "colorscheme " . s:thorstel_darkcolor
+        let s:thorstel_darkbg = 1
+    endif
 endfunction
 
 " function for switching between relative and absolute line numbers
 function! <SID>SwitchLineNumbers()
-  if (&relativenumber == 1)
-    set number
-  else
-    set relativenumber
-  endif
+    if (&relativenumber == 1)
+        set number
+    else
+        set relativenumber
+    endif
 endfunction
 
 " restores the default window settings. call with <leader>n
 function! <SID>DefaultWindow()
-  NERDTreeClose
-  TagbarClose
-  set co=90
-  set lines=56
+    NERDTreeClose
+    TagbarClose
+    set co=90
+    set lines=56
 endfunction
 
 let s:thorstel_qwertz = 0
 function! <SID>ToggleQWERTZLayout()
-  if (s:thorstel_qwertz == 0)
-    inoremap ; ö
-    inoremap : Ö
-    inoremap ' ä
-    inoremap " Ä
-    inoremap [ ü
-    inoremap { Ü
-    inoremap < ;
-    inoremap > :
-    inoremap z y
-    inoremap y z
-    inoremap Z Y
-    inoremap Y Z
-    inoremap - ß
-    let s:thorstel_qwertz = 1
-  else
-    iunmap ;
-    iunmap :
-    iunmap '
-    iunmap "
-    iunmap [
-    iunmap {
-    iunmap <
-    iunmap >
-    iunmap z
-    iunmap y
-    iunmap Z
-    iunmap Y
-    iunmap -
-    let s:thorstel_qwertz = 0
-  endif
+    if (s:thorstel_qwertz == 0)
+        inoremap ; ö
+        inoremap : Ö
+        inoremap ' ä
+        inoremap " Ä
+        inoremap [ ü
+        inoremap { Ü
+        inoremap < ;
+        inoremap > :
+        inoremap z y
+        inoremap y z
+        inoremap Z Y
+        inoremap Y Z
+        inoremap - ß
+        let s:thorstel_qwertz = 1
+    else
+        iunmap ;
+        iunmap :
+        iunmap '
+        iunmap "
+        iunmap [
+        iunmap {
+        iunmap <
+        iunmap >
+        iunmap z
+        iunmap y
+        iunmap Z
+        iunmap Y
+        iunmap -
+        let s:thorstel_qwertz = 0
+    endif
 endfunction
 
 " }}}
@@ -598,7 +600,7 @@ iab itme item
 
 "  consider local Vim Settings
 if filereadable(expand('~/.vimrc.local'))
-  source ~/.vimrc.local
+    source ~/.vimrc.local
 endif
 
 " vim: fdm=marker

@@ -293,6 +293,7 @@ let g:org_command_for_emacsclient = 'emacsclient'
 
 " show line numbers
 set number
+set relativenumber
 " display line numbers with 5 digits
 set numberwidth=5
 
@@ -390,6 +391,7 @@ endfunction
 function! <SID>SwitchLineNumbers()
     if (&relativenumber == 1)
         set number
+        set norelativenumber
     else
         set relativenumber
     endif

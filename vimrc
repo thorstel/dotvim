@@ -475,6 +475,10 @@ inoremap <S-CR> <ESC>
 noremap <space> <C-d>
 noremap <S-space> <C-u>
 
+" Make ctrl-Backspace delete the previous word (console and gVim)
+inoremap <C-h> <C-w>
+inoremap <C-BS> <C-w>
+
 " center around line with current search result
 nnoremap n nzz
 nnoremap N Nzz

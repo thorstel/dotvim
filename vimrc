@@ -49,6 +49,8 @@ set nostartofline
 " directory for the vim swap-files
 if isdirectory(expand('~/.vimtmp'))
     set directory=~/.vimtmp
+elseif isdirectory(expand('~/_vimtmp'))
+  set directory=~/_vimtmp
 else
     set directory=
     set noswapfile
@@ -328,7 +330,7 @@ if has("gui_running")
     set gcr=n:blinkon0
     " favorite font for coding so far
     if has("gui_win32")
-        set guifont=Consolas:h10
+        set guifont=Consolas:h11
         set guioptions+=r
     else
         set guifont="Deja Vu Sans Mono 10"
@@ -345,8 +347,8 @@ command! DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis | wincm
 command! -bang Bdall bufdo bd<bang>
 
 " save and restore vim Sessions
-command SaveSession mksession! ~/.vimtmp/latestSession | echo "Session saved!"
-command LoadSession source ~/.vimtmp/latestSession
+command SaveSession mksession! fnameescape(&directory)."/latestSession" | echo "Session saved!"
+command LoadSession source fnameescape(&directory)."/latestSession"
 
 " set the arglist to the filenames currently referenced in the quickfix list
 command! -nargs=0 -bar Qargs execute 'args' QuickfixFilenames()

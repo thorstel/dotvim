@@ -300,16 +300,21 @@ set relativenumber
 set numberwidth=5
 
 " colorscheme setup
-let s:thorstel_lightcolor = "PaperColor"
-let s:thorstel_darkcolor  = "PaperColor-Dark"
+let s:thorstel_lightcolor = "github"
+let s:thorstel_darkcolor  = "badwolf"
 let s:thorstel_darkbg     = 1
+
+let g:gruvbox_contrast_dark  = "hard"
+let g:gruvbox_contrast_light = "hard"
+
+set bg=dark
 execute "colorscheme " . s:thorstel_darkcolor
-"colo badwolf
 
 " hightlight the current line of the cursor
 "set cursorline
 
 if has("gui_running")
+    set bg=light
     execute "colorscheme " . s:thorstel_lightcolor
     let s:thorstel_darkbg=0
 

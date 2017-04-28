@@ -274,7 +274,7 @@ let g:ctrlp_working_path_mode = 1
 " ---------
 
 let g:lightline = {
-  \ 'colorscheme' : 'Tomorrow'
+  \ 'colorscheme' : 'gruvbox'
   \ }
 
 " Org Mode

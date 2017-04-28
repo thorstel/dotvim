@@ -301,7 +301,7 @@ set numberwidth=5
 
 " colorscheme setup
 let s:thorstel_lightcolor = "github"
-let s:thorstel_darkcolor  = "badwolf"
+let s:thorstel_darkcolor  = "gruvbox"
 let s:thorstel_darkbg     = 1
 
 let g:gruvbox_contrast_dark  = "hard"
@@ -314,9 +314,9 @@ execute "colorscheme " . s:thorstel_darkcolor
 "set cursorline
 
 if has("gui_running")
-    set bg=light
-    execute "colorscheme " . s:thorstel_lightcolor
-    let s:thorstel_darkbg=0
+    "set bg=light
+    "execute "colorscheme " . s:thorstel_lightcolor
+    "let s:thorstel_darkbg=0
 
     " columns from 80 shall be in a different color (vim 7.3 feature)
     "if version >= 703
@@ -500,6 +500,13 @@ nnoremap <C-b> :call EasyMotion#F(0,1)<CR>
 
 " always open file under cursor - even if it does not exist
 map <silent> gf :e <cfile><CR>
+
+" Invoke gtags lookup for the tag at the current cursor position.
+nnoremap <silent> gt :GtagsCursor<CR>
+
+" Go to the next/previous entry in the quickfix window
+nnoremap <silent> <C-j> :cn<CR>
+nnoremap <silent> <C-k> :cp<CR>
 
 " turn off hlsearch
 noremap <silent> <leader>h :noh<CR>

@@ -8,7 +8,7 @@
 " How to use this:
 " * Put levdes.vim (this file) under ~/.vim/syntax (or similar directory for
 "   your system - usually C:\Program Files\Vim\vimfiles\syntax on Windows).
-" * In your .vimrc, add this line:
+" * In your .vimrc, or in a new file ~/.vim/ftdetect/levdes.vim, add this line:
 "     au BufRead,BufNewFile *.des set syntax=levdes
 " Thereafter, any .des files you edit in (g)vim will use syntax highlighting.
 
@@ -56,11 +56,14 @@ syn region desColourline start=/^\(COLOUR\|L[A-Z]*COL\):/ end=/$/ contains=desDe
 syn region desNameline start=/^NAME:/ end=/$/ contains=desDec,desVaultname keepend
 syn match desVaultname /\w*/ contained
 
-syn match desGod contained /ashenzari\|beogh\|cheibriados\|elyvilon\|fedhas\|jiyva\|kikubaaqudgha\|lugonu\|makhleb/
-syn match desGod contained /nemelex_xobeh\|okawaru\|sif_muna\|trog\|vehumet\|xom\|yredelemnul\|zin\|the_shining_one/
+syn match desGod contained /ashenzari\|beogh\|cheibriados\|dithmenos\|elyvilon/
+syn match desGod contained /fedhas\|gozag\|hepliaklqana\|jiyva\|kikubaaqudgha/
+syn match desGod contained /lugonu\|makhleb\|nemelex_xobeh\|okawaru\|pakellas/
+syn match desGod contained /qazlal\|ru\|sif_muna\|trog\|uskayaw\|vehumet\|wu_jian/
+syn match desGod contained /xom\|yredelemnul\|zin\|the_shining_one/
 
 syn keyword desDeclarator ORIENT: DEPTH: PLACE: MONS: FLAGS: default-depth: TAGS: CHANCE: WEIGHT:
-syn keyword desDeclarator ITEM: KFEAT: KMONS: KITEM: KMASK: KPROP: MARKER: WELCOME: LFLAGS: BFLAGS:
+syn keyword desDeclarator ITEM: KFEAT: KMONS: KITEM: KMASK: KPROP: MARKER: WELCOME:
 syn keyword desDeclarator LFLOORTILE: LROCKTILE: FTILE: RTILE: TILE: SUBVAULT: FHEIGHT: DESC: ORDER:
 
 " keywords
@@ -88,23 +91,20 @@ syn match desBranchname contained /bailey\|ice_cave\|volcano\|wizlab/
 " in abyss.cc
 syn keyword desOrientation abyss_exit
 " in decks.cc and dgn-labyrinth.cc (without `minotaur` because monster)
-syn keyword desOrientation trowel_portal lab generate_loot
+syn keyword desOrientation lab generate_loot
 " from dlua.ziggurat
 syn keyword desOrientation ziggurat_pillar centered
 " map building in dungeon.cc (`transparent` is handled later)
 "Note: `dummy` mis-catches `training dummy` about half as often as actually used as tag
-syn keyword desOrientation dummy arrival mini_float extra ruin layout pan decor
+syn keyword desOrientation dummy arrival no_exits extra ruin layout pan decor
 syn keyword desOrientation allow_dup uniq luniq
 syn keyword desOrientation no_hmirror no_vmirror no_rotate
 syn keyword desOrientation no_dump
 " vault placement in maps.cc
 syn keyword desOrientation unrand place_unique special_room tutorial
-syn keyword desOrientation water_ok can_overwrite replace_portal
+syn keyword desOrientation water_ok overwrite_floor_cell replace_portal
 " V vault building (mostly dlua/v_layouts and v_rooms)
 syn keyword desOrientation vaults_room vaults_empty vaults_hard no_windows preserve_wall
-
-" LFLAGS (in l_dgn.cc)
-syn keyword desOrientation no_tele_control not_mappable no_magic_map
 
 " ITEM | KITEM (in mapdef.cc, without `random`)
 syn keyword desOrientation randbook any good_item star_item superb_item gold nothing
@@ -118,7 +118,7 @@ syn keyword desOrientation fix_slot priest_spells actual_spells god_gift
 syn keyword desOrientation generate_awake patrolling band
 syn keyword desOrientation hostile friendly good_neutral fellow_slime strict_neutral neutral
 "Note: `spectre` removed: mis-catches `silent spectre` but was unused as modifier (`spectral` exists)
-syn keyword desOrientation zombie skeleton simulacrum spectral chimera
+syn keyword desOrientation zombie skeleton simulacrum spectral
 syn keyword desOrientation seen always_corpse never_corpse
 syn keyword desOrientation base nonbase
 syn keyword desOrientation n_suf        n_adj           n_rpl         n_the
@@ -150,9 +150,9 @@ syn keyword desOrientation overwritable
 syn keyword desOrientation vault no_item_gen no_monster_gen no_pool_fixup no_wall_fixup opaque no_trap_gen
 
 " KPROP
-syn keyword desOrientation bloody highlight mold no_cloud_gen no_rtele_into no_ctele_into no_tele_into no_submerge no_tide no_jiyva
+syn keyword desOrientation bloody highlight mold no_cloud_gen no_tele_into no_submerge no_tide no_jiyva
 
-syn match desComment "^\s*#.*$"
+syn match desComment "^\s*#.*$&"
 
 "Note: `;` and `|` are necessary due to monster/randbook `spells:`,
 " `.` can be an empty spell slot and `'` is contained in certain spell names,
@@ -177,7 +177,6 @@ syn match desEntry "\<overflow_altar_\w*\>"  contains=desGod
 syn match desEntry "\<enter_\w*\>"       contains=desBranchname
 syn match desEntry "\<exit_\w*\>"        contains=desBranchname
 syn match desEntry "\<ruin_\w*\>"        contains=desBranchname
-syn match desEntry "\<return_from_\w*\>" contains=desBranchname
 
 " 'transparent' is a Vim syntax keyword
 syn match desTransparent "\<transparent\>"

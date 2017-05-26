@@ -25,9 +25,6 @@
 [submodule "bundle/lightline"]
 	path = bundle/lightline
 	url = git://github.com/itchyny/lightline.vim.git
-[submodule "bundle/papercolor-theme"]
-	path = bundle/papercolor-theme
-	url = git://github.com/NLKNguyen/papercolor-theme.git
 [submodule "bundle/ReplaceWithRegister"]
 	path = bundle/ReplaceWithRegister
 	url = git://github.com/vim-scripts/ReplaceWithRegister.git

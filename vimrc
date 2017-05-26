@@ -234,11 +234,6 @@ augroup END
 " }}}
 " PlugIn Settings {{{
 
-" file browsers width is 40 columns
-let NERDTreeWinSize = 40
-" always display bookmarks
-let NERDTreeShowBookmarks=0
-
 " no preview window for cppcomplete
 set completeopt=menuone
 " select first match for code completion but don't replace before confirmed
@@ -404,14 +399,6 @@ function! <SID>SwitchLineNumbers()
     endif
 endfunction
 
-" restores the default window settings. call with <leader>n
-function! <SID>DefaultWindow()
-    NERDTreeClose
-    TagbarClose
-    set co=90
-    set lines=56
-endfunction
-
 let s:thorstel_qwertz = 0
 function! <SID>ToggleQWERTZLayout()
     if (s:thorstel_qwertz == 0)
@@ -536,14 +523,8 @@ else
   nnoremap <silent> <leader>l :set number!<CR>
 endif
 
-" show/hide the NERDTree filebrowser
-map <silent> <down> :NERDTreeToggle<CR>
-
 " toggle the Tagbar-PlugIn view
 map <silent> <up> :TagbarToggle<CR>
-
-" restore standard window layout
-map <silent> <leader>n :call <SID>DefaultWindow()<CR>
 
 " delete trailing whitespaces manually
 "nmap <silent> <leader>t :call <SID>DeleteTrailings()<CR>

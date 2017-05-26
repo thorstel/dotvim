@@ -250,11 +250,6 @@ let OmniCpp_ShowAccess = 1
 " use ctrl-space completion insted (Eclipse-like)
 let g:SuperTabMappingForward = '<C-Space>'
 
-" EasyMotion
-" ----------
-" all EasyMotion commands are triggered with double pressing leader key
-let g:EasyMotion_leader_key = '<leader><leader>'
-
 " CtrlP
 " -----
 " CtrlP Plugin is invoked with ctrl-e
@@ -480,10 +475,6 @@ nnoremap * *zz
 nnoremap # #zz
 nnoremap g* g*zz
 nnoremap g# g#zz
-
-" make the Easymotion goto-character-function more accessible
-nnoremap <C-f> :call EasyMotion#F(0,0)<CR>
-nnoremap <C-b> :call EasyMotion#F(0,1)<CR>
 
 " always open file under cursor - even if it does not exist
 map <silent> gf :e <cfile><CR>

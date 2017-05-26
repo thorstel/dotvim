@@ -523,9 +523,6 @@ else
   nnoremap <silent> <leader>l :set number!<CR>
 endif
 
-" toggle the Tagbar-PlugIn view
-map <silent> <up> :TagbarToggle<CR>
-
 " delete trailing whitespaces manually
 "nmap <silent> <leader>t :call <SID>DeleteTrailings()<CR>
 

@@ -68,12 +68,6 @@ set visualbell t_vb=
 " statusline is only displayed when more than one window exists
 set laststatus=1
 
-" statusline layout (without powerline)
-"set statusline=%#StatusLine#\ \|%#Folded#\ %02n\ %#StatusLine#\|
-      "\\ \"%f\"\ %#ErrorMsg#%w%r%m%#StatusLine#%=
-      "\\ [%{&filetype}\|%{&fileformat}\|%{&fileencoding}]
-      "\\ \ [L:%3l/%L,\ C:%2v]\ \ [%3b\|0x%-2B]
-
 " directory paths always use forward-slashes, even on windows
 set shellslash
 
@@ -84,9 +78,6 @@ set formatoptions=crq
 
 " Do not use the internal formatter
 set formatexpr=
-
-" Use par for formatting plaintext
-set formatprg=par\ 72j
 
 " show current position of the cursor
 set ruler
@@ -184,18 +175,6 @@ augroup VIMRC
     " always activate spelling in LaTeX, txt-Files and MDown-Files
     autocmd BufRead,BufNewFile *.tex,*.txt,*.mkd setlocal spell
 
-    " update ctags database in C++ if a header is changed
-    autocmd BufWritePost *.h,*.hpp :silent! :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .
-
-    " do not show special characters in terminal view (PLUGIN!)
-    autocmd FileType conque_term setl nolist
-
-    " set compiler to javac for java-files
-    autocmd Filetype java setl makeprg=javac\ %
-
-    " set compiler to scalac for scala-files
-    autocmd Filetype scala setl makeprg=scalac\ %
-
     " set compiler to gcc for c-files
     autocmd Filetype c setl makeprg=make
 
@@ -213,15 +192,12 @@ augroup VIMRC
     " visualbell has to be silenced again if a GUI is entered
     autocmd GuiEnter * set visualbell t_vb=
 
-    " make the current file executable if it's a shellscript
-    autocmd BufWritePost * if getline(1) =~ "^#!" | if getline(1) =~ "/bin/" | silent !chmod +x <afile> | endif | endif
-
     " set compiler for graphviz dot
     autocmd Filetype dot setl makeprg=dot\ -Tpdf\ %\ >%:t:r.pdf
     "autocmd Filetype dot setl makeprg=neato\ -Tpdf\ %\ >%:t:r.pdf
 
     " remove trailing characters before saving a file
-    autocmd BufWritePre * call <SID>DeleteTrailings()
+    "autocmd BufWritePre * call <SID>DeleteTrailings()
 
     " settings for pandoc markdown
     autocmd Filetype pandoc setl makeprg=pandoc\ -s\ %\ -o\ %:t:r.html
@@ -233,6 +209,23 @@ augroup END
 
 " }}}
 " PlugIn Settings {{{
+
+" CScope + GTAGS
+" --------------
+
+" Enable automatic (incremental!) updates of the GTAGS database.
+let g:Gtags_Auto_Update=1
+
+" Setup the CScope - GTAGS connection.
+let g:GtagsCscope_Auto_Load=1
+let g:GtagsCscope_Auto_Map=0
+let g:GtagsCscope_Quiet=1
+
+" Display CScope output in quickfix window.
+set cscopequickfix=s-,c-,d-,i-,t-,e-
+
+" Use CScope for default tag lookup.
+set cscopetag
 
 " no preview window for cppcomplete
 set completeopt=menuone
@@ -266,19 +259,6 @@ let g:ctrlp_working_path_mode = 1
 let g:lightline = {
   \ 'colorscheme' : 'gruvbox'
   \ }
-
-" Org Mode
-" --------
-let g:ft_ignore_pat = '\.org'
-" and then put these lines in vimrc somewhere after the line above
-au! BufRead,BufWrite,BufWritePost,BufNewFile *.org
-au BufEnter *.org            call org#SetOrgFileType()
-" let g:org_capture_file = '~/org_files/mycaptures.org'
-command! OrgCapture :call org#CaptureBuffer()
-command! OrgCaptureFile :call org#OpenCaptureFile()
-
-let g:org_todo_setup='TODO | DONE'
-let g:org_command_for_emacsclient = 'emacsclient'
 
 " }}}
 " (G)UI Settings {{{
@@ -357,6 +337,7 @@ function! QuickfixFilenames()
 endfunction
 
 " delete all trailings in the current buffer
+command! WhiteSpaceCleanUp call <SID>DeleteTrailings()
 function! <SID>DeleteTrailings()
     let _s=@/
     let l = line(".")
@@ -394,41 +375,6 @@ function! <SID>SwitchLineNumbers()
     endif
 endfunction
 
-let s:thorstel_qwertz = 0
-function! <SID>ToggleQWERTZLayout()
-    if (s:thorstel_qwertz == 0)
-        inoremap ; ö
-        inoremap : Ö
-        inoremap ' ä
-        inoremap " Ä
-        inoremap [ ü
-        inoremap { Ü
-        inoremap < ;
-        inoremap > :
-        inoremap z y
-        inoremap y z
-        inoremap Z Y
-        inoremap Y Z
-        inoremap - ß
-        let s:thorstel_qwertz = 1
-    else
-        iunmap ;
-        iunmap :
-        iunmap '
-        iunmap "
-        iunmap [
-        iunmap {
-        iunmap <
-        iunmap >
-        iunmap z
-        iunmap y
-        iunmap Z
-        iunmap Y
-        iunmap -
-        let s:thorstel_qwertz = 0
-    endif
-endfunction
-
 " }}}
 " Mappings {{{
 
@@ -438,15 +384,9 @@ inoremap [] []<Left>
 inoremap {} {}<Left>
 inoremap "" ""<Left>
 inoremap '' ''<Left>
-" LaTeX-Math
-inoremap $$ $$<Left>
 
 " curly brace completion like in eclipse
-"inoremap <silent> {<CR> <Esc>o<Esc>:call <SID>PlaceCurlyBraces()<CR>$i<CR><CR><Up><Tab>
 inoremap <silent> {<CR> <Esc>o{<CR>}<Esc>O
-
-noremap <silent> <C-l> :call <SID>ToggleQWERTZLayout()<CR>
-inoremap <silent> <C-l> <Esc>:call <SID>ToggleQWERTZLayout()<CR>a
 
 " emacs-like insert mode navigation
 inoremap <C-f> <Right>
@@ -514,19 +454,8 @@ else
   nnoremap <silent> <leader>l :set number!<CR>
 endif
 
-" delete trailing whitespaces manually
-"nmap <silent> <leader>t :call <SID>DeleteTrailings()<CR>
-
 " maximize the current window
 map <silent> <leader>m :set co=181<CR>
-
-" compile and run the current java-file
-map <silent> <leader>jr :!javac % && java %:t:r<CR>
-
-" compile and run the current c-file
-map <silent> <leader>cr :!gcc -Wall -o %:t:r % && ./%:t:r<CR>
-
-map <silent> <leader>sr :!scalac % && scala %:t:r<CR>
 
 " go to the next buffer
 map <silent> <right> :bn<CR>
@@ -554,23 +483,8 @@ vnoremap <silent> <C-c> "+y
 " Paste from system clipboard with ctrl-p
 nnoremap <silent> <C-p> o<Esc>"+p
 
-" scale the window up / down by 10 columns
-noremap <silent> <C-F12> :set co+=10<CR>
-noremap <silent> <C-F11> :set co-=10<CR>
-
-" create ctags database of current location
-map <silent> <C-F10> :!ctags -R .<CR>
-
-" open / close the quickfix view
-map <silent> <leader>q :copen<CR>
-map <silent> <leader>qc :cclose<CR>
-
-" toggle background color
-"call togglebg#map("<F5>")
 " toggle between favorite dark and light colorschemes
 nnoremap <silent> <F2> :call <SID>ToggleColorScheme()<CR>
-
-nnoremap <F5> :make<CR>
 
 " call CtrlP buffer explorer
 noremap <silent> <leader>b :CtrlPBuffer<CR>
@@ -578,6 +492,11 @@ noremap <silent> <leader>b :CtrlPBuffer<CR>
 noremap <silent> <leader>e :CtrlP<CR>
 " call CtrlP tag explorer
 noremap <silent> <leader>t :CtrlPBufTag<CR>
+" call CtrlP quickfix explorer
+noremap <silent> <leader>q :CtrlPQuickfix<CR>
+
+" Use Ctrl-\ for the CScope reference lookup.
+nnoremap <C-\> :cs find c <C-R>=expand("<cword>")<CR><CR>
 
 " adjust very frequent mistakes
 iab esle else

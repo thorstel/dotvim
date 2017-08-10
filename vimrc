@@ -258,6 +258,18 @@ let g:lightline = {
   \ 'colorscheme' : 'gruvbox'
   \ }
 
+" Easy-Align
+" ----------
+
+if !exists('g:easy_align_delimiters')
+    let g:easy_align_delimiters = {}
+endif
+
+let g:easy_align_delimiters['d'] = {
+  \ 'pattern': ' \ze\S\+\s*[;=]',
+  \ 'left_margin': 0, 'right_margin': 0
+  \ }
+
 " }}}
 " (G)UI Settings {{{
 
@@ -397,6 +409,10 @@ noremap <S-space> <C-u>
 " Make ctrl-Backspace delete the previous word (console and gVim)
 inoremap <C-h> <C-w>
 inoremap <C-BS> <C-w>
+
+" Invoke Easy-Align with tab
+nmap <tab> <Plug>(EasyAlign)
+xmap <tab> <Plug>(EasyAlign)
 
 " center around line with current search result
 nnoremap n nzz

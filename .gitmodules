@@ -1,24 +1,27 @@
 [submodule "bundle/ctrlp"]
 	path = bundle/ctrlp
-	url = git://github.com/kien/ctrlp.vim.git
+	url = https://github.com/kien/ctrlp.vim.git
 [submodule "bundle/nerdcommenter"]
 	path = bundle/nerdcommenter
-	url = git://github.com/scrooloose/nerdcommenter.git
+	url = https://github.com/scrooloose/nerdcommenter.git
 [submodule "bundle/textobj-word-column"]
 	path = bundle/textobj-word-column
-	url = git://github.com/coderifous/textobj-word-column.vim.git
+	url = https://github.com/coderifous/textobj-word-column.vim.git
 [submodule "bundle/snipmate"]
 	path = bundle/snipmate
-	url = git://github.com/msanders/snipmate.vim.git
+	url = https://github.com/msanders/snipmate.vim.git
 [submodule "bundle/vim-scala"]
 	path = bundle/vim-scala
-	url = git://github.com/derekwyatt/vim-scala.git
+	url = https://github.com/derekwyatt/vim-scala.git
 [submodule "bundle/lightline"]
 	path = bundle/lightline
-	url = git://github.com/itchyny/lightline.vim.git
+	url = https://github.com/itchyny/lightline.vim.git
 [submodule "bundle/ReplaceWithRegister"]
 	path = bundle/ReplaceWithRegister
-	url = git://github.com/vim-scripts/ReplaceWithRegister.git
+	url = https://github.com/vim-scripts/ReplaceWithRegister.git
 [submodule "bundle/gruvbox"]
 	path = bundle/gruvbox
-	url = git://github.com/morhetz/gruvbox
+	url = https://github.com/morhetz/gruvbox
+[submodule "bundle/EasyAlign"]
+	path = bundle/EasyAlign
+	url = https://github.com/junegunn/vim-easy-align.git

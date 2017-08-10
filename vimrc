@@ -71,13 +71,11 @@ set laststatus=1
 " directory paths always use forward-slashes, even on windows
 set shellslash
 
-" wrap text after 78 characters
-set textwidth=78
+" wrap text after 72 characters
+set textwidth=72
+
 " always wrap text in comments
 set formatoptions=crq
-
-" Do not use the internal formatter
-set formatexpr=
 
 " show current position of the cursor
 set ruler
@@ -280,18 +278,10 @@ let g:gruvbox_contrast_light = "hard"
 set bg=dark
 execute "colorscheme " . s:thorstel_darkcolor
 
-" hightlight the current line of the cursor
-"set cursorline
-
 if has("gui_running")
     "set bg=light
     "execute "colorscheme " . s:thorstel_lightcolor
     "let s:thorstel_darkbg=0
-
-    " columns from 80 shall be in a different color (vim 7.3 feature)
-    "if version >= 703
-    "set colorcolumn=81,82,83,84,85,86,87,88,89,90
-    "endif
 
     " minimalistic GUI - I don't need no fancy buttons
     set guioptions=acm
@@ -303,7 +293,7 @@ if has("gui_running")
     set lines=56
     " cursor only blinks in insert mode
     set gcr=n:blinkon0
-    " favorite font for coding so far
+
     if has("gui_win32")
         set guifont=Consolas:h11
         set guioptions+=r
@@ -438,9 +428,6 @@ noremap <silent> <leader>v :e $MYVIMRC<CR>
 " switch between current and alternate buffer
 noremap <silent> <leader>a :b#<CR>
 
-" open Gundo-PlugIn view
-noremap <silent> <leader>u :GundoToggle<CR>
-
 " close the current buffer
 noremap <silent> <leader>d :bd<CR>
 
@@ -469,10 +456,6 @@ map <silent> Q gq
 " spilt line at current position - opposite of J
 nnoremap K i<CR><ESC>k$
 
-" align text with Tabularize
-nmap <tab> :Tabularize /
-vmap <tab> :Tabularize /
-
 " Y should copy from the current position to the end of line
 nnoremap <silent> Y y$
 
@@ -497,6 +480,9 @@ noremap <silent> <leader>q :CtrlPQuickfix<CR>
 
 " Use Ctrl-\ for the CScope reference lookup.
 nnoremap <C-\> :cs find c <C-R>=expand("<cword>")<CR><CR>
+
+" Invoke Cscope symbol lookup for the current cursor position
+noremap gs :cs find s <C-R>=expand("<cword>")<CR><CR>
 
 " adjust very frequent mistakes
 iab esle else

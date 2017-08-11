@@ -97,7 +97,7 @@ set scrolloff=5
 " don't redraw the screen while using a macro
 set lazyredraw
 
-" code indentation of 2 spaces - do not use real tabs
+" code indentation (do not use real tabs)
 set expandtab
 set tabstop=8
 set softtabstop=4
@@ -235,12 +235,6 @@ let OmniCpp_ShowAccess = 1
 " tag-databases for system / C++ STL / QT-Lib
 "set tags+=~/.vimtags/commontags,~/.vimtags/stltags,~/.vimtags/qttags
 
-" SuperTab Completion
-" -------------------
-" do not use standard <tab> to complete code, that is reserved for snipMate
-" use ctrl-space completion insted (Eclipse-like)
-let g:SuperTabMappingForward = '<C-Space>'
-
 " CtrlP
 " -----
 " CtrlP Plugin is invoked with ctrl-e
@@ -269,6 +263,13 @@ let g:easy_align_delimiters['d'] = {
   \ 'pattern': ' \ze\S\+\s*[;=]',
   \ 'left_margin': 0, 'right_margin': 0
   \ }
+
+" Supertab
+" --------
+
+" Use Ctrl-Space instead of the default tab
+let g:SuperTabMappingForward = '<c-space>'
+let g:SuperTabMappingBackward = '<s-c-space>'
 
 " }}}
 " (G)UI Settings {{{

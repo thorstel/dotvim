@@ -25,3 +25,6 @@
 [submodule "bundle/EasyAlign"]
 	path = bundle/EasyAlign
 	url = https://github.com/junegunn/vim-easy-align.git
+[submodule "bundle/supertab"]
+	path = bundle/supertab
+	url = https://github.com/ervandew/supertab.git

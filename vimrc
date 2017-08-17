@@ -111,8 +111,8 @@ set breakindent
 set listchars=tab:»\ ,trail:· ",eol:¬
 set list
 
-" highlight search results
-set hlsearch
+" do not highlight search results by default
+set nohlsearch
 " interactive search while typing
 set incsearch
 " usually use ignorecase while search except when capital letters are used
@@ -433,8 +433,8 @@ nnoremap <silent> gt :GtagsCursor<CR>
 nnoremap <silent> <C-j> :cn<CR>
 nnoremap <silent> <C-k> :cp<CR>
 
-" turn off hlsearch
-noremap <silent> <leader>h :noh<CR>
+" toggle hlsearch
+noremap <silent> <leader>h :set hlsearch!<CR>
 
 " toggle spell checking
 noremap <silent> <leader>s :set spell! <CR>

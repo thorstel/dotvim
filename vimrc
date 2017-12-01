@@ -26,9 +26,6 @@ let g:tex_flavor='latex'
 " set errorformat so it can differ between real errors and warnings
 let &errorformat="%f:%l:%c: %t%*[^:]:%m,%f:%l: %t%*[^:]:%m," . &errorformat
 
-" self-explanatory - prefer unix over dos over mac formats
-set fileformats=unix,dos,mac
-
 " use unicode
 set encoding=utf-8
 

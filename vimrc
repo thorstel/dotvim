@@ -105,7 +105,7 @@ set shiftround
 set breakindent
 
 " show tabs and trailing spaces
-set listchars=tab:»\ ,trail:· ",eol:¬
+set listchars=tab:»\ ,trail:·,precedes:←,extends:→ ",eol:¬
 set list
 
 " do not highlight search results by default
@@ -205,15 +205,13 @@ augroup END
 " }}}
 " PlugIn Settings {{{
 
-" CScope + GTAGS
-" --------------
+" GTAGS-CScope
+" ------------
 
-" Enable automatic (incremental!) updates of the GTAGS database.
-let g:Gtags_Auto_Update=1
-
-" Setup the CScope - GTAGS connection.
-let g:GtagsCscope_Auto_Load=1
+let g:GtagsCscope_Absolute_Path=1
+let g:GtagsCscope_Auto_Load=0
 let g:GtagsCscope_Auto_Map=0
+let g:GtagsCscope_Auto_Update_Gtags=1
 let g:GtagsCscope_Quiet=1
 
 " Display CScope output in quickfix window.

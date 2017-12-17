@@ -34,3 +34,6 @@
 [submodule "bundle/tlib"]
 	path = bundle/tlib
 	url = https://github.com/tomtom/tlib_vim.git
+[submodule "bundle/vim-gtags-cscope"]
+	path = bundle/vim-gtags-cscope
+	url = https://github.com/thorstel/vim-gtags-cscope.git

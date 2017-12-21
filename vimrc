@@ -72,7 +72,7 @@ set shellslash
 set textwidth=72
 
 " always wrap text in comments
-set formatoptions=crq
+set formatoptions=cjrq
 
 " show current position of the cursor
 set ruler

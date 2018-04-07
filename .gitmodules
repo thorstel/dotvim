@@ -1,39 +1,33 @@
 [submodule "bundle/ctrlp"]
-	path = bundle/ctrlp
+	path = pack/bundle/start/ctrlp
 	url = https://github.com/kien/ctrlp.vim.git
 [submodule "bundle/nerdcommenter"]
-	path = bundle/nerdcommenter
+	path = pack/bundle/start/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter.git
 [submodule "bundle/textobj-word-column"]
-	path = bundle/textobj-word-column
+	path = pack/bundle/start/textobj-word-column
 	url = https://github.com/coderifous/textobj-word-column.vim.git
-[submodule "bundle/vim-scala"]
-	path = bundle/vim-scala
-	url = https://github.com/derekwyatt/vim-scala.git
 [submodule "bundle/lightline"]
-	path = bundle/lightline
+	path = pack/bundle/start/lightline
 	url = https://github.com/itchyny/lightline.vim.git
-[submodule "bundle/ReplaceWithRegister"]
-	path = bundle/ReplaceWithRegister
-	url = https://github.com/vim-scripts/ReplaceWithRegister.git
 [submodule "bundle/gruvbox"]
-	path = bundle/gruvbox
+	path = pack/bundle/start/gruvbox
 	url = https://github.com/morhetz/gruvbox
 [submodule "bundle/EasyAlign"]
-	path = bundle/EasyAlign
+	path = pack/bundle/start/EasyAlign
 	url = https://github.com/junegunn/vim-easy-align.git
 [submodule "bundle/supertab"]
-	path = bundle/supertab
+	path = pack/bundle/start/supertab
 	url = https://github.com/ervandew/supertab.git
 [submodule "bundle/snipmate"]
-	path = bundle/snipmate
+	path = pack/bundle/start/snipmate
 	url = https://github.com/garbas/vim-snipmate.git
 [submodule "bundle/mw-utils"]
-	path = bundle/mw-utils
+	path = pack/bundle/start/mw-utils
 	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
 [submodule "bundle/tlib"]
-	path = bundle/tlib
+	path = pack/bundle/start/tlib
 	url = https://github.com/tomtom/tlib_vim.git
 [submodule "bundle/vim-gtags-cscope"]
-	path = bundle/vim-gtags-cscope
+	path = pack/bundle/start/vim-gtags-cscope
 	url = https://github.com/thorstel/vim-gtags-cscope.git

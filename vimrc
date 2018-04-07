@@ -1,8 +1,5 @@
 set nocompatible
 
-" enable Pathogen PlugIn-Manager
-call pathogen#infect()
-
 " General Settings {{{
 
 filetype indent plugin on

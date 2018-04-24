@@ -24,7 +24,7 @@ set incsearch
 set laststatus=1
 set lazyredraw
 set list
-set listchars=tab:»\ ,trail:·,precedes:←,extends:→ ",eol:¬
+set listchars=tab:»\ ,space:·,trail:·,nbsp:•,precedes:←,extends:→,eol:¶ "eol:¬
 set mouse=a
 set mousehide
 set nohlsearch
@@ -64,7 +64,7 @@ let mapleader             = ','
 if isdirectory(expand('~/.vimtmp'))
     set directory=~/.vimtmp
 elseif isdirectory(expand('~/_vimtmp'))
-  set directory=~/_vimtmp
+    set directory=~/_vimtmp
 else
     set directory=
     set noswapfile
@@ -267,9 +267,9 @@ noremap <silent> <leader>d :bd<CR>
 
 " switch between absolute and relative line numbers (only vim 7.3 and after)
 if version >= 703
-  nnoremap <silent> <leader>l :call <SID>SwitchLineNumbers()<CR>
+    nnoremap <silent> <leader>l :call <SID>SwitchLineNumbers()<CR>
 else
-  nnoremap <silent> <leader>l :set number!<CR>
+    nnoremap <silent> <leader>l :set number!<CR>
 endif
 
 " format text with Q instead of gq

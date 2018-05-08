@@ -127,7 +127,7 @@ let g:SuperTabMappingBackward = '<s-c-space>'
 " (G)UI Settings {{{
 
 " colorscheme setup
-let s:thorstel_lightcolor = "github"
+let s:thorstel_lightcolor = "thorstel"
 let s:thorstel_darkcolor  = "gruvbox"
 let s:thorstel_darkbg     = 1
 

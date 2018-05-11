@@ -250,6 +250,7 @@ syn match cOperator	"[][]"
 
 " custom typedefs
 syn match cType "\w\+_t\ze\W"
+syn match cType "\w\+_e\ze\W"
 
 " Preprocs
 syn keyword cDefined defined contained containedin=cDefine

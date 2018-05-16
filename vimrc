@@ -138,10 +138,10 @@ set background=dark
 execute "colorscheme " . s:thorstel_darkcolor
 
 if has("gui_running")
-    set columns=90
+    set columns=160
     set guicursor=n:blinkon0
     set guioptions=acm
-    set lines=56
+    set lines=40
     set showtabline=1
 
     if has("gui_win32")

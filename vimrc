@@ -140,7 +140,7 @@ execute "colorscheme " . s:thorstel_darkcolor
 if has("gui_running")
     set columns=160
     set guicursor=n:blinkon0
-    set guioptions=acm
+    set guioptions=acem
     set lines=40
     set showtabline=1
 

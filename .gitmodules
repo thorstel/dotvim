@@ -31,3 +31,6 @@
 [submodule "bundle/vim-gtags-cscope"]
 	path = pack/bundle/start/vim-gtags-cscope
 	url = https://github.com/thorstel/vim-gtags-cscope.git
+[submodule "pack/bundle/start/vim-ps1"]
+	path = pack/bundle/start/vim-ps1
+	url = https://github.com/PProvost/vim-ps1.git

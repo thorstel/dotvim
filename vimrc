@@ -24,7 +24,7 @@ set incsearch
 set laststatus=1
 set lazyredraw
 set list
-set listchars=tab:→—,space:·,trail:·,nbsp:•,precedes:←,extends:→,eol:¶ "eol:¬
+set listchars=tab:→\ ,space:·,trail:·,nbsp:•,precedes:←,extends:→,eol:¶ "eol:¬
 set mouse=a
 set mousehide
 set nohlsearch

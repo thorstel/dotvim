@@ -1,6 +1,7 @@
-spell
+.DS_Store
 .VimballRecord
 .netrwhist
 .netrwhist
-.DS_Store
+pack/local/
+spell
 tags

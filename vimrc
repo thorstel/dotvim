@@ -236,14 +236,6 @@ inoremap <C-BS> <C-w>
 nmap <tab> <Plug>(EasyAlign)
 xmap <tab> <Plug>(EasyAlign)
 
-" center around line with current search result
-nnoremap n nzz
-nnoremap N Nzz
-nnoremap * *zz
-nnoremap # #zz
-nnoremap g* g*zz
-nnoremap g# g#zz
-
 " always open file under cursor - even if it does not exist
 map <silent> gf :e <cfile><CR>
 

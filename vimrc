@@ -146,6 +146,7 @@ if has("gui_running")
 
     if has("gui_win32")
         set guifont=Consolas:h11
+        set linespace=0
     else
         set guifont="Deja Vu Sans Mono 10"
     endif

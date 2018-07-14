@@ -34,3 +34,6 @@
 [submodule "pack/bundle/start/vim-ps1"]
 	path = pack/bundle/start/vim-ps1
 	url = https://github.com/PProvost/vim-ps1.git
+[submodule "pack/bundle/start/jellybeans"]
+	path = pack/bundle/start/jellybeans
+	url = https://github.com/nanotech/jellybeans.vim.git

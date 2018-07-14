@@ -107,7 +107,7 @@ let g:ctrlp_cmd               = 'CtrlP'
 let g:ctrlp_working_path_mode = 1
 
 " Lightline
-let g:lightline = { 'colorscheme' : 'gruvbox' }
+let g:lightline = { 'colorscheme' : 'jellybeans' }
 
 " Easy-Align
 if !exists('g:easy_align_delimiters')
@@ -126,13 +126,21 @@ let g:SuperTabMappingBackward = '<s-c-space>'
 " }}}
 " (G)UI Settings {{{
 
-" colorscheme setup
-let s:thorstel_lightcolor = "thorstel"
-let s:thorstel_darkcolor  = "gruvbox"
-let s:thorstel_darkbg     = 1
-
+" Gruvbox
 let g:gruvbox_contrast_dark  = "hard"
 let g:gruvbox_contrast_light = "hard"
+
+" Jellybeans
+let g:jellybeans_use_gui_italics = 0
+let g:jellybeans_overrides = {
+            \ 'SpecialKey': { 'guibg': '' },
+            \ 'NonText':    { 'guifg': '444444' },
+            \}
+
+" colorscheme setup
+let s:thorstel_lightcolor = "thorstel"
+let s:thorstel_darkcolor  = "jellybeans"
+let s:thorstel_darkbg     = 1
 
 set background=dark
 execute "colorscheme " . s:thorstel_darkcolor

@@ -137,15 +137,16 @@ let g:jellybeans_overrides = {
             \ 'NonText':    { 'guifg': '444444' },
             \}
 
+" colorscheme setup
+let g:wincmd_use_legacy_colors = 1
+let s:thorstel_lightcolor      = "thorstel"
+let s:thorstel_darkcolor       = "wincmd"
+let s:thorstel_darkbg          = 1
+
+set background=dark
+execute "colorscheme " . s:thorstel_darkcolor
+
 if has("gui_running")
-    " colorscheme setup
-    let s:thorstel_lightcolor = "thorstel"
-    let s:thorstel_darkcolor  = "jellybeans"
-    let s:thorstel_darkbg     = 1
-
-    set background=dark
-    execute "colorscheme " . s:thorstel_darkcolor
-
     set columns=160
     set guicursor=n:blinkon0
     set guioptions=acem

@@ -48,7 +48,7 @@ if exists("g:wincmd_use_legacy_colors") && g:wincmd_use_legacy_colors
     hi Pmenu        ctermfg=White        gui=NONE guifg=#FFFFFF ctermbg=DarkGray  guibg=#808080
     hi PmenuSel     ctermfg=Yellow       gui=NONE guifg=#FFFF00 ctermbg=Black     guibg=#000000
     hi PmenuSBar                                                ctermbg=LightGray guibg=#C0C0C0
-    hi PmenuThumb                                               ctermbg=White     guibg=#FFFFFF
+    hi PmenuThumb                                               ctermbg=Black     guibg=#000000
 
     hi Folded       ctermfg=White        gui=NONE guifg=#FFFFFF ctermbg=DarkGrey  guibg=#808080
     hi FoldColumn   ctermfg=White        gui=NONE guifg=#FFFFFF ctermbg=DarkGrey  guibg=#808080
@@ -66,6 +66,8 @@ if exists("g:wincmd_use_legacy_colors") && g:wincmd_use_legacy_colors
 
     hi LineNr       ctermfg=DarkYellow   gui=NONE guifg=#808000
     hi CursorLineNr ctermfg=Yellow       gui=BOLD guifg=#FFFF00
+
+    hi Visual       cterm=reverse        gui=NONE guifg=#000000                   guibg=#C0C0C0
 else
     hi Normal       ctermfg=LightGray    gui=NONE guifg=#CCCCCC ctermbg=Black     guibg=#0C0C0C
     hi Search       ctermfg=Black        gui=NONE guifg=#0C0C0C ctermbg=Yellow    guibg=#F9F1A5
@@ -75,7 +77,7 @@ else
     hi Pmenu        ctermfg=White        gui=NONE guifg=#F1F1F1 ctermbg=DarkGray  guibg=#767676
     hi PmenuSel     ctermfg=Yellow       gui=NONE guifg=#F9F1A5 ctermbg=Black     guibg=#0C0C0C
     hi PmenuSBar                                                ctermbg=LightGray guibg=#CCCCCC
-    hi PmenuThumb                                               ctermbg=White     guibg=#F1F1F1
+    hi PmenuThumb                                               ctermbg=Black     guibg=#0C0C0C
 
     hi Folded       ctermfg=White        gui=NONE guifg=#F1F1F1 ctermbg=DarkGrey  guibg=#767676
     hi FoldColumn   ctermfg=White        gui=NONE guifg=#F1F1F1 ctermbg=DarkGrey  guibg=#767676
@@ -93,6 +95,8 @@ else
 
     hi LineNr       ctermfg=DarkYellow   gui=NONE guifg=#C19C00
     hi CursorLineNr ctermfg=Yellow       gui=BOLD guifg=#F9F1A5
+
+    hi Visual       cterm=reverse        gui=NONE guifg=#0C0C0C                   guibg=#CCCCCC
 endif
 
 hi link Function         Identifier

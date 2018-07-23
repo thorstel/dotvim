@@ -107,7 +107,7 @@ let g:ctrlp_cmd               = 'CtrlP'
 let g:ctrlp_working_path_mode = 1
 
 " Lightline
-let g:lightline = { 'colorscheme' : 'jellybeans' }
+let g:lightline = { 'colorscheme' : 'landscape' }
 
 " Easy-Align
 if !exists('g:easy_align_delimiters')

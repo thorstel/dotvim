@@ -1,10 +1,11 @@
-" ----------------------------------------------------------------------
+" ======================================================================
 " File:        wincmd.vim
+" Author:      thorstel
+" Created:     2018-07-22
+" License:     MIT
 " Description: Colorscheme based on the default colors of the Windows
 "              command prompt.
-" Author:      thorstel 
-" Created:     2018-07-22
-" ----------------------------------------------------------------------
+" ======================================================================
 "
 " The following palette is used for the colorscheme. With the option
 " g:wincmd_use_legacy_colors the legacy colors will be used instead of
@@ -40,63 +41,55 @@ endif
 let colors_name = "wincmd"
 
 if exists("g:wincmd_use_legacy_colors") && g:wincmd_use_legacy_colors
-    hi Normal       ctermfg=LightGray    gui=NONE guifg=#C0C0C0 ctermbg=Black     guibg=#000000
-    hi Search       ctermfg=Black        gui=NONE guifg=#000000 ctermbg=Yellow    guibg=#FFFF00
-    hi NonText      ctermfg=DarkBlue     gui=NONE guifg=#000080
-    hi SpecialKey   ctermfg=DarkBlue     gui=NONE guifg=#000080
+    hi Normal       cterm=none    ctermfg=LightGray    gui=none guifg=#C0C0C0 ctermbg=Black     guibg=#000000
+    hi Visual       cterm=reverse                      gui=none guifg=#000000                   guibg=#C0C0C0
+    hi Search       cterm=none    ctermfg=Black        gui=none guifg=#000000 ctermbg=Yellow    guibg=#FFFF00
+    hi LineNr       cterm=none    ctermfg=DarkYellow   gui=none guifg=#808000
+    hi CursorLineNr cterm=none    ctermfg=Yellow       gui=bold guifg=#FFFF00
+    hi Folded       cterm=none    ctermfg=White        gui=none guifg=#FFFFFF ctermbg=DarkGrey  guibg=#808080
+    hi FoldColumn   cterm=none    ctermfg=White        gui=none guifg=#FFFFFF ctermbg=DarkGrey  guibg=#808080
+    hi Error        cterm=none    ctermfg=White        gui=bold guifg=#FFFFFF ctermbg=LightRed  guibg=#FF0000
+    hi Todo         cterm=none    ctermfg=LightRed     gui=bold guifg=#FF0000 ctermbg=Yellow    guibg=#FFFF00
+    hi NonText      cterm=none    ctermfg=DarkBlue     gui=none guifg=#000080
+    hi SpecialKey   cterm=none    ctermfg=DarkBlue     gui=none guifg=#000080
 
-    hi Pmenu        ctermfg=White        gui=NONE guifg=#FFFFFF ctermbg=DarkGray  guibg=#808080
-    hi PmenuSel     ctermfg=Yellow       gui=NONE guifg=#FFFF00 ctermbg=Black     guibg=#000000
-    hi PmenuSBar                                                ctermbg=LightGray guibg=#C0C0C0
-    hi PmenuThumb                                               ctermbg=Black     guibg=#000000
+    hi Pmenu        cterm=none    ctermfg=White        gui=none guifg=#FFFFFF ctermbg=DarkGray  guibg=#808080
+    hi PmenuSel     cterm=none    ctermfg=Yellow       gui=none guifg=#FFFF00 ctermbg=Black     guibg=#000000
+    hi PmenuSBar    cterm=none                                                ctermbg=LightGray guibg=#C0C0C0
+    hi PmenuThumb   cterm=none                                                ctermbg=Black     guibg=#000000
 
-    hi Folded       ctermfg=White        gui=NONE guifg=#FFFFFF ctermbg=DarkGrey  guibg=#808080
-    hi FoldColumn   ctermfg=White        gui=NONE guifg=#FFFFFF ctermbg=DarkGrey  guibg=#808080
-
-    hi Error        ctermfg=White        gui=BOLD guifg=#FFFFFF ctermbg=LightRed  guibg=#FF0000
-    hi Todo         ctermfg=LightRed     gui=BOLD guifg=#FF0000 ctermbg=Yellow    guibg=#FFFF00
-
-    hi Comment      ctermfg=DarkGray     gui=NONE guifg=#808080
-    hi Statement    ctermfg=Yellow       gui=NONE guifg=#FFFF00
-    hi Constant     ctermfg=LightMagenta gui=NONE guifg=#FF00FF
-    hi Identifier   ctermfg=LightCyan    gui=NONE guifg=#00FFFF
-    hi Type         ctermfg=LightGreen   gui=NONE guifg=#00FF00
-    hi Special      ctermfg=LightRed     gui=NONE guifg=#FF0000
-    hi PreProc      ctermfg=LightBlue    gui=NONE guifg=#0000FF
-
-    hi LineNr       ctermfg=DarkYellow   gui=NONE guifg=#808000
-    hi CursorLineNr ctermfg=Yellow       gui=BOLD guifg=#FFFF00
-
-    hi Visual       cterm=reverse        gui=NONE guifg=#000000                   guibg=#C0C0C0
+    hi Comment      cterm=none    ctermfg=DarkGray     gui=none guifg=#808080
+    hi Statement    cterm=none    ctermfg=Yellow       gui=none guifg=#FFFF00
+    hi Constant     cterm=none    ctermfg=LightMagenta gui=none guifg=#FF00FF
+    hi Identifier   cterm=none    ctermfg=LightCyan    gui=none guifg=#00FFFF
+    hi Type         cterm=none    ctermfg=LightGreen   gui=none guifg=#00FF00
+    hi Special      cterm=none    ctermfg=LightRed     gui=none guifg=#FF0000
+    hi PreProc      cterm=none    ctermfg=LightBlue    gui=none guifg=#0000FF
 else
-    hi Normal       ctermfg=LightGray    gui=NONE guifg=#CCCCCC ctermbg=Black     guibg=#0C0C0C
-    hi Search       ctermfg=Black        gui=NONE guifg=#0C0C0C ctermbg=Yellow    guibg=#F9F1A5
-    hi NonText      ctermfg=DarkBlue     gui=NONE guifg=#0037DA
-    hi SpecialKey   ctermfg=DarkBlue     gui=NONE guifg=#0037DA
+    hi Normal       cterm=none    ctermfg=LightGray    gui=none guifg=#CCCCCC ctermbg=Black     guibg=#0C0C0C
+    hi Visual       cterm=reverse                      gui=none guifg=#0C0C0C                   guibg=#CCCCCC
+    hi Search       cterm=none    ctermfg=Black        gui=none guifg=#0C0C0C ctermbg=Yellow    guibg=#F9F1A5
+    hi LineNr       cterm=none    ctermfg=DarkYellow   gui=none guifg=#C19C00
+    hi CursorLineNr cterm=none    ctermfg=Yellow       gui=bold guifg=#F9F1A5
+    hi Folded       cterm=none    ctermfg=White        gui=none guifg=#F1F1F1 ctermbg=DarkGrey  guibg=#767676
+    hi FoldColumn   cterm=none    ctermfg=White        gui=none guifg=#F1F1F1 ctermbg=DarkGrey  guibg=#767676
+    hi Error        cterm=none    ctermfg=White        gui=bold guifg=#F1F1F1 ctermbg=LightRed  guibg=#E74856
+    hi Todo         cterm=none    ctermfg=LightRed     gui=bold guifg=#E74856 ctermbg=Yellow    guibg=#F9F1A5
+    hi NonText      cterm=none    ctermfg=DarkBlue     gui=none guifg=#0037DA
+    hi SpecialKey   cterm=none    ctermfg=DarkBlue     gui=none guifg=#0037DA
 
-    hi Pmenu        ctermfg=White        gui=NONE guifg=#F1F1F1 ctermbg=DarkGray  guibg=#767676
-    hi PmenuSel     ctermfg=Yellow       gui=NONE guifg=#F9F1A5 ctermbg=Black     guibg=#0C0C0C
-    hi PmenuSBar                                                ctermbg=LightGray guibg=#CCCCCC
-    hi PmenuThumb                                               ctermbg=Black     guibg=#0C0C0C
+    hi Pmenu        cterm=none    ctermfg=White        gui=none guifg=#F1F1F1 ctermbg=DarkGray  guibg=#767676
+    hi PmenuSel     cterm=none    ctermfg=Yellow       gui=none guifg=#F9F1A5 ctermbg=Black     guibg=#0C0C0C
+    hi PmenuSBar    cterm=none                                                ctermbg=LightGray guibg=#CCCCCC
+    hi PmenuThumb   cterm=none                                                ctermbg=Black     guibg=#0C0C0C
 
-    hi Folded       ctermfg=White        gui=NONE guifg=#F1F1F1 ctermbg=DarkGrey  guibg=#767676
-    hi FoldColumn   ctermfg=White        gui=NONE guifg=#F1F1F1 ctermbg=DarkGrey  guibg=#767676
-
-    hi Error        ctermfg=White        gui=BOLD guifg=#F1F1F1 ctermbg=LightRed  guibg=#E74856
-    hi Todo         ctermfg=LightRed     gui=BOLD guifg=#E74856 ctermbg=Yellow    guibg=#F9F1A5
-
-    hi Comment      ctermfg=DarkGray     gui=NONE guifg=#767676
-    hi Statement    ctermfg=Yellow       gui=NONE guifg=#F9F1A5
-    hi Constant     ctermfg=LightMagenta gui=NONE guifg=#B4009E
-    hi Identifier   ctermfg=LightCyan    gui=NONE guifg=#61D6D6
-    hi Type         ctermfg=LightGreen   gui=NONE guifg=#16C60C
-    hi Special      ctermfg=LightRed     gui=NONE guifg=#E74856
-    hi PreProc      ctermfg=LightBlue    gui=NONE guifg=#3878FF
-
-    hi LineNr       ctermfg=DarkYellow   gui=NONE guifg=#C19C00
-    hi CursorLineNr ctermfg=Yellow       gui=BOLD guifg=#F9F1A5
-
-    hi Visual       cterm=reverse        gui=NONE guifg=#0C0C0C                   guibg=#CCCCCC
+    hi Comment      cterm=none    ctermfg=DarkGray     gui=none guifg=#767676
+    hi Statement    cterm=none    ctermfg=Yellow       gui=none guifg=#F9F1A5
+    hi Constant     cterm=none    ctermfg=LightMagenta gui=none guifg=#B4009E
+    hi Identifier   cterm=none    ctermfg=LightCyan    gui=none guifg=#61D6D6
+    hi Type         cterm=none    ctermfg=LightGreen   gui=none guifg=#16C60C
+    hi Special      cterm=none    ctermfg=LightRed     gui=none guifg=#E74856
+    hi PreProc      cterm=none    ctermfg=LightBlue    gui=none guifg=#3878FF
 endif
 
 hi link Function         Identifier
@@ -132,3 +125,4 @@ hi link cBadContinuation Error
 hi link cSpecial         SpecialChar
 hi link cFormat          cSpecial
 hi link cString          String
+

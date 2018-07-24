@@ -53,6 +53,11 @@ if exists("g:wincmd_use_legacy_colors") && g:wincmd_use_legacy_colors
     hi NonText      cterm=none    ctermfg=DarkBlue     gui=none guifg=#000080
     hi SpecialKey   cterm=none    ctermfg=DarkBlue     gui=none guifg=#000080
 
+    hi DiffAdd      cterm=none    ctermfg=White        gui=none guifg=#FFFFFF ctermbg=DarkGreen guibg=#008000
+    hi DiffDelete   cterm=none    ctermfg=Black        gui=none guifg=#000000 ctermbg=DarkRed   guibg=#800000
+    hi DiffChange   cterm=none    ctermfg=Black        gui=none guifg=#000000 ctermbg=LightGray guibg=#C0C0C0
+    hi DiffText     cterm=none    ctermfg=Black        gui=none guifg=#000000 ctermbg=Yellow    guibg=#FFFF00
+
     hi Pmenu        cterm=none    ctermfg=White        gui=none guifg=#FFFFFF ctermbg=DarkGray  guibg=#808080
     hi PmenuSel     cterm=none    ctermfg=Yellow       gui=none guifg=#FFFF00 ctermbg=Black     guibg=#000000
     hi PmenuSBar    cterm=none                                                ctermbg=LightGray guibg=#C0C0C0
@@ -77,6 +82,11 @@ else
     hi Todo         cterm=none    ctermfg=LightRed     gui=bold guifg=#E74856 ctermbg=Yellow    guibg=#F9F1A5
     hi NonText      cterm=none    ctermfg=DarkBlue     gui=none guifg=#0037DA
     hi SpecialKey   cterm=none    ctermfg=DarkBlue     gui=none guifg=#0037DA
+
+    hi DiffAdd      cterm=none    ctermfg=White        gui=none guifg=#F1F1F1 ctermbg=DarkGreen guibg=#13A10E
+    hi DiffDelete   cterm=none    ctermfg=Black        gui=none guifg=#0C0C0C ctermbg=DarkRed   guibg=#C50F1F
+    hi DiffChange   cterm=none    ctermfg=Black        gui=none guifg=#0C0C0C ctermbg=LightGray guibg=#CCCCCC
+    hi DiffText     cterm=none    ctermfg=Black        gui=none guifg=#0C0C0C ctermbg=Yellow    guibg=#F9F1A5
 
     hi Pmenu        cterm=none    ctermfg=White        gui=none guifg=#F1F1F1 ctermbg=DarkGray  guibg=#767676
     hi PmenuSel     cterm=none    ctermfg=Yellow       gui=none guifg=#F9F1A5 ctermbg=Black     guibg=#0C0C0C

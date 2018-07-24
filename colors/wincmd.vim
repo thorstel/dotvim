@@ -64,7 +64,7 @@ if exists("g:wincmd_use_legacy_colors") && g:wincmd_use_legacy_colors
     hi Identifier   cterm=none    ctermfg=LightCyan    gui=none guifg=#00FFFF
     hi Type         cterm=none    ctermfg=LightGreen   gui=none guifg=#00FF00
     hi Special      cterm=none    ctermfg=LightRed     gui=none guifg=#FF0000
-    hi PreProc      cterm=none    ctermfg=LightBlue    gui=none guifg=#0000FF
+    hi PreProc      cterm=none    ctermfg=DarkCyan     gui=none guifg=#008080
 else
     hi Normal       cterm=none    ctermfg=LightGray    gui=none guifg=#CCCCCC ctermbg=Black     guibg=#0C0C0C
     hi Visual       cterm=reverse                      gui=none guifg=#0C0C0C                   guibg=#CCCCCC
@@ -89,7 +89,7 @@ else
     hi Identifier   cterm=none    ctermfg=LightCyan    gui=none guifg=#61D6D6
     hi Type         cterm=none    ctermfg=LightGreen   gui=none guifg=#16C60C
     hi Special      cterm=none    ctermfg=LightRed     gui=none guifg=#E74856
-    hi PreProc      cterm=none    ctermfg=LightBlue    gui=none guifg=#3878FF
+    hi PreProc      cterm=none    ctermfg=DarkCyan     gui=none guifg=#3A96DD
 endif
 
 hi link Function         Identifier

@@ -2,7 +2,7 @@
 " File:        wincmd.vim
 " Author:      thorstel
 " Created:     2018-07-22
-" License:     MIT
+" License:     MIT License
 " Description: Colorscheme based on the default colors of the Windows
 "              command prompt.
 " ======================================================================
@@ -41,27 +41,28 @@ endif
 let colors_name = "wincmd"
 
 if exists("g:wincmd_use_legacy_colors") && g:wincmd_use_legacy_colors
-    hi Normal       cterm=none    ctermfg=LightGray    gui=none guifg=#C0C0C0 ctermbg=Black     guibg=#000000
-    hi Visual       cterm=reverse                      gui=none guifg=#000000                   guibg=#C0C0C0
-    hi Search       cterm=none    ctermfg=Black        gui=none guifg=#000000 ctermbg=Yellow    guibg=#FFFF00
+    hi Normal       cterm=none    ctermfg=LightGray    gui=none guifg=#C0C0C0 ctermbg=Black      guibg=#000000
+    hi Cursor       cterm=bold    ctermfg=Black        gui=bold guifg=#000000 ctermbg=LightGreen guibg=#00FF00
+    hi Visual       cterm=reverse                      gui=none guifg=#000000                    guibg=#C0C0C0
+    hi Search       cterm=none    ctermfg=Black        gui=none guifg=#000000 ctermbg=Yellow     guibg=#FFFF00
     hi LineNr       cterm=none    ctermfg=DarkYellow   gui=none guifg=#808000
     hi CursorLineNr cterm=none    ctermfg=Yellow       gui=bold guifg=#FFFF00
-    hi Folded       cterm=none    ctermfg=White        gui=none guifg=#FFFFFF ctermbg=DarkGrey  guibg=#808080
-    hi FoldColumn   cterm=none    ctermfg=White        gui=none guifg=#FFFFFF ctermbg=DarkGrey  guibg=#808080
-    hi Error        cterm=none    ctermfg=White        gui=bold guifg=#FFFFFF ctermbg=LightRed  guibg=#FF0000
-    hi Todo         cterm=none    ctermfg=LightRed     gui=bold guifg=#FF0000 ctermbg=Yellow    guibg=#FFFF00
+    hi Folded       cterm=none    ctermfg=White        gui=none guifg=#FFFFFF ctermbg=DarkGrey   guibg=#808080
+    hi FoldColumn   cterm=none    ctermfg=White        gui=none guifg=#FFFFFF ctermbg=DarkGrey   guibg=#808080
+    hi Error        cterm=none    ctermfg=White        gui=bold guifg=#FFFFFF ctermbg=LightRed   guibg=#FF0000
+    hi Todo         cterm=none    ctermfg=LightRed     gui=bold guifg=#FF0000 ctermbg=Yellow     guibg=#FFFF00
     hi NonText      cterm=none    ctermfg=DarkBlue     gui=none guifg=#000080
     hi SpecialKey   cterm=none    ctermfg=DarkBlue     gui=none guifg=#000080
 
-    hi DiffAdd      cterm=none    ctermfg=White        gui=none guifg=#FFFFFF ctermbg=DarkGreen guibg=#008000
-    hi DiffDelete   cterm=none    ctermfg=Black        gui=none guifg=#000000 ctermbg=DarkRed   guibg=#800000
-    hi DiffChange   cterm=none    ctermfg=Black        gui=none guifg=#000000 ctermbg=LightGray guibg=#C0C0C0
-    hi DiffText     cterm=none    ctermfg=Black        gui=none guifg=#000000 ctermbg=Yellow    guibg=#FFFF00
+    hi DiffAdd      cterm=none    ctermfg=White        gui=none guifg=#FFFFFF ctermbg=DarkGreen  guibg=#008000
+    hi DiffDelete   cterm=none    ctermfg=Black        gui=none guifg=#000000 ctermbg=DarkRed    guibg=#800000
+    hi DiffChange   cterm=none    ctermfg=Black        gui=none guifg=#000000 ctermbg=LightGray  guibg=#C0C0C0
+    hi DiffText     cterm=none    ctermfg=Black        gui=none guifg=#000000 ctermbg=Yellow     guibg=#FFFF00
 
-    hi Pmenu        cterm=none    ctermfg=White        gui=none guifg=#FFFFFF ctermbg=DarkGray  guibg=#808080
-    hi PmenuSel     cterm=none    ctermfg=Yellow       gui=none guifg=#FFFF00 ctermbg=Black     guibg=#000000
-    hi PmenuSBar    cterm=none                                                ctermbg=LightGray guibg=#C0C0C0
-    hi PmenuThumb   cterm=none                                                ctermbg=Black     guibg=#000000
+    hi Pmenu        cterm=none    ctermfg=White        gui=none guifg=#FFFFFF ctermbg=DarkGray   guibg=#808080
+    hi PmenuSel     cterm=none    ctermfg=Yellow       gui=none guifg=#FFFF00 ctermbg=Black      guibg=#000000
+    hi PmenuSBar    cterm=none                                                ctermbg=LightGray  guibg=#C0C0C0
+    hi PmenuThumb   cterm=none                                                ctermbg=Black      guibg=#000000
 
     hi Comment      cterm=none    ctermfg=DarkGray     gui=none guifg=#808080
     hi Statement    cterm=none    ctermfg=Yellow       gui=none guifg=#FFFF00
@@ -71,27 +72,28 @@ if exists("g:wincmd_use_legacy_colors") && g:wincmd_use_legacy_colors
     hi Special      cterm=none    ctermfg=LightRed     gui=none guifg=#FF0000
     hi PreProc      cterm=none    ctermfg=DarkCyan     gui=none guifg=#008080
 else
-    hi Normal       cterm=none    ctermfg=LightGray    gui=none guifg=#CCCCCC ctermbg=Black     guibg=#0C0C0C
-    hi Visual       cterm=reverse                      gui=none guifg=#0C0C0C                   guibg=#CCCCCC
-    hi Search       cterm=none    ctermfg=Black        gui=none guifg=#0C0C0C ctermbg=Yellow    guibg=#F9F1A5
+    hi Normal       cterm=none    ctermfg=LightGray    gui=none guifg=#CCCCCC ctermbg=Black      guibg=#0C0C0C
+    hi Cursor       cterm=bold    ctermfg=Black        gui=bold guifg=#0C0C0C ctermbg=LightGreen guibg=#16C60C
+    hi Visual       cterm=reverse                      gui=none guifg=#0C0C0C                    guibg=#CCCCCC
+    hi Search       cterm=none    ctermfg=Black        gui=none guifg=#0C0C0C ctermbg=Yellow     guibg=#F9F1A5
     hi LineNr       cterm=none    ctermfg=DarkYellow   gui=none guifg=#C19C00
     hi CursorLineNr cterm=none    ctermfg=Yellow       gui=bold guifg=#F9F1A5
-    hi Folded       cterm=none    ctermfg=White        gui=none guifg=#F1F1F1 ctermbg=DarkGrey  guibg=#767676
-    hi FoldColumn   cterm=none    ctermfg=White        gui=none guifg=#F1F1F1 ctermbg=DarkGrey  guibg=#767676
-    hi Error        cterm=none    ctermfg=White        gui=bold guifg=#F1F1F1 ctermbg=LightRed  guibg=#E74856
-    hi Todo         cterm=none    ctermfg=LightRed     gui=bold guifg=#E74856 ctermbg=Yellow    guibg=#F9F1A5
+    hi Folded       cterm=none    ctermfg=White        gui=none guifg=#F1F1F1 ctermbg=DarkGrey   guibg=#767676
+    hi FoldColumn   cterm=none    ctermfg=White        gui=none guifg=#F1F1F1 ctermbg=DarkGrey   guibg=#767676
+    hi Error        cterm=none    ctermfg=White        gui=bold guifg=#F1F1F1 ctermbg=LightRed   guibg=#E74856
+    hi Todo         cterm=none    ctermfg=LightRed     gui=bold guifg=#E74856 ctermbg=Yellow     guibg=#F9F1A5
     hi NonText      cterm=none    ctermfg=DarkBlue     gui=none guifg=#0037DA
     hi SpecialKey   cterm=none    ctermfg=DarkBlue     gui=none guifg=#0037DA
 
-    hi DiffAdd      cterm=none    ctermfg=White        gui=none guifg=#F1F1F1 ctermbg=DarkGreen guibg=#13A10E
-    hi DiffDelete   cterm=none    ctermfg=Black        gui=none guifg=#0C0C0C ctermbg=DarkRed   guibg=#C50F1F
-    hi DiffChange   cterm=none    ctermfg=Black        gui=none guifg=#0C0C0C ctermbg=LightGray guibg=#CCCCCC
-    hi DiffText     cterm=none    ctermfg=Black        gui=none guifg=#0C0C0C ctermbg=Yellow    guibg=#F9F1A5
+    hi DiffAdd      cterm=none    ctermfg=White        gui=none guifg=#F1F1F1 ctermbg=DarkGreen  guibg=#13A10E
+    hi DiffDelete   cterm=none    ctermfg=Black        gui=none guifg=#0C0C0C ctermbg=DarkRed    guibg=#C50F1F
+    hi DiffChange   cterm=none    ctermfg=Black        gui=none guifg=#0C0C0C ctermbg=LightGray  guibg=#CCCCCC
+    hi DiffText     cterm=none    ctermfg=Black        gui=none guifg=#0C0C0C ctermbg=Yellow     guibg=#F9F1A5
 
-    hi Pmenu        cterm=none    ctermfg=White        gui=none guifg=#F1F1F1 ctermbg=DarkGray  guibg=#767676
-    hi PmenuSel     cterm=none    ctermfg=Yellow       gui=none guifg=#F9F1A5 ctermbg=Black     guibg=#0C0C0C
-    hi PmenuSBar    cterm=none                                                ctermbg=LightGray guibg=#CCCCCC
-    hi PmenuThumb   cterm=none                                                ctermbg=Black     guibg=#0C0C0C
+    hi Pmenu        cterm=none    ctermfg=White        gui=none guifg=#F1F1F1 ctermbg=DarkGray   guibg=#767676
+    hi PmenuSel     cterm=none    ctermfg=Yellow       gui=none guifg=#F9F1A5 ctermbg=Black      guibg=#0C0C0C
+    hi PmenuSBar    cterm=none                                                ctermbg=LightGray  guibg=#CCCCCC
+    hi PmenuThumb   cterm=none                                                ctermbg=Black      guibg=#0C0C0C
 
     hi Comment      cterm=none    ctermfg=DarkGray     gui=none guifg=#767676
     hi Statement    cterm=none    ctermfg=Yellow       gui=none guifg=#F9F1A5

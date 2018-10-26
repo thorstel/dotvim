@@ -139,7 +139,7 @@ let g:jellybeans_overrides = {
 
 " colorscheme setup
 let g:wincmd_use_legacy_colors = 1
-let s:thorstel_lightcolor      = "thorstel"
+let s:thorstel_lightcolor      = "github"
 let s:thorstel_darkcolor       = "wincmd"
 let s:thorstel_darkbg          = 1
 

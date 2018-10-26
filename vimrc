@@ -159,6 +159,9 @@ if has("gui_running")
     else
         set guifont="Deja Vu Sans Mono 10"
     endif
+
+    amenu &View\ Modes.&Presentation<Tab>p :call <SID>PresenterView()<CR>
+    amenu &View\ Modes.Restore\ &Defaults<Tab>d :source $MYVIMRC<CR>
 endif
 
 " }}}
@@ -213,6 +216,21 @@ function! <SID>SwitchLineNumbers()
     else
         set relativenumber
     endif
+endfunction
+
+" Configure the editor for presenting.
+command! PresenterView call <SID>PresenterView()
+function! <SID>PresenterView()
+    if has("gui_win32")
+        set guifont=Consolas:h14
+        set linespace=2
+    else
+        set guifont="Deja Vu Sans Mono 12"
+    endif
+    set nolist
+    set bg=light
+    execute "colorscheme " . s:thorstel_lightcolor
+    let s:thorstel_darkbg = 0
 endfunction
 
 " }}}

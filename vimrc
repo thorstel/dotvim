@@ -227,6 +227,8 @@ function! <SID>PresenterView()
     else
         set guifont="Deja Vu Sans Mono 12"
     endif
+    set columns=90
+    set lines=24
     set nolist
     set bg=light
     execute "colorscheme " . s:thorstel_lightcolor

@@ -139,12 +139,8 @@ let g:jellybeans_overrides = {
 
 " colorscheme setup
 let g:wincmd_use_legacy_colors = 1
-let s:thorstel_lightcolor      = "github"
+let s:thorstel_lightcolor      = "Notepad++"
 let s:thorstel_darkcolor       = "wincmd"
-let s:thorstel_darkbg          = 1
-
-set background=dark
-execute "colorscheme " . s:thorstel_darkcolor
 
 if has("gui_running")
     set columns=160
@@ -162,6 +158,14 @@ if has("gui_running")
 
     amenu &View\ Modes.&Presentation<Tab>p :call <SID>PresenterView()<CR>
     amenu &View\ Modes.Restore\ &Defaults<Tab>d :source $MYVIMRC<CR>
+
+    let s:thorstel_darkbg = 0
+    set background=light
+    execute "colorscheme " . s:thorstel_lightcolor
+else
+    let s:thorstel_darkbg = 1
+    set background=dark
+    execute "colorscheme " . s:thorstel_darkcolor
 endif
 
 " }}}

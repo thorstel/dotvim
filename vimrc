@@ -145,7 +145,7 @@ let s:thorstel_darkcolor       = "wincmd"
 if has("gui_running")
     set columns=160
     set guicursor=n:blinkon0
-    set guioptions=acem
+    set guioptions=cem
     set lines=40
     set showtabline=1
 
@@ -308,11 +308,11 @@ nnoremap K i<CR><ESC>k$
 nnoremap <silent> Y y$
 
 " Y yanks to the clipboard in visual mode
-vnoremap <silent> Y "+y
 vnoremap <silent> <C-c> "+y
 
-" Paste from system clipboard with ctrl-p
-nnoremap <silent> <C-p> o<Esc>"+p
+" Paste from system clipboard with ctrl-v
+vnoremap <silent> <C-v> "+p
+nnoremap <silent> <C-v> o<Esc>:set paste<CR>"+p:set nopaste<CR>
 
 " toggle between favorite dark and light colorschemes
 nnoremap <silent> <F2> :call <SID>ToggleColorScheme()<CR>

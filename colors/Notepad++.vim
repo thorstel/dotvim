@@ -19,7 +19,7 @@ hi Cursor       cterm=bold    ctermfg=LightBlue   gui=none guifg=#E8E8FF ctermbg
 hi LineNr       cterm=none    ctermfg=DarkGray    gui=none guifg=#808080 ctermbg=LightGray  guibg=#E4E4E4
 hi ColorColumn                                                           ctermbg=LightBlue  guibg=#E8E8FF
 hi CursorLine                                                            ctermbg=LightBlue  guibg=#E8E8FF
-hi CursorLineNr cterm=none    ctermfg=DarkBlue    gui=bold guifg=#000080 ctermbg=LightBlue  guibg=#E8E8FF
+hi CursorLineNr cterm=none    ctermfg=DarkBlue    gui=bold guifg=#000080 ctermbg=White      guibg=#FFFFFF
 hi Folded       cterm=none    ctermfg=DarkGray    gui=none guifg=#808080 ctermbg=LightGray  guibg=#F3F3F3
 hi FoldColumn   cterm=none    ctermfg=DarkGray    gui=none guifg=#808080 ctermbg=LightGray  guibg=#F3F3F3
 hi Search                                                                ctermbg=LightGreen guibg=#00FF00

@@ -41,12 +41,12 @@ hi Constant     cterm=none    ctermfg=DarkRed     gui=none guifg=#800000
 hi Error        cterm=none    ctermfg=White       gui=bold guifg=#FFFFFF ctermbg=LightRed   guibg=#FF0000
 hi Function     cterm=none    ctermfg=DarkRed     gui=none guifg=#95004A
 hi Identifier   cterm=none    ctermfg=DarkGrey    gui=none guifg=#8080C0
-hi NonText      cterm=none    ctermfg=Black       gui=none guifg=#808080
+hi NonText      cterm=none    ctermfg=Black       gui=none guifg=#000000
 hi Number       cterm=none    ctermfg=DarkYellow  gui=none guifg=#FF8000
 hi Operator     cterm=none    ctermfg=DarkBlue    gui=bold guifg=#000080
 hi PreProc      cterm=none    ctermfg=DarkRed     gui=none guifg=#804000
 hi Special      cterm=none    ctermfg=LightRed    gui=none guifg=#FF0000
-hi SpecialKey   cterm=none    ctermfg=LightGrey   gui=none guifg=#808080
+hi SpecialKey   cterm=none    ctermfg=DarkYellow  gui=none guifg=#FFB56A
 hi Statement    cterm=none    ctermfg=Blue        gui=bold guifg=#0000FF
 hi String       cterm=none    ctermfg=DarkGray    gui=none guifg=#808080
 hi Todo         cterm=none    ctermfg=LightRed    gui=bold guifg=#FF0000 ctermbg=Yellow     guibg=#FFFF00

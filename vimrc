@@ -143,10 +143,8 @@ let s:thorstel_lightcolor      = "Notepad++"
 let s:thorstel_darkcolor       = "wincmd"
 
 if has("gui_running")
-    set columns=120
     set guicursor=n:blinkon0
     set guioptions=cem
-    set lines=30
     set showtabline=1
 
     if has("gui_win32")

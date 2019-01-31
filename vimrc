@@ -231,7 +231,6 @@ function! <SID>PresenterView()
     endif
     set columns=90
     set lines=24
-    set nolist
     set bg=light
     execute "colorscheme " . s:thorstel_lightcolor
     let s:thorstel_darkbg = 0

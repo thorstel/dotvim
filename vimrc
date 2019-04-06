@@ -148,7 +148,7 @@ if has("gui_running")
     set showtabline=1
 
     if has("gui_win32")
-        set guifont=Consolas:h11
+        set guifont=Consolas:h10
         set linespace=0
     else
         set guifont="Deja Vu Sans Mono 10"

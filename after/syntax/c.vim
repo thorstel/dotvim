@@ -249,8 +249,8 @@ syn match cOperator "&&\|||"
 syn match cOperator	"[][]"
 
 " custom typedefs
-syn match cType "\w\+_t\ze\W"
-syn match cType "\w\+_e\ze\W"
+syn match cType "\<\w\+_t\>"
+syn match cType "\<\w\+_e\>"
 
 " Preprocs
 syn keyword cDefined defined contained containedin=cDefine
@@ -272,6 +272,8 @@ syn match cBraces display "[{}]"
 " Booleans
 syn keyword cBoolean true false TRUE FALSE
 
+" Integers
+syn keyword cType u64 u32 u16 u8 s64 s32 s16 s8
 
 " Links
 hi def link cFunction Function

@@ -15,7 +15,7 @@
 " | Color Name   | Legacy Values | New Defaults |
 " +--------------+---------------+--------------+
 " | Black        | 000000        | 0C0C0C       |
-" | DarkBlue     | 000080        | 0037DA       |
+" | DarkBlue     | 0000C0        | 0037DA       |
 " | DarkGreen    | 008000        | 13A10E       |
 " | DarkCyan     | 008080        | 3A96DD       |
 " | DarkRed      | 800000        | C50F1F       |
@@ -51,8 +51,8 @@ if exists("g:wincmd_use_legacy_colors") && g:wincmd_use_legacy_colors
     hi FoldColumn   cterm=none ctermfg=White        gui=none guifg=#FFFFFF ctermbg=DarkGrey   guibg=#808080
     hi Error        cterm=none ctermfg=White        gui=bold guifg=#FFFFFF ctermbg=LightRed   guibg=#FF0000
     hi Todo         cterm=none ctermfg=LightRed     gui=bold guifg=#FF0000 ctermbg=Yellow     guibg=#FFFF00
-    hi NonText      cterm=none ctermfg=DarkBlue     gui=none guifg=#000080
-    hi SpecialKey   cterm=none ctermfg=DarkBlue     gui=none guifg=#000080
+    hi NonText      cterm=none ctermfg=DarkBlue     gui=none guifg=#0000C0
+    hi SpecialKey   cterm=none ctermfg=DarkBlue     gui=none guifg=#0000C0
 
     hi DiffAdd      cterm=none ctermfg=White        gui=none guifg=#FFFFFF ctermbg=DarkGreen  guibg=#008000
     hi DiffDelete   cterm=none ctermfg=Black        gui=none guifg=#000000 ctermbg=DarkRed    guibg=#800000

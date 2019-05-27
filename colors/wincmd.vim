@@ -17,7 +17,7 @@
 " | Black        | 000000        | 0C0C0C       |
 " | DarkBlue     | 0000C0        | 0037DA       |
 " | DarkGreen    | 008000        | 13A10E       |
-" | DarkCyan     | 008080        | 3A96DD       |
+" | DarkCyan     | 00C0C0        | 3A96DD       |
 " | DarkRed      | 800000        | C50F1F       |
 " | DarkMagenta  | 800080        | 881798       |
 " | DarkYellow   | 808000        | C19C00       |
@@ -70,7 +70,7 @@ if exists("g:wincmd_use_legacy_colors") && g:wincmd_use_legacy_colors
     hi Identifier   cterm=none ctermfg=LightCyan    gui=none guifg=#00FFFF
     hi Type         cterm=none ctermfg=LightGreen   gui=none guifg=#00FF00
     hi Special      cterm=none ctermfg=LightRed     gui=none guifg=#FF0000
-    hi PreProc      cterm=none ctermfg=DarkCyan     gui=none guifg=#008080
+    hi PreProc      cterm=none ctermfg=DarkCyan     gui=none guifg=#00C0C0
 else
     hi Normal       cterm=none ctermfg=LightGray    gui=none guifg=#CCCCCC ctermbg=Black      guibg=#0C0C0C
     hi Cursor       cterm=bold ctermfg=Black        gui=bold guifg=#0C0C0C ctermbg=LightGreen guibg=#16C60C

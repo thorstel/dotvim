@@ -39,7 +39,7 @@ hi Character    cterm=none    ctermfg=DarkGray    gui=none guifg=#808080
 hi Comment      cterm=none    ctermfg=DarkGreen   gui=none guifg=#008000
 hi Constant     cterm=none    ctermfg=DarkRed     gui=none guifg=#800000
 hi Error        cterm=none    ctermfg=White       gui=bold guifg=#FFFFFF ctermbg=LightRed   guibg=#FF0000
-hi Function     cterm=none    ctermfg=DarkRed     gui=none guifg=#95004A
+hi Function     cterm=none    ctermfg=DarkBlue    gui=none guifg=#0000C0
 hi Identifier   cterm=none    ctermfg=DarkGrey    gui=none guifg=#8080C0
 hi NonText      cterm=none    ctermfg=Black       gui=none guifg=#000000
 hi Number       cterm=none    ctermfg=DarkYellow  gui=none guifg=#FF8000

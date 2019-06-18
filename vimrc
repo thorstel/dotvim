@@ -28,6 +28,7 @@ set listchars=tab:→\ ,space:·,trail:·,nbsp:•,precedes:←,extends:→,eol:
 set mouse=a
 set mousehide
 set nohlsearch
+set nomodeline
 set nostartofline
 set number
 set numberwidth=5

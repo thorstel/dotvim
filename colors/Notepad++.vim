@@ -16,14 +16,14 @@ let colors_name = "Notepad++"
 
 hi Normal       cterm=none    ctermfg=Black       gui=none guifg=#000000 ctermbg=White      guibg=#FFFFFF
 hi Cursor       cterm=bold    ctermfg=LightBlue   gui=none guifg=#E8E8FF ctermbg=DarkBlue   guibg=#000080
-hi LineNr       cterm=none    ctermfg=DarkGray    gui=none guifg=#808080 ctermbg=LightGray  guibg=#E4E4E4
+hi LineNr       cterm=none    ctermfg=DarkGray    gui=none guifg=#808080 ctermbg=LightGray  guibg=#F7F7F7
 hi ColorColumn                                                           ctermbg=LightBlue  guibg=#E8E8FF
 hi CursorLine                                                            ctermbg=LightBlue  guibg=#E8E8FF
-hi CursorLineNr cterm=none    ctermfg=DarkBlue    gui=bold guifg=#000080 ctermbg=White      guibg=#FFFFFF
-hi Folded       cterm=none    ctermfg=DarkGray    gui=none guifg=#808080 ctermbg=LightGray  guibg=#F3F3F3
-hi FoldColumn   cterm=none    ctermfg=DarkGray    gui=none guifg=#808080 ctermbg=LightGray  guibg=#F3F3F3
-hi Search                                                                ctermbg=LightGreen guibg=#00FF00
-hi Visual       cterm=reverse                                            ctermbg=LightGray  guibg=#E0E0E0
+hi CursorLineNr cterm=none    ctermfg=Black       gui=bold guifg=#000000 ctermbg=White      guibg=#FFFFFF
+hi Folded       cterm=none    ctermfg=DarkGray    gui=none guifg=#808080 ctermbg=LightGray  guibg=#F7F7F7
+hi FoldColumn   cterm=none    ctermfg=DarkGray    gui=none guifg=#808080 ctermbg=LightGray  guibg=#F7F7F7
+hi Search       cterm=none    ctermfg=LightRed    gui=none guifg=#FF0000 ctermbg=Yellow     guibg=#FFFF00
+hi Visual       cterm=reverse                                            ctermbg=LightGray  guibg=#F0F0F0
 
 hi Pmenu        cterm=none    ctermfg=Black       gui=none guifg=#000000 ctermbg=LightGray  guibg=#F3F3F3
 hi PmenuSel     cterm=none    ctermfg=DarkBlue    gui=bold guifg=#000080 ctermbg=LightBlue  guibg=#E8E8FF

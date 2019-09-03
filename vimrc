@@ -236,6 +236,18 @@ function! <SID>PresenterView()
     let s:thorstel_darkbg = 0
 endfunction
 
+" Command for copying to the system clipboard in normal mode.
+command! CopyToClipboard call <SID>CopyToClipboard()
+function! <SID>CopyToClipboard()
+    let l = line(".")
+    let c = col(".")
+    if mode() == 'n'
+        normal! "+yiW
+        echo "Copied \"" . getreg('+') . "\" to clipboard!"
+    endif
+    call cursor(l, c)
+endfunction
+
 " }}}
 " Mappings {{{
 
@@ -304,8 +316,11 @@ nnoremap K i<CR><ESC>k$
 " Y should copy from the current position to the end of line
 nnoremap <silent> Y y$
 
-" Y yanks to the clipboard in visual mode
+" Use ctrl-c to copy to the system clipboard. In visual mode the current
+" selection is copied. In normal mode, copy the whitespace-delimited
+" word under the cursor.
 vnoremap <silent> <C-c> "+y
+nnoremap <silent> <C-c> :CopyToClipboard<CR>
 
 " Paste from system clipboard with ctrl-v
 vnoremap <silent> <C-v> "+p

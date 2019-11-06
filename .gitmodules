@@ -37,3 +37,6 @@
 [submodule "pack/bundle/start/jellybeans"]
 	path = pack/bundle/start/jellybeans
 	url = https://github.com/nanotech/jellybeans.vim.git
+[submodule "pack/bundle/start/vim-lister"]
+	path = pack/bundle/start/vim-lister
+	url = https://github.com/tommcdo/vim-lister.git

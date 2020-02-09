@@ -341,6 +341,10 @@ nnoremap <C-\> :cs find c <C-R>=expand("<cword>")<CR><CR>
 " Invoke Cscope symbol lookup for the current cursor position
 noremap gs :cs find s <C-R>=expand("<cword>")<CR><CR>
 
+" Mirror the insert Time/Date of Notepad
+nnoremap <F5> o<C-R>=strftime("%Y-%m-%d %H:%M:%S")<CR><Esc>
+inoremap <F5> <C-R>=strftime("%Y-%m-%d %H:%M:%S")<CR>
+
 " adjust very frequent mistakes
 iab esle else
 iab flase false

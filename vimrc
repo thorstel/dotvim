@@ -140,8 +140,8 @@ let g:jellybeans_overrides = {
 
 " colorscheme setup
 let g:wincmd_use_legacy_colors = 1
-let s:thorstel_lightcolor      = "Notepad++"
-let s:thorstel_darkcolor       = "wincmd"
+let g:thorstel_lightcolor      = "Notepad++"
+let g:thorstel_darkcolor       = "wincmd"
 
 if has("gui_running")
     set guicursor=n:blinkon0
@@ -157,13 +157,13 @@ if has("gui_running")
     amenu &View\ Modes.&Presentation<Tab>p :call <SID>PresenterView()<CR>
     amenu &View\ Modes.Restore\ &Defaults<Tab>d :source $MYVIMRC<CR>
 
-    let s:thorstel_darkbg = 0
+    let g:thorstel_darkbg = 0
     set background=light
-    execute "colorscheme " . s:thorstel_lightcolor
+    execute "colorscheme " . g:thorstel_lightcolor
 else
-    let s:thorstel_darkbg = 1
+    let g:thorstel_darkbg = 1
     set background=dark
-    execute "colorscheme " . s:thorstel_darkcolor
+    execute "colorscheme " . g:thorstel_darkcolor
 endif
 
 " }}}
@@ -199,14 +199,14 @@ endfunction
 
 " toggle between a light and a dark colorscheme
 function! <SID>ToggleColorScheme()
-    if (s:thorstel_darkbg == 1)
+    if (g:thorstel_darkbg == 1)
         set bg=light
-        execute "colorscheme " . s:thorstel_lightcolor
-        let s:thorstel_darkbg = 0
+        execute "colorscheme " . g:thorstel_lightcolor
+        let g:thorstel_darkbg = 0
     else
         set bg=dark
-        execute "colorscheme " . s:thorstel_darkcolor
-        let s:thorstel_darkbg = 1
+        execute "colorscheme " . g:thorstel_darkcolor
+        let g:thorstel_darkbg = 1
     endif
 endfunction
 
@@ -232,8 +232,8 @@ function! <SID>PresenterView()
     set columns=90
     set lines=24
     set bg=light
-    execute "colorscheme " . s:thorstel_lightcolor
-    let s:thorstel_darkbg = 0
+    execute "colorscheme " . g:thorstel_lightcolor
+    let g:thorstel_darkbg = 0
 endfunction
 
 " Command for copying to the system clipboard in normal mode.

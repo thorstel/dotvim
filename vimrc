@@ -345,6 +345,10 @@ noremap gs :cs find s <C-R>=expand("<cword>")<CR><CR>
 nnoremap <F5> o<C-R>=strftime("%Y-%m-%d %H:%M:%S")<CR><Esc>
 inoremap <F5> <C-R>=strftime("%Y-%m-%d %H:%M:%S")<CR>
 
+" For more consistency when tabbing back and forth.
+nmap <F3> n
+nmap <S-F3> N
+
 " adjust very frequent mistakes
 iab esle else
 iab flase false

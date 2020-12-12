@@ -160,10 +160,9 @@ if has("gui_running")
     let g:thorstel_darkbg = 0
     set background=light
     execute "colorscheme " . g:thorstel_lightcolor
-else
-    let g:thorstel_darkbg = 1
-    set background=dark
-    execute "colorscheme " . g:thorstel_darkcolor
+
+    " toggle between favorite dark and light colorschemes
+    nnoremap <silent> <F2> :call <SID>ToggleColorScheme()<CR>
 endif
 
 " }}}
@@ -325,9 +324,6 @@ nnoremap <silent> <C-c> :CopyToClipboard<CR>
 " Paste from system clipboard with ctrl-v
 vnoremap <silent> <C-v> "+p
 nnoremap <silent> <C-v> o<Esc>:set paste<CR>"+p:set nopaste<CR>
-
-" toggle between favorite dark and light colorschemes
-nnoremap <silent> <F2> :call <SID>ToggleColorScheme()<CR>
 
 " Invoke CtrlP
 noremap <silent> <leader>b :CtrlPBuffer<CR>

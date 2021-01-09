@@ -65,6 +65,7 @@ exe "hi NonText         gui=none    guifg=" .s:base1
 exe "hi Number          gui=none    guifg=" .s:orange
 exe "hi Operator        gui=none    guifg=" .s:base02
 exe "hi PreProc         gui=bold    guifg=" .s:base02
+exe "hi Question        gui=bold    guifg=" .s:green
 exe "hi Special         gui=none    guifg=" .s:base02
 exe "hi SpecialKey      gui=none    guifg=" .s:base1
 exe "hi Statement       gui=bold    guifg=" .s:base02

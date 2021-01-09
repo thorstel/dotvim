@@ -10,6 +10,7 @@ set backspace=indent,eol,start
 set breakindent
 set complete=.,w,b,u,t
 set completeopt=menuone
+set cursorline
 set diffopt+=iwhite
 set encoding=utf-8
 set fillchars=""
@@ -27,7 +28,7 @@ set list
 set listchars=tab:→\ ,space:·,trail:·,nbsp:•,precedes:←,extends:→,eol:¶ "eol:¬
 set mouse=a
 set mousehide
-set nohlsearch
+set hlsearch
 set nomodeline
 set nostartofline
 set number
@@ -85,6 +86,7 @@ augroup VIMRC
     autocmd BufRead,BufNewFile *.tex,*.txt,*.mkd setlocal spell
     autocmd BufRead,BufNewFile *.des set syntax=levdes
     autocmd GuiEnter * set visualbell t_vb=
+    autocmd colorscheme * highlight clear CursorLine
 augroup END
 
 " }}}
@@ -108,7 +110,8 @@ let g:ctrlp_cmd               = 'CtrlP'
 let g:ctrlp_working_path_mode = 1
 
 " Lightline
-let g:lightline = { 'colorscheme' : 'landscape' }
+"let g:lightline = { 'colorscheme' : 'landscape' }
+let g:lightline = { 'colorscheme' : 'solarized' }
 
 " Easy-Align
 if !exists('g:easy_align_delimiters')
@@ -138,11 +141,6 @@ let g:jellybeans_overrides = {
             \ 'NonText':    { 'guifg': '444444' },
             \}
 
-" colorscheme setup
-let g:wincmd_use_legacy_colors = 1
-let g:thorstel_lightcolor      = "Notepad++"
-let g:thorstel_darkcolor       = "wincmd"
-
 if has("gui_running")
     set guicursor=n:blinkon0
     set guioptions=cem
@@ -154,15 +152,19 @@ if has("gui_running")
         set guifont="Deja Vu Sans Mono 10"
     endif
 
-    amenu &View\ Modes.&Presentation<Tab>p :call <SID>PresenterView()<CR>
-    amenu &View\ Modes.Restore\ &Defaults<Tab>d :source $MYVIMRC<CR>
+    colorscheme SolarizedLight-Bases
+    " toggle between dark and light colorschemes
+    "let g:wincmd_use_legacy_colors = 1
+    "let g:thorstel_lightcolor      = "Notepad++"
+    "let g:thorstel_darkcolor       = "wincmd"
 
-    let g:thorstel_darkbg = 0
-    set background=light
-    execute "colorscheme " . g:thorstel_lightcolor
+    "let g:thorstel_darkbg = 0
+    "set background=light
+    "execute "colorscheme " . g:thorstel_lightcolor
 
-    " toggle between favorite dark and light colorschemes
-    nnoremap <silent> <F2> :call <SID>ToggleColorScheme()<CR>
+    "nnoremap <silent> <F2> :call <SID>ToggleColorScheme()<CR>
+else
+    colo default
 endif
 
 " }}}
@@ -219,22 +221,6 @@ function! <SID>SwitchLineNumbers()
     endif
 endfunction
 
-" Configure the editor for presenting.
-command! PresenterView call <SID>PresenterView()
-function! <SID>PresenterView()
-    if has("gui_win32")
-        set guifont=Consolas:h14
-        set linespace=2
-    else
-        set guifont="Deja Vu Sans Mono 12"
-    endif
-    set columns=90
-    set lines=24
-    set bg=light
-    execute "colorscheme " . g:thorstel_lightcolor
-    let g:thorstel_darkbg = 0
-endfunction
-
 " Command for copying to the system clipboard in normal mode.
 command! CopyToClipboard call <SID>CopyToClipboard()
 function! <SID>CopyToClipboard()
@@ -286,7 +272,7 @@ nnoremap <silent> <C-j> :cn<CR>
 nnoremap <silent> <C-k> :cp<CR>
 
 " Toggle settings
-noremap <silent> <leader>h :set hlsearch!<CR>
+noremap <silent> <leader>h :nohlsearch<CR>
 noremap <silent> <leader>s :set spell! <CR>
 noremap <silent> <leader>w :set wrap!<CR>
 

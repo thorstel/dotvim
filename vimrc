@@ -332,6 +332,10 @@ cnoremap <F5> <C-R>=strftime("%Y%m%d%H%M%S")<CR>
 nmap <F3> n
 nmap <S-F3> N
 
+" Set the search pattern to the word under the cursor and enable hlsearch.
+nnoremap <silent> <C-h> :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
+inoremap <silent> <C-h> <C-O>:let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR><C-O>:set hls<CR>
+
 " adjust very frequent mistakes
 iab esle else
 iab flase false

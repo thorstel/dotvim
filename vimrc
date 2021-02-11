@@ -110,8 +110,8 @@ let g:ctrlp_cmd               = 'CtrlP'
 let g:ctrlp_working_path_mode = 1
 
 " Lightline
-"let g:lightline = { 'colorscheme' : 'landscape' }
-let g:lightline = { 'colorscheme' : 'solarized' }
+let g:lightline = { 'colorscheme' : 'landscape' }
+"let g:lightline = { 'colorscheme' : 'solarized' }
 
 " Easy-Align
 if !exists('g:easy_align_delimiters')
@@ -152,7 +152,7 @@ if has("gui_running")
         set guifont="Deja Vu Sans Mono 10"
     endif
 
-    colorscheme SolarizedLight-Bases
+    colorscheme Notepad++
     " toggle between dark and light colorschemes
     "let g:wincmd_use_legacy_colors = 1
     "let g:thorstel_lightcolor      = "Notepad++"

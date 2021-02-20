@@ -310,6 +310,7 @@ nnoremap <silent> <C-c> :CopyToClipboard<CR>
 " Paste from system clipboard with ctrl-v
 vnoremap <silent> <C-v> "+p
 nnoremap <silent> <C-v> o<Esc>:set paste<CR>"+p:set nopaste<CR>
+inoremap <silent> <C-r><C-v> <C-r>+
 
 " Invoke CtrlP
 noremap <silent> <leader>b :CtrlPBuffer<CR>
